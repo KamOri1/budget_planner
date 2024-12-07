@@ -19,3 +19,11 @@ def billing(request):
         template_name="billing.html",
         context={"title": get_title(request)},
     )
+
+
+def notifications(request):
+    return render(
+        request=request,
+        template_name="notifications.html",
+        context={"title": get_title(request)},
+    )
