@@ -95,25 +95,33 @@
             <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">
               <div class="card card-plain">
                 <div class="card-header">
-                  <h4 class="font-weight-bolder">Sign Up</h4>
+                    <div class="col-md-8">
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-{{ message.tags }}">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
                   <p class="mb-0">Enter your email and password to register</p>
                 </div>
                 <div class="card-body">
                   <form role="form" method="POST">
                       {%  csrf_token %}
                       <fieldset class="form-group">
-                          <legend class="border-bottom mb-4"></legend>
+                          <legend class="border-bottom mb-4">Sing In</legend>
                           {{ form|crispy }}
                       </fieldset>
                     <div class="form-group">
-                      <button  class="btn btn-outline-info" type="submit">Sign Up</button>
+                      <button  class="btn btn-outline-info" type="submit">Sign In</button>
                     </div>
                   </form>
                 </div>
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-2 text-sm mx-auto">
-                    Already have an account?
-                    <a href="sign-in.html" class="text-primary text-gradient font-weight-bold">Sign in</a>
+                    Don't have an account?
+                    <a href="{% url 'register' %}" class="text-primary text-gradient font-weight-bold">Sign up</a>
                   </p>
                 </div>
               </div>

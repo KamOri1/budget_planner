@@ -6,7 +6,10 @@ def get_title(request):
 
 
 def main_view(request):
-    return redirect("/dashboard")
+    if request.user.is_authenticated:
+        return redirect("/dashboard")
+    else:
+        return redirect("/login")
 
 
 def dashboard(request):
