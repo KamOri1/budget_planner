@@ -1,8 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 
 def get_title(request):
     return request.path.strip("/").title()
+
+
+def main_view(request):
+    return redirect("/dashboard")
 
 
 def dashboard(request):

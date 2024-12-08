@@ -26,7 +26,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
-INSTALLED_EXTENSIONS = []
+INSTALLED_EXTENSIONS = [
+    "users.apps.UsersConfig",
+]
 
 INSTALLED_APPS += INSTALLED_EXTENSIONS
 
