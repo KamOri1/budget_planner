@@ -1,10 +1,11 @@
-from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import logout
+from django.shortcuts import redirect, render
+
 from .forms import UserRegisterForm
 
 
-def register(request): # TODO Class Based View + Template z boostrap'a.
+def register(request):  # TODO Class Based View + Template z boostrap'a.
     if request.method == "POST":
         form = UserRegisterForm(request.POST)
         if form.is_valid():

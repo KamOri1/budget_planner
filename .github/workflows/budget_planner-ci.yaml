@@ -41,7 +41,7 @@ jobs:
     - name: Run Django Test
       run: |
         coverage manage.py test
-        coverage report 
+        coverage report
         coverage xml
       env:
         POSTGRES_NAME: ${{ vars.POSTGRES_NAME }}
@@ -56,4 +56,3 @@ jobs:
     - name: Lint with ruff
       run: |
         ruff check .
-
