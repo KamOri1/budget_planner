@@ -4,7 +4,7 @@ from django.contrib.auth import logout
 from .forms import UserRegisterForm
 
 
-def register(request):
+def register(request): # TODO Class Based View + Template z boostrap'a.
     if request.method == "POST":
         form = UserRegisterForm(request.POST)
         if form.is_valid():

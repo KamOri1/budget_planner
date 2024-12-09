@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import User
-from django import forms
+from django import forms # noqa
 
 
 class UserRegisterForm(UserCreationForm):
