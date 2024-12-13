@@ -42,8 +42,9 @@
                   <h4 class="font-weight-bolder">Sign Up</h4>
                   <p class="mb-0">Enter name, email and password to register</p>
                 </div>
+
                 <div class="card-body">
-                  <form role="form" method="POST" action="{% url 'login' %}">
+                  <form role="form" method="POST" >
                     {% csrf_token %}
                     <div class="input-group input-group-outline mb-3">
                        {{ form.username }}
@@ -52,7 +53,10 @@
                         {{ form.email }}
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                      {{ form.password }}
+                      {{ form.password1 }}
+                    </div>
+                    <div class="input-group input-group-outline mb-3">
+                      {{ form.password2 }}
                     </div>
                     <div class="text-center">
                       <button type="submit" value="Submit" class="btn btn-lg bg-gradient-dark btn-lg w-100 mt-4 mb-0">Sign Up</button>
