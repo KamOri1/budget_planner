@@ -1,6 +1,8 @@
-import environ
 import os
 from pathlib import Path
+
+import environ
+
 from .env import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +29,9 @@ INSTALLED_APPS = [
 ]
 
 INSTALLED_EXTENSIONS = [
+    "wallet.apps.WalletConfig",
     "users.apps.UsersConfig",
+    "rest_framework",
     "crispy_forms",
     "crispy_bootstrap4",
 ]

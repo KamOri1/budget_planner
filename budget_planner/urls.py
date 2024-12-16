@@ -1,11 +1,9 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.contrib.auth import views as auth_views
 from django.urls import include, path
 
 from dashboard.views import billing, dashboard, main_view, notifications
-from users import views as user_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -14,6 +12,7 @@ urlpatterns = [
     path("billing", billing, name="billing"),
     path("notifications", notifications, name="notifications"),
     path("users/", include("users.urls")),
+    path("wallet/", include("wallet.urls")),
 ]
 
 if settings.DEBUG:
