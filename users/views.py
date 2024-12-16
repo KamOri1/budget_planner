@@ -1,10 +1,9 @@
 from django.contrib import messages
 from django.contrib.auth import logout
-from django.contrib.auth.views import LoginView as login_view
+from django.contrib.auth.views import LoginView as DjangoLoginView
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
-from django.views import generic
-from django.views.generic import CreateView
+from django.views.generic import CreateView, View
 
 from .forms import UserRegisterForm
 
@@ -24,13 +23,13 @@ class RegisterView(CreateView):
         return self.render_to_response(self.get_context_data(form=form))
 
 
-class LoginView(login_view):
+class LoginView(DjangoLoginView):
     template_name = "users/login.html"
     redirect_authenticated_user = True
     success_url = reverse_lazy("dashboard")
 
 
-class LogoutView(generic.View):
+class LogoutView(View):
     @staticmethod
     def get(request):
         logout(request)

@@ -12,7 +12,7 @@ urlpatterns = [
     path("billing", billing, name="billing"),
     path("notifications", notifications, name="notifications"),
     path("users/", include("users.urls")),
-    path("wallet/", include("wallet.urls")),
+    path("", include("wallet.urls")),
 ]
 
 if settings.DEBUG:

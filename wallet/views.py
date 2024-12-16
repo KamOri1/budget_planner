@@ -1,25 +1,34 @@
-from rest_framework import permissions
-from rest_framework.viewsets import generics
+from rest_framework import generics, permissions
+from rest_framework.mixins import CreateModelMixin, DestroyModelMixin, ListModelMixin
+from rest_framework.viewsets import GenericViewSet
 
 from wallet.models import BankAccount, Wallet
 
 from .serializers import BankAccountSerializer, WalletSerializer
 
 
-class WalletViewSet(generics.CreateAPIView):
-    serializer_class = WalletSerializer
-    queryset = Wallet.objects.all()
-
-
-class GetAllWallet(generics.ListAPIView):
-    serializer_class = WalletSerializer
-    queryset = Wallet.objects.all()
-
-
-class DeleteWallet(generics.DestroyAPIView):
+class WalletViewSet(
+    GenericViewSet, CreateModelMixin, ListModelMixin, DestroyModelMixin
+):
     serializer_class = WalletSerializer
     queryset = Wallet.objects.all()
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+
+# class WalletViewSet(generics.CreateAPIView):
+#     serializer_class = WalletSerializer
+#     queryset = Wallet.objects.all()
+#
+#
+# class GetAllWallet(generics.ListAPIView):
+#     serializer_class = WalletSerializer
+#     queryset = Wallet.objects.all()
+#
+#
+# class DeleteWallet(generics.DestroyAPIView):
+#     serializer_class = WalletSerializer
+#     queryset = Wallet.objects.all()
+#     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
 class BankAccountViewSet(generics.CreateAPIView):

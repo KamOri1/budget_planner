@@ -26,14 +26,15 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
+    "crispy_forms",
+    "crispy_bootstrap4",
+    "django_extensions",
 ]
 
 INSTALLED_EXTENSIONS = [
     "wallet.apps.WalletConfig",
     "users.apps.UsersConfig",
-    "rest_framework",
-    "crispy_forms",
-    "crispy_bootstrap4",
 ]
 
 INSTALLED_APPS += INSTALLED_EXTENSIONS
