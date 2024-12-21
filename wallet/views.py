@@ -1,17 +1,22 @@
-from rest_framework import generics, permissions
-from rest_framework.mixins import CreateModelMixin, DestroyModelMixin, ListModelMixin
-from rest_framework.viewsets import GenericViewSet
+from django.views.generic import CreateView
 
-from api.serializers import BankAccountSerializer, WalletSerializer
-from wallet.models import BankAccount, Wallet
+from wallet.models import Wallet
 
 
-class WalletViewSet(
-    GenericViewSet, CreateModelMixin, ListModelMixin, DestroyModelMixin
-):
-    serializer_class = WalletSerializer
-    queryset = Wallet.objects.all()
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+class WalletViewSet(CreateView):
+    model = Wallet
+    fields = ["wallet_name", "portfolio_value"]
+    template_name = "wallet/wallet_view.html"
+
+    def form_valid(self, form):
+        wallet = form.save(commit=False)
+        wallet.user_id_id = self.request.user.id
+        form.save()
+        return super().form_valid(form)
+
+    # def form_invalid(self, form):
+    #
+    #     return self.render_to_response(self.get_context_data(form=form))
 
 
 # class WalletViewSet(generics.CreateAPIView):
@@ -29,18 +34,18 @@ class WalletViewSet(
 #     queryset = Wallet.objects.all()
 #     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
-
-class BankAccountViewSet(generics.CreateAPIView):
-    serializer_class = BankAccountSerializer
-    queryset = BankAccount.objects.all()
-
-
-class GetAllBankAccount(generics.ListAPIView):
-    serializer_class = BankAccountSerializer
-    queryset = BankAccount.objects.all()
-
-
-class DeleteBankAccount(generics.DestroyAPIView):
-    serializer_class = BankAccountSerializer
-    queryset = BankAccount.objects.all()
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+#
+# class BankAccountViewSet(generics.CreateAPIView):
+#     serializer_class = BankAccountSerializer
+#     queryset = BankAccount.objects.all()
+#
+#
+# class GetAllBankAccount(generics.ListAPIView):
+#     serializer_class = BankAccountSerializer
+#     queryset = BankAccount.objects.all()
+#
+#
+# class DeleteBankAccount(generics.DestroyAPIView):
+#     serializer_class = BankAccountSerializer
+#     queryset = BankAccount.objects.all()
+#     permission_classes = [permissions.IsAuthenticatedOrReadOnly]

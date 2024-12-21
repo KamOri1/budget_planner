@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" name="Changes" comment="" />
+    <list default="true" id="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/budget_planner/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget_planner/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/templates/users/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/views.py" afterDir="false" />
+    </list>
     <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +66,7 @@
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kaspi\Desktop\budget_planner\api" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\templates" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\dashboard\templates\dashboard" />
@@ -117,6 +125,7 @@
       <workItem from="1733350455796" duration="620000" />
       <workItem from="1733685931465" duration="56884000" />
       <workItem from="1734382532262" duration="1292000" />
+      <workItem from="1734819683353" duration="5333000" />
     </task>
     <servers />
   </component>

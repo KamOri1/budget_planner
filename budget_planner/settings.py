@@ -35,6 +35,7 @@ INSTALLED_APPS = [
 INSTALLED_EXTENSIONS = [
     "wallet.apps.WalletConfig",
     "users.apps.UsersConfig",
+    "api.apps.ApiConfig",
 ]
 
 INSTALLED_APPS += INSTALLED_EXTENSIONS
