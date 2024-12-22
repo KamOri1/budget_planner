@@ -10,12 +10,12 @@
             <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">
               <div class="card card-plain">
                 <div class="card-header">
-                  <h4 class="font-weight-bolder">Sign Up</h4>
+                  <h4 class="font-weight-bolder">Add wallet</h4>
                   <p class="mb-0">Enter name and value</p>
                 </div>
 
                 <div class="card-body">
-                  <form role="form" method="POST" >
+                  <form role="form" method="POST" action = {{ create_wallet }}>
                     {% csrf_token %}
                     <div class="input-group input-group-outline mb-3">
                        {{ form.wallet_name }}
