@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wallet/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wallet/templates/wallet/wallet_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/templates/wallet/wallet_view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/views.py" afterDir="false" />
     </list>
     <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +124,7 @@
       <workItem from="1733350455796" duration="620000" />
       <workItem from="1733685931465" duration="56884000" />
       <workItem from="1734382532262" duration="1292000" />
-      <workItem from="1734819683353" duration="7205000" />
+      <workItem from="1734819683353" duration="9473000" />
     </task>
     <servers />
   </component>

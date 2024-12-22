@@ -5,13 +5,13 @@ from .models import Wallet
 
 class WalletForm(forms.Form):
     wallet_name = forms.CharField(
-        label="Nazwa portfela",  # Dodano etykietę
+        label="Wallet name",
         widget=forms.TextInput(
             attrs={"class": "form-control", "placeholder": "Wallet name"}
         ),
     )
     portfolio_value = forms.IntegerField(
-        label="Wartość portfela",  # Dodano etykietę
+        label="Portfolio value",
         widget=forms.NumberInput(
             attrs={"class": "form-control", "placeholder": "Portfolio value"}
         ),
