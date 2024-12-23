@@ -1,11 +1,14 @@
 from django.urls import path
 
-from .views import (  # DeleteWallet,; GetAllWallet,; BankAccountViewSet,; DeleteBankAccount,; GetAllBankAccount,
-    WalletViewSet,
-)
+from .views import WalletCreateView, WalletListView
 
 urlpatterns = [
-    path("add/wallet", WalletViewSet.as_view(), name="create_wallet"),
+    path(
+        "wallet/",
+        WalletListView.as_view(template_name="wallet/wallet_home_page.html"),
+        name="wallet-home",
+    ),
+    path("add/wallet", WalletCreateView.as_view(), name="create_wallet"),
     # path("list/wallet", GetAllWallet.as_view(), name="list_wallet"),
     # path("delete/wallet/<int:pk>/", DeleteWallet.as_view(), name="delete_wallet"),
     # path("add/bank_account", BankAccountViewSet.as_view(), name="create_bank_account"),

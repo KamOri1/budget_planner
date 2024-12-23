@@ -1,10 +1,10 @@
 from django.shortcuts import redirect
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView, UpdateView
 
 from wallet.models import Wallet
 
 
-class WalletViewSet(CreateView):
+class WalletCreateView(CreateView):
     model = Wallet
     fields = ["wallet_name", "portfolio_value"]
     template_name = "wallet/wallet_view.html"
@@ -16,6 +16,31 @@ class WalletViewSet(CreateView):
         form.save()
 
         return redirect(self.success_url)
+
+
+class WalletUpdateView(UpdateView):
+    model = Wallet
+    fields = ["wallet_name", "portfolio_value"]
+    template_name = "wallet/wallet_view.html"
+    success_url = "create_wallet"
+
+    def form_valid(self, form):
+        wallet = form.save(commit=False)
+        wallet.user_id_id = self.request.user.id
+        form.save()
+
+        return redirect(self.success_url)
+
+
+class WalletListView(ListView):
+    model = Wallet
+    template_name = (
+        "wallet/wallet_home_page.html"  # Opcjonalnie: Zdefiniuj nazwę szablonu
+    )
+    context_object_name = "wallets"  # Opcjonalnie: Zmień domyślną nazwę zmiennej w szablonie (object_list)
+    ordering = [
+        "-portfolio_value"
+    ]  # Opcjonalnie: sortowanie po wartości portfela od największej do najmniejszej
 
     # def form_invalid(self, form):
     #
