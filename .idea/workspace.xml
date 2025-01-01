@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/budget_planner/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget_planner/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/templates/wallet/wallet_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/templates/wallet/wallet_home_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/templates/wallet/wallet_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/templates/wallet/wallet_add.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wallet/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/views.py" afterDir="false" />
     </list>
     <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,32 +37,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Django Server.budget_planner.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Kaspi/Desktop/budget_planner/wallet&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.budget_planner.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "django.template.preview.state": "SHOW_EDITOR",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Kaspi/Desktop/budget_planner/wallet/templates/wallet",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Kaspi\Desktop\budget_planner\wallet\templates\wallet" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\wallet" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\templates" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\users\templates\users" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\dashboard\templates\dashboard" />
-      <recent name="C:\Users\Kaspi\Desktop\budget_planner\static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\api" />
@@ -122,7 +124,7 @@
       <workItem from="1733350455796" duration="620000" />
       <workItem from="1733685931465" duration="56884000" />
       <workItem from="1734382532262" duration="1292000" />
-      <workItem from="1734819683353" duration="23585000" />
+      <workItem from="1734819683353" duration="29038000" />
     </task>
     <servers />
   </component>

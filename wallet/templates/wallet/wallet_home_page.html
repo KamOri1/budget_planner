@@ -21,7 +21,7 @@
 						<a href="{% url 'create_wallet' %}" class="btn btn-secondary active" type="button">Create</a>
 					</button>
 					<button type="button" class="btn btn-secondary active">
-						<a href="#" class="btn btn-secondary active" type="button">Update</a>
+{#						<a href="{% url 'update_wallet' %}" class="btn btn-secondary active" type="button">Update</a>#}
 					</button>
 					<button type="button" class="btn btn-secondary active">
 						<a href="#" class="btn btn-secondary active" type="button">Delete</a>
@@ -45,6 +45,7 @@
                                         <td>{{ wallet.wallet_name }}</td>
                                         <td>{{ wallet.portfolio_value }}</td>
                                         <td>{{ wallet.id }}</td>
+                                        <td><a href="{%  url 'update_wallet' pk=wallet.id %}">Edytuj</a></td>
                                     </tr>
                                     {% endfor %}
                                 </td>
