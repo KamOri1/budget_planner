@@ -5,19 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/transaction/templates/transaction/transaction_add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/transaction/templates/transaction/transaction_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/transaction/templates/transaction/transaction_home_page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/transaction/templates/transaction/transaction_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/transaction/templates/transaction/transaction_update_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/transaction/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/budget_planner/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget_planner/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bank_account/templates/bank_account/account_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/bank_account/templates/bank_account/account_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bank_account/templates/bank_account/account_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/bank_account/templates/bank_account/account_home_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bank_account/templates/bank_account/account_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bank_account/templates/bank_account/account_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/bank_account/templates/bank_account/account_update_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bank_account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bank_account/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bank_account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bank_account/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/templates/category/category_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/category/templates/category/category_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/templates/category/category_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/category/templates/category/category_home_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/templates/category/category_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/templates/category/category_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/category/templates/category/category_update_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/transaction/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction/templates/transaction/transaction_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/templates/transaction/transaction_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction/templates/transaction/transaction_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/templates/transaction/transaction_home_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction/templates/transaction/transaction_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction/templates/transaction/transaction_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/templates/transaction/transaction_update_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/templates/wallet/wallet_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/templates/wallet/wallet_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/templates/wallet/wallet_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/templates/wallet/wallet_home_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/templates/wallet/wallet_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/templates/wallet/wallet_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/templates/wallet/wallet_update_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/views.py" afterDir="false" />
+    </list>
+    <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="">
+      <change beforePath="$PROJECT_DIR$/bandit.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/bandit.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/transaction/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/views.py" afterDir="false" />
     </list>
-    <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,6 +55,32 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/transaction/views.py">
+      <ranges>
+        <range start1="9" end1="10" start2="9" end2="11" changelist="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" />
+        <range start1="13" end1="17" start2="14" end2="14" changelist="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" />
+        <range start1="19" end1="20" start2="16" end2="17" changelist="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" />
+        <range start1="21" end1="22" start2="18" end2="19" changelist="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" />
+        <range start1="28" end1="29" start2="25" end2="26" changelist="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" />
+        <range start1="33" end1="34" start2="30" end2="31" changelist="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" />
+        <range start1="38" end1="39" start2="35" end2="36" changelist="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" />
+        <range start1="45" end1="47" start2="42" end2="43" changelist="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" />
+        <range start1="48" end1="49" start2="44" end2="45" changelist="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" />
+        <range start1="56" end1="57" start2="52" end2="53" changelist="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" />
+        <range start1="62" end1="63" start2="58" end2="59" changelist="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" />
+        <range start1="70" end1="71" start2="66" end2="67" changelist="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/transaction/forms.py">
+      <ranges>
+        <range start1="5" end1="32" start2="5" end2="6" changelist="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" />
+        <range start1="35" end1="37" start2="9" end2="13" changelist="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" />
+        <range start1="38" end1="64" start2="14" end2="15" changelist="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" />
+        <range start1="67" end1="68" start2="18" end2="22" changelist="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -60,6 +108,11 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -130,7 +183,7 @@
       <workItem from="1733350455796" duration="620000" />
       <workItem from="1733685931465" duration="56884000" />
       <workItem from="1734382532262" duration="1292000" />
-      <workItem from="1734819683353" duration="62270000" />
+      <workItem from="1734819683353" duration="75470000" />
     </task>
     <servers />
   </component>

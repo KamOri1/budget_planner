@@ -1,3 +1,2 @@
-# FILE: bandit.yaml
 exclude_dirs: ['tests']
 skips: ['B101']

@@ -6,35 +6,59 @@
     <section>
       <div class=" min-vh-100">
           <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12"  style="margin-bottom:40px">
-			<div class="jumbotron">
-				<h2>
-					Transaction's manager
-				</h2>
+            <div class="row">
+                <div class="col-md-12"  style="margin-bottom:40px">
+                    <div class="jumbotron">
+                        <h2>
+                            Transaction's manager
+                        </h2>
+			        </div>
+			        <div class="row">
 
-			</div>
-			<div class="row">
-				<div class="col-md-6">
 
-                    <button type="button" class="btn btn-secondary active" style="width: 80px">
-						<a href="{% url 'create_transaction' %}" style="color:#fff">Create</a>
-					</button>
-					<button type="button" class="btn btn-secondary active" style="width: 80px">
-						<a href="{% url 'transaction_list' q='edit' %}"  style="color:#fff">Update</a>
-					</button>
-					<button type="button" class="btn btn-secondary active" style="width: 80px">
-						<a href="{% url 'transaction_list' q='del' %}"  style="color:#fff">Delete</a>
-					</button>
+                        <div>
+                            <div class="row">
 
-				</div>
-				<div>
-                    <button type="button" class="btn bg-gradient-dark active" style="width: 80px">
-                        <a href="{% url 'home_page'  %}" style="color:#fff" >Back</a>
-                    </button>
-		</div>
-	</div>
-</div>
+                                <div class="col-md-6">
+                                    {% if transactions %}
+                                        <table style="width:80%">
+                                            <tr>
+                                                <td>
+                                                    <tr style="border-bottom: #000 1px solid;">
+                                                        <td>Name</td>
+                                                        <td>Value</td>
+                                                        <td>Id</td>
+                                                        <td colspan="2"><a href="{% url 'create_transaction' %}" style="color:#000; ">Add new <b>+</b></a></td>
+                                                    </tr>
+                                                    {% for transaction in transactions %}
+                                                    <tr>
+                                                        <td>{{ transaction.transaction_name }}</td>
+                                                        <td>{{ transaction.sum_amount }}</td>
+                                                        <td>{{ transaction.id }}</td>
+                                                        <td><a href="{%  url 'update_transaction' pk=transaction.id %}">Edit</a></td>
+                                                        <td><a href="{%  url 'delete_transaction' pk=transaction.id %}">Delete</a></td>
+
+                                                    </tr>
+                                                    {% endfor %}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    {% else %}
+                                        <p>No transaction to view</p>
+                                        <div class="col-md-6">
+                                             <button type="button" class="btn btn-secondary active" style="width: 100px">
+                                                <a href="{% url 'create_transaction' %}" style="color:#fff">Add new</a>
+                                             </button>
+                                        </div>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
+	                </div>
+                </div>
+            </div>
+          </div>
       </div>
     </section>
 </main>

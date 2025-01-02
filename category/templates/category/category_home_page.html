@@ -16,23 +16,44 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
+                            {% if categorys %}
+                                <table style="width:80%">
+                                    <tr>
+                                        <td>
+                                            <tr style="border-bottom: #000 1px solid;">
+                                                <td>Name</td>
+                                                <td>Type</td>
+                                                <td>Id</td>
+                                            <td colspan="2"><a href="{% url 'create_category' %}" style="color:#000; ">Add new <b>+</b></a></td>
+                                    </tr>
+                                            {% for category in categorys %}
+                                            <tr>
+                                                <td>{{ category.category_name }}</td>
+                                                <td>{{ category.category_type }}</td>
+                                                <td>{{ category.id }}</td>
 
-                            <button type="button" class="btn btn-secondary active" style="width: 80px">
-                                <a href="{% url 'create_category' %}" style="color:#fff">Create</a>
-                            </button>
-                            <button type="button" class="btn btn-secondary active" style="width: 80px">
-                                <a href="{% url 'category_list' q='edit' %}"  style="color:#fff">Update</a>
-                            </button>
-                            <button type="button" class="btn btn-secondary active" style="width: 80px">
-                                <a href="{% url 'category_list' q='del' %}"  style="color:#fff">Delete</a>
+                                                    <td><a href="{%  url 'update_category' pk=category.id %}">Edit</a></td>
+
+                                                    <td><a href="{%  url 'delete_category' pk=category.id %}">Delete</a></td>
+
+                                            </tr>
+                                            {% endfor %}
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            {% else %}
+                                <p>No category to view</p>
+                                <div>
+                            <button type="button" class="btn btn-secondary active" style="width: 100px">
+                                <a href="{% url 'create_category' %}" style="color:#fff">Add new</a>
                             </button>
                         </div>
-                        <div>
-                            <button type="button" class="btn bg-gradient-dark active" style="width: 80px">
-                                <a href="{% url 'home_page'  %}" style="color:#fff" >Back</a>
-                            </button>
+                            {% endif %}
                         </div>
-	                </div>
+			        </div>
+
+
                 </div>
             </div>
           </div>

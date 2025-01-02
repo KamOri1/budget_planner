@@ -20,7 +20,7 @@ class WalletCreateView(CreateView):
     model = Wallet
     fields = ["wallet_name", "portfolio_value"]
     template_name = "wallet/wallet_add.html"
-    success_url = "create_wallet"
+    success_url = "wallet-home"
 
     def form_valid(self, form):
         wallet = form.save(commit=False)
@@ -32,7 +32,7 @@ class WalletCreateView(CreateView):
 
 class WalletListView(ListView):
     model = Wallet
-    template_name = "wallet/wallet_list.html"
+    template_name = "wallet/wallet_home_page.html"
     context_object_name = "wallets"
     ordering = ["-portfolio_value"]
 
@@ -47,7 +47,7 @@ class WalletUpdateView(UpdateView):
     form = UpdateWalletForm
     fields = ["wallet_name", "portfolio_value"]
     template_name = "wallet/wallet_update_form.html"
-    success_url = "wallet_list"
+    success_url = "wallet-home"
 
     def get_queryset(self):
         return Wallet.objects.filter(user_id_id=self.request.user)
@@ -55,13 +55,13 @@ class WalletUpdateView(UpdateView):
     def form_valid(self, form):
         form.save()
 
-        return redirect(self.success_url, q="edit")
+        return redirect(self.success_url)
 
 
 class WalletDeleteView(DeleteView):
     model = Wallet
     template_name = "wallet/wallet_delete.html"
-    success_url = "wallet_list"
+    success_url = "wallet-home"
 
     def get_queryset(self):
         return Wallet.objects.filter(user_id_id=self.request.user)
@@ -69,4 +69,4 @@ class WalletDeleteView(DeleteView):
     def form_valid(self, form):
         self.object.delete()
 
-        return redirect(self.success_url, q="del")
+        return redirect(self.success_url)

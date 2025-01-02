@@ -10,30 +10,51 @@
 		<div class="col-md-12"  style="margin-bottom:40px">
 			<div class="jumbotron">
 				<h2>
-					Wallet
+					Wallet's manager
 				</h2>
 
 			</div>
-			<div class="row">
-				<div class="col-md-6">
+            <div class="row">
 
-                    <button type="button" class="btn btn-secondary active" style="width: 80px">
-						<a href="{% url 'create_wallet' %}" style="color:#fff">Create</a>
-					</button>
-					<button type="button" class="btn btn-secondary active" style="width: 80px">
-						<a href="{% url 'wallet_list' q='edit' %}"  style="color:#fff">Update</a>
-					</button>
-					<button type="button" class="btn btn-secondary active" style="width: 80px">
-						<a href="{% url 'wallet_list' q='del' %}"  style="color:#fff">Delete</a>
-					</button>
+				<div class="col-md-6">
+                    {% if wallets %}
+                        <table style="width:80%">
+                            <tr>
+                                <td>
+                                    <tr style="border-bottom: #000 1px solid;">
+                                        <td>Name</td>
+                                        <td>Value</td>
+                                        <td>Id</td>
+                                        <td colspan="2"><a href="{% url 'create_wallet' %}" style="color:#000; ">Add new <b>+</b></a></td>
+                                    </tr>
+                                    {% for wallet in wallets %}
+                                    <tr>
+                                        <td>{{ wallet.wallet_name }}</td>
+                                        <td>{{ wallet.portfolio_value }}</td>
+                                        <td>{{ wallet.id }}</td>
+
+                                                <td><a href="{%  url 'update_wallet' pk=wallet.id %}">Edit</a></td>
+
+                                                <td><a href="{%  url 'delete_wallet' pk=wallet.id %}">Delete</a></td>
+
+                                    </tr>
+                                    {% endfor %}
+
+                                </td>
+                            </tr>
+                        </table>
+                    {% else %}
+                        <p>No wallet to view</p>
+                        <div >
+                            <button type="button" class="btn btn-secondary active" style="width: 100px">
+                                <a href="{% url 'create_wallet' %}" style="color:#fff">Add new</a>
+                            </button>
+		                </div>
+                    {% endif %}
 
 				</div>
-				<div>
-                    <button type="button" class="btn bg-gradient-dark active" style="width: 80px">
-                        <a href="{% url 'home_page'  %}" style="color:#fff" >Back</a>
-                    </button>
-		</div>
-	</div>
+			</div>
+
 </div>
       </div>
     </section>
