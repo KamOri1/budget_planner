@@ -36,27 +36,37 @@ class WalletListView(ListView):
     context_object_name = "wallets"
     ordering = ["-portfolio_value"]
 
+    def get_queryset(self):
+        return Wallet.objects.filter(user_id_id=self.request.user).order_by(
+            "-portfolio_value"
+        )
+
 
 class WalletUpdateView(UpdateView):
     model = Wallet
     form = UpdateWalletForm
     fields = ["wallet_name", "portfolio_value"]
     template_name = "wallet/wallet_update_form.html"
-    success_url = "update_wallet_list"
+    success_url = "wallet_list"
+
+    def get_queryset(self):
+        return Wallet.objects.filter(user_id_id=self.request.user)
 
     def form_valid(self, form):
         form.save()
 
-        return redirect(self.success_url)
+        return redirect(self.success_url, q="edit")
 
 
 class WalletDeleteView(DeleteView):
     model = Wallet
     template_name = "wallet/wallet_delete.html"
-    success_url = "wallet-home"
+    success_url = "wallet_list"
+
+    def get_queryset(self):
+        return Wallet.objects.filter(user_id_id=self.request.user)
 
     def form_valid(self, form):
-
         self.object.delete()
 
-        return redirect(self.success_url)
+        return redirect(self.success_url, q="del")
