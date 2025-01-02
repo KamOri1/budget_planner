@@ -7,7 +7,7 @@ from dashboard.views import billing, dashboard, main_view, notifications
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", main_view),
+    path("", main_view, name="home_page"),
     path("dashboard", dashboard, name="dashboard"),
     path("billing", billing, name="billing"),
     path("notifications", notifications, name="notifications"),
