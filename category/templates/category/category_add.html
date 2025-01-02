@@ -10,29 +10,24 @@
             <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column  me-auto ">
               <div class="card card-plain">
                 <div class="card-header">
-                  <h4 class="font-weight-bolder">Update wallet</h4>
-                  <p class="mb-0">Edit name or value</p>
+                  <h4 class="font-weight-bolder">Add category</h4>
+                  <p class="mb-0">Enter name and type</p>
                 </div>
 
                 <div class="card-body">
-                  <form role="form" method="POST" action = ''>
+                  <form role="form" method="POST" action = {{ create_category }}>
                     {% csrf_token %}
                     <div class="input-group input-group-outline mb-3" style="display:grid">
-                        {{ form.account_name.label }}
-                       {{ form.account_name }}
+                        {{ form.category_name.label }}
+                       {{ form.category_name }}
                     </div>
                     <div class="input-group input-group-outline mb-3" style="display:grid">
-                        {{ form.account_number.label }}
-                        {{ form.account_number }}
+                        {{ form.category_type.label }}
+                        {{ form.category_type }}
                     </div>
-                    <div class="input-group input-group-outline mb-3" style="display:grid">
-                        {{ form.sum_of_funds.label }}
-                        {{ form.sum_of_funds }}
-                    </div>
-
                     <div class="text-center">
                       <button type="submit" value="Submit" class="btn btn-lg bg-gradient-dark btn-lg w-100 mt-4 mb-0">Save</button>
-                      <a href="{% url 'account_list' q='edit' %}" class="btn btn-lg bg-gradient-dark btn-lg w-100 mt-4 mb-0">Back</a>
+                      <a href="{% url 'category-home'  %}" class="btn btn-lg bg-gradient-dark btn-lg w-100 mt-4 mb-0">Back</a>
                     </div>
                   </form>
 

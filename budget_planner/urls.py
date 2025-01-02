@@ -14,6 +14,7 @@ urlpatterns = [
     path("users/", include("users.urls")),
     path("wallet/", include("wallet.urls")),
     path("account/", include("bank_account.urls")),
+    path("category/", include("category.urls")),
 ]
 
 if settings.DEBUG:

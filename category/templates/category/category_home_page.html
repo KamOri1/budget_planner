@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main-content  mt-0">
+    <section>
+      <div class=" min-vh-100">
+          <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12"  style="margin-bottom:40px">
+                    <div class="jumbotron">
+                        <h2>
+                            Account's manager
+                        </h2>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <button type="button" class="btn btn-secondary active" style="width: 80px">
+                                <a href="{% url 'create_category' %}" style="color:#fff">Create</a>
+                            </button>
+                            <button type="button" class="btn btn-secondary active" style="width: 80px">
+                                <a href="{% url 'category_list' q='edit' %}"  style="color:#fff">Update</a>
+                            </button>
+                            <button type="button" class="btn btn-secondary active" style="width: 80px">
+                                <a href="{% url 'category_list' q='del' %}"  style="color:#fff">Delete</a>
+                            </button>
+                        </div>
+                        <div>
+                            <button type="button" class="btn bg-gradient-dark active" style="width: 80px">
+                                <a href="{% url 'home_page'  %}" style="color:#fff" >Back</a>
+                            </button>
+                        </div>
+	                </div>
+                </div>
+            </div>
+          </div>
+      </div>
+    </section>
+</main>
+{% endblock content %}
