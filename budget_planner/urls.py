@@ -13,6 +13,7 @@ urlpatterns = [
     path("notifications", notifications, name="notifications"),
     path("users/", include("users.urls")),
     path("wallet/", include("wallet.urls")),
+    path("account/", include("bank_account.urls")),
 ]
 
 if settings.DEBUG:
