@@ -5,11 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saving_goal/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/budget_planner/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget_planner/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/transaction/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/transaction/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction/migrations/0002_transaction_transaction_name.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction/migrations/0003_alter_transaction_category_id_delete_category.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction/migrations/0004_alter_transaction_transaction_name.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction/migrations/0005_transaction_created_at_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction/migrations/0006_remove_transaction_created_at_transaction_create_at_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction/migrations/0007_alter_transaction_create_at.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/transaction/templates/transaction/transaction_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/templates/transaction/transaction_home_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction/templates/transaction/transaction_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/templates/transaction/transaction_update_form.html" afterDir="false" />
     </list>
     <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,30 +47,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Django Server.budget_planner.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Kaspi/Desktop/budget_planner/transaction/templates/transaction&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.budget_planner.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "django.template.preview.state": "SHOW_EDITOR",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Kaspi/Desktop/budget_planner/transaction/templates/transaction",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\transaction\templates\transaction" />
@@ -129,7 +140,7 @@
       <workItem from="1733350455796" duration="620000" />
       <workItem from="1733685931465" duration="56884000" />
       <workItem from="1734382532262" duration="1292000" />
-      <workItem from="1734819683353" duration="78845000" />
+      <workItem from="1734819683353" duration="86302000" />
     </task>
     <servers />
   </component>

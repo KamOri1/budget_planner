@@ -34,6 +34,7 @@ INSTALLED_APPS = [
 
 INSTALLED_EXTENSIONS = [
     "wallet.apps.WalletConfig",
+    "saving_goal.apps.SavingGoalConfig",
     "category.apps.CategoryConfig",
     "transaction.apps.TransactionConfig",
     "bank_account.apps.BankAccountConfig",

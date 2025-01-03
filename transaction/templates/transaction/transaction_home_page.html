@@ -35,7 +35,7 @@
                                                     <tr>
                                                         <td>{{ transaction.transaction_name }}</td>
                                                         <td>{{ transaction.sum_amount }}</td>
-                                                        <td>{{ transaction.transaction_date }}</td>
+                                                        <td>{{ transaction.transaction_date|date:"d-m-Y" }}</td>
                                                         <td>{{ transaction.id }}</td>
                                                         <td><a href="{%  url 'update_transaction' pk=transaction.id %}">Edit</a></td>
                                                         <td><a href="{%  url 'delete_transaction' pk=transaction.id %}">Delete</a></td>

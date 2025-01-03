@@ -15,9 +15,6 @@ class CreateTransactionForm(forms.ModelForm):
             "description",
         ]
         widgets = {
-            "transaction_name": forms.TextInput(
-                attrs={"placeholder": "Transaction name"}
-            ),
             "transaction_date": forms.DateInput(attrs={"type": "date"}),
         }
 
@@ -33,4 +30,6 @@ class UpdateTransactionForm(forms.ModelForm):
             "sum_amount",
             "description",
         ]
-        widgets = {"transaction_name": forms.TextInput()}
+        widgets = {
+            "transaction_date": forms.DateInput(attrs={"type": "date"}),
+        }
