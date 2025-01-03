@@ -11,10 +11,9 @@ class Transaction(models.Model):
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
     sum_amount = models.FloatField()
     description = models.TextField()
-    transaction_name = models.CharField(
-        default="", max_length=100
-    )  # , max_length=100) # TODO change to CharField
-    transaction_date = models.DateTimeField(auto_now_add=True)
+    transaction_name = models.CharField(default="", max_length=100)
+    create_at = models.DateTimeField(auto_now_add=True)
+    transaction_date = models.DateTimeField()
 
     def __str__(self) -> str:
         return self.transaction_name
