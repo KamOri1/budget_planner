@@ -39,6 +39,7 @@ INSTALLED_EXTENSIONS = [
     "category.apps.CategoryConfig",
     "transaction.apps.TransactionConfig",
     "bank_account.apps.BankAccountConfig",
+    "possession_status.apps.PossessionStatusConfig",
     "users.apps.UsersConfig",
     "api.apps.ApiConfig",
 ]

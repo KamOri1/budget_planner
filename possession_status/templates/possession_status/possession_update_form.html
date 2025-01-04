@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main-content  mt-0">
+    <section>
+      <div class=" min-vh-100">
+        <div class="container">
+
+            <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column  me-auto ">
+              <div class="card card-plain">
+                <div class="card-header">
+                  <h4 class="font-weight-bolder">Update possession status</h4>
+                  <p class="mb-0">Edit name or value</p>
+                </div>
+
+                <div class="card-body">
+                  <form role="form" method="POST" action = ''>
+                    {% csrf_token %}
+                    <div class="input-group input-group-outline mb-3" style="display:grid">
+                        {{ form.asset_name.label }}
+                        {{ form.asset_name }}
+                    </div>
+                      <div class="input-group input-group-outline mb-3" style="display:grid">
+                        {{ form.asset_value.label }}
+                        {{ form.asset_value }}
+                    </div>
+                    <div class="input-group input-group-outline mb-3" style="display:grid">
+                        {{ form.sum_amount.label }}
+                        {{ form.sum_amount }}
+                    </div>
+                    <div class="input-group input-group-outline mb-3" style="display:grid">
+                        {{ form.description.label }}
+                        {{ form.description }}
+                    </div>
+
+
+                    <div class="text-center">
+                      <button type="submit" value="Submit" class="btn btn-lg bg-gradient-dark btn-lg w-100 mt-4 mb-0">Save</button>
+                      <a href="{% url 'possessions_home'  %}" class="btn btn-lg bg-gradient-dark btn-lg w-100 mt-4 mb-0">Back</a>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock content %}
