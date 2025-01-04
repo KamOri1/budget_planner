@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main-content  mt-0">
+    <section>
+      <div class=" min-vh-100">
+          <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12"  style="margin-bottom:40px">
+                    <div class="jumbotron">
+                        <h2>
+                            Regular expense's manager
+                        </h2>
+			        </div>
+			        <div class="row">
+
+
+                        <div>
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    {% if expenses %}
+                                        <table style="width:80%">
+                                            <tr>
+                                                <td>
+                                                    <tr style="border-bottom: #000 1px solid;">
+                                                        <td>Name</td>
+                                                        <td>Category</td>
+                                                        <td>Value</td>
+                                                        <td colspan="2"><a href="{% url 'create_expenses' %}" style="color:#000; ">Add new <b>+</b></a></td>
+                                                    </tr>
+                                                    {% for expense in expenses %}
+                                                    <tr>
+                                                        <td>{{ expense.name }}</td>
+                                                        <td>{{ expense.category }}</td>
+                                                        <td>{{ expense.sum_amount }}</td>
+
+
+                                                        <td><a href="{%  url 'update_expenses' pk=expense.id %}">Edit</a></td>
+                                                        <td><a href="{%  url 'delete_expenses' pk=expense.id %}">Delete</a></td>
+
+                                                    </tr>
+                                                    {% endfor %}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    {% else %}
+                                        <p>No regular expenses to view</p>
+                                        <div class="col-md-6">
+                                             <button type="button" class="btn btn-secondary active" style="width: 100px">
+                                                <a href="{% url 'create_expenses' %}" style="color:#fff">Add new</a>
+                                             </button>
+                                        </div>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
+	                </div>
+                </div>
+            </div>
+          </div>
+      </div>
+    </section>
+</main>
+{% endblock content %}
