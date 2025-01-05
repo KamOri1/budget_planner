@@ -5,9 +5,7 @@ from category.models import Category
 
 
 class Transaction(models.Model):
-    user_id = models.ForeignKey(
-        User, on_delete=models.CASCADE
-    )  # Transaction.objects.get(id=1).user.id
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
     sum_amount = models.FloatField()
     description = models.TextField()
