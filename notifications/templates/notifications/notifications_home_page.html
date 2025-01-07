@@ -14,11 +14,8 @@
                         </h2>
 			        </div>
 			        <div class="row">
-
-
                         <div>
                             <div class="row">
-
                                 <div class="col-md-6">
                                     {% if notifications %}
                                         <table style="width:80%">
@@ -33,12 +30,8 @@
                                                     <tr>
                                                         <td>{{ notification.name }}</td>
                                                         <td>{{ notification.type }}</td>
-
-
-
                                                         <td><a href="{%  url 'update_notification' pk=notification.id %}">Edit</a></td>
                                                         <td><a href="{%  url 'delete_notification' pk=notification.id %}">Delete</a></td>
-
                                                     </tr>
                                                     {% endfor %}
                                                 </td>
@@ -52,7 +45,6 @@
                                              </button>
                                         </div>
                                     {% endif %}
-
                                 </div>
                             </div>
                         </div>
