@@ -9,5 +9,5 @@ class Category(models.Model):
         User, on_delete=models.CASCADE, related_name="categories"
     )
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.category_name

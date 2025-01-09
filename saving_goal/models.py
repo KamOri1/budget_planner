@@ -11,5 +11,5 @@ class SavingGoal(models.Model):
     target_amount = models.IntegerField()
     name = models.CharField(max_length=50)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name

@@ -8,5 +8,5 @@ class BankAccount(models.Model):
     account_number = models.IntegerField()
     sum_of_funds = models.IntegerField()
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.account_name

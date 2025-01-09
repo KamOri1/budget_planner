@@ -7,5 +7,5 @@ class Wallet(models.Model):
     wallet_name = models.CharField(max_length=50, unique=True)
     portfolio_value = models.IntegerField()
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.wallet_name
