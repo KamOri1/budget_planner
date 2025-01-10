@@ -20,35 +20,35 @@
 
       <tr>
          <td>
-            <div class="d-flex px-2 py-1">
+            <div class="d-flex px-3 py-1">
               <div class="d-flex flex-column justify-content-center">
                 <h6 class="mb-0 text-sm">{{ transaction.transaction_name }}</h6>
               </div>
             </div>
          </td>
          <td>
-            <div class="d-flex px-2 py-1">
+            <div class="d-flex px-3 py-1">
               <div class="d-flex flex-column justify-content-center">
                 <h6 class="mb-0 text-sm">{{ transaction.sum_amount }}</h6>
               </div>
             </div>
          </td>
          <td>
-            <div class="d-flex px-2 py-1">
+            <div class="d-flex px-3 py-1">
               <div class="d-flex flex-column justify-content-center">
                 <h6 class="mb-0 text-sm">{{ transaction.transaction_date|date:"d-m-Y" }}</h6>
               </div>
             </div>
          </td>
          <td>
-            <div class="d-flex px-2 py-1">
+            <div class="d-flex px-3 py-1">
               <div class="d-flex flex-column justify-content-center">
                 <h6 class="mb-0 text-sm"><a href="{%  url 'update_transaction' pk=transaction.id %}">Edit</a></h6>
               </div>
             </div>
          </td>
          <td>
-            <div class="d-flex px-2 py-1">
+            <div class="d-flex px-3 py-1">
               <div class="d-flex flex-column justify-content-center">
                 <h6 class="mb-0 text-sm"><a href="{%  url 'delete_transaction' pk=transaction.id %}">Delete</a></h6>
               </div>
