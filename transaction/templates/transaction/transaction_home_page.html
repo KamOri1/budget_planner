@@ -1,67 +1,67 @@
-{% extends 'base.html' %}
+{% extends 'tables.html' %}
 {% load static %}
 
-{% block content %}
-<main class="main-content  mt-0">
-    <section>
-      <div class=" min-vh-100">
-          <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12"  style="margin-bottom:40px">
-                    <div class="jumbotron">
-                        <h2>
-                            Transaction's manager
-                        </h2>
-			        </div>
-			        <div class="row">
 
+{% block topTitle %}
+    Transaction's manager
+{% endblock topTitle %}
 
-                        <div>
-                            <div class="row">
+{% block tableTitle %}
+    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
+    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Value</th>
+    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
+    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" colspan="2"></th>
 
-                                <div class="col-md-6">
-                                    {% if transactions %}
-                                        <table style="width:80%">
-                                            <tr>
-                                                <td>
-                                                    <tr style="border-bottom: #000 1px solid;">
-                                                        <td>Name</td>
-                                                        <td>Value</td>
-                                                        <td>Date</td>
-                                                        <td>Id</td>
-                                                        <td colspan="2"><a href="{% url 'create_transaction' %}" style="color:#000; ">Add new <b>+</b></a></td>
-                                                    </tr>
-                                                    {% for transaction in transactions %}
-                                                    <tr>
-                                                        <td>{{ transaction.transaction_name }}</td>
-                                                        <td>{{ transaction.sum_amount }}</td>
-                                                        <td>{{ transaction.transaction_date|date:"d-m-Y" }}</td>
-                                                        <td>{{ transaction.id }}</td>
-                                                        <td><a href="{%  url 'update_transaction' pk=transaction.id %}">Edit</a></td>
-                                                        <td><a href="{%  url 'delete_transaction' pk=transaction.id %}">Delete</a></td>
+{% endblock tableTitle %}
 
-                                                    </tr>
-                                                    {% endfor %}
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    {% else %}
-                                        <p>No transaction to view</p>
-                                        <div class="col-md-6">
-                                             <button type="button" class="btn btn-secondary active" style="width: 100px">
-                                                <a href="{% url 'create_transaction' %}" style="color:#fff">Add new</a>
-                                             </button>
-                                        </div>
-                                    {% endif %}
+{% block tableData %}
+{% if transactions %}
+  {% for transaction in transactions %}
 
-                                </div>
-                            </div>
-                        </div>
-	                </div>
-                </div>
+      <tr>
+         <td>
+            <div class="d-flex px-2 py-1">
+              <div class="d-flex flex-column justify-content-center">
+                <h6 class="mb-0 text-sm">{{ transaction.transaction_name }}</h6>
+              </div>
             </div>
-          </div>
-      </div>
-    </section>
-</main>
-{% endblock content %}
+         </td>
+         <td>
+            <div class="d-flex px-2 py-1">
+              <div class="d-flex flex-column justify-content-center">
+                <h6 class="mb-0 text-sm">{{ transaction.sum_amount }}</h6>
+              </div>
+            </div>
+         </td>
+         <td>
+            <div class="d-flex px-2 py-1">
+              <div class="d-flex flex-column justify-content-center">
+                <h6 class="mb-0 text-sm">{{ transaction.transaction_date|date:"d-m-Y" }}</h6>
+              </div>
+            </div>
+         </td>
+         <td>
+            <div class="d-flex px-2 py-1">
+              <div class="d-flex flex-column justify-content-center">
+                <h6 class="mb-0 text-sm"><a href="{%  url 'update_transaction' pk=transaction.id %}">Edit</a></h6>
+              </div>
+            </div>
+         </td>
+         <td>
+            <div class="d-flex px-2 py-1">
+              <div class="d-flex flex-column justify-content-center">
+                <h6 class="mb-0 text-sm"><a href="{%  url 'delete_transaction' pk=transaction.id %}">Delete</a></h6>
+              </div>
+            </div>
+         </td>
+      </tr>
+  {% endfor %}
+{% else %}
+    <p>No transaction to view</p>
+    <div class="col-md-6">
+         <button type="button" class="btn btn-secondary active" style="width: 100px">
+            <a href="{% url 'create_transaction' %}" style="color:#fff">Add new</a>
+         </button>
+    </div>
+{% endif %}
+{% endblock tableData %}
