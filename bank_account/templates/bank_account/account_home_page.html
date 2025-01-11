@@ -1,58 +1,66 @@
-{% extends 'base.html' %}
+{% extends 'tables.html' %}
 {% load static %}
 
-{% block content %}
-<main class="main-content  mt-0">
-    <section>
-      <div class=" min-vh-100">
-          <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12"  style="margin-bottom:40px">
-                    <div class="jumbotron">
-                        <h2>
-                            Account's manager
-                        </h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            {% if accounts %}
-                                <table style="width:80%">
-                                    <tr>
-                                        <td>
-                                            <tr style="border-bottom: #000 1px solid;">
-                                                <td>Name</td>
-                                                <td>Number</td>
-                                                <td>Value</td>
-                                                <td>Id</td>
-                                                <td colspan="2"><a href="{% url 'create_account' %}" style="color:#000; ">Add new <b>+</b></a></td>
-                                            </tr>
-                                            {% for account in accounts %}
-                                            <tr>
-                                                <td>{{ account.account_name }}</td>
-                                                <td>{{ account.account_number }}</td>
-                                                <td>{{ account.sum_of_funds }}</td>
-                                                <td>{{ account.id }}</td>
-                                                <td><a href="{%  url 'update_account' pk=account.id %}">Edit</a></td>
-                                                <td><a href="{%  url 'delete_account' pk=account.id %}">Delete</a></td>
-                                            </tr>
-                                            {% endfor %}
-                                        </td>
-                                    </tr>
-                                </table>
-                            {% else %}
-                                <p>No wallet to view</p>
-                                <div >
-                                    <button type="button" class="btn btn-secondary active" style="width: 100px">
-                                        <a href="{% url 'create_account' %}" style="color:#fff">Add new</a>
-                                    </button>
-	                            </div>
-                            {% endif %}
-                        </div>
-			        </div>
-                </div>
+
+{% block topTitle %}
+    Account's manager
+{% endblock topTitle %}
+
+{% block tableTitle %}
+    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
+    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Number</th>
+    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Value</th>
+    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" colspan="2"></th>
+
+{% endblock tableTitle %}
+
+{% block tableData %}
+{% if accounts %}
+  {% for account in accounts %}
+      <tr>
+         <td>
+            <div class="d-flex px-3 py-1">
+              <div class="d-flex flex-column justify-content-center ">
+                <h6 class="mb-0 text-sm">{{ account.account_name }}</h6>
+              </div>
             </div>
-          </div>
-      </div>
-    </section>
-</main>
-{% endblock content %}
+         </td>
+         <td>
+            <div class="d-flex px-3 py-1">
+              <div class="d-flex flex-column justify-content-center">
+                <h6 class="mb-0 text-sm">{{ account.account_number }}</h6>
+              </div>
+            </div>
+         </td>
+          <td>
+            <div class="d-flex px-3 py-1">
+              <div class="d-flex flex-column justify-content-center">
+                <h6 class="mb-0 text-sm">{{ account.sum_of_funds }}</h6>
+              </div>
+            </div>
+         </td>
+         <td>
+            <div class="d-flex px-3 py-1">
+              <div class="d-flex flex-column justify-content-center">
+                <h6 class="mb-0 text-sm"><a href="{%  url 'update_account' pk=account.id %}">Edit</a></h6>
+              </div>
+            </div>
+         </td>
+         <td>
+            <div class="d-flex px-3 py-1">
+              <div class="d-flex flex-column justify-content-center">
+                <h6 class="mb-0 text-sm"><a href="{%  url 'delete_account' pk=account.id %}">Delete</a></h6>
+              </div>
+            </div>
+         </td>
+      </tr>
+  {% endfor %}
+{% else %}
+    <p>No transaction to view</p>
+    <div class="col-md-6">
+         <button type="button" class="btn btn-secondary active" style="width: 100px">
+            <a href="{% url 'create_account' %}" style="color:#fff">Add new</a>
+         </button>
+    </div>
+{% endif %}
+{% endblock tableData %}

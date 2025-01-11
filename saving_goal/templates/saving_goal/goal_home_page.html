@@ -1,66 +1,66 @@
-{% extends 'base.html' %}
+{% extends 'tables.html' %}
 {% load static %}
 
-{% block content %}
-<main class="main-content  mt-0">
-    <section>
-      <div class=" min-vh-100">
-          <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12"  style="margin-bottom:40px">
-                    <div class="jumbotron">
-                        <h2>
-                            Saving goal's manager
-                        </h2>
-			        </div>
-			        <div class="row">
 
+{% block topTitle %}
+     Saving goal's manager
+{% endblock topTitle %}
 
-                        <div>
-                            <div class="row">
+{% block tableTitle %}
+    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
+    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
+    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Value</th>
+    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" colspan="2"></th>
 
-                                <div class="col-md-6">
-                                    {% if goals %}
-                                        <table style="width:80%">
-                                            <tr>
-                                                <td>
-                                                    <tr style="border-bottom: #000 1px solid;">
-                                                        <td>Name</td>
-                                                        <td>Date</td>
-                                                        <td>Value</td>
-                                                        <td colspan="2"><a href="{% url 'create_goal' %}" style="color:#000; ">Add new <b>+</b></a></td>
-                                                    </tr>
-                                                    {% for goal in goals %}
-                                                    <tr>
-                                                        <td>{{ goal.name }}</td>
-                                                        <td>{{ goal.target_date|date:"d-m-Y" }}</td>
-                                                        <td>{{ goal.target_amount }}</td>
+{% endblock tableTitle %}
 
-                                                        <td><a href="{%  url 'update_goal' pk=goal.id %}">Edit</a></td>
-                                                        <td><a href="{%  url 'delete_goal' pk=goal.id %}">Delete</a></td>
-
-                                                    </tr>
-                                                    {% endfor %}
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    {% else %}
-                                        <p>No saving goal to view</p>
-                                        <div class="col-md-6">
-                                             <button type="button" class="btn btn-secondary active" style="width: 100px">
-                                                <a href="{% url 'create_goal' %}" style="color:#fff">Add new</a>
-                                             </button>
-                                        </div>
-                                    {% endif %}
-
-                                </div>
-                            </div>
-                        </div>
-	                </div>
-                </div>
+{% block tableData %}
+{% if goals %}
+  {% for goal in goals %}
+      <tr>
+         <td>
+            <div class="d-flex px-3 py-1">
+              <div class="d-flex flex-column justify-content-center ">
+                <h6 class="mb-0 text-sm">{{ goal.name }}</h6>
+              </div>
             </div>
-          </div>
-      </div>
-    </section>
-</main>
-{% endblock content %}
+         </td>
+         <td>
+            <div class="d-flex px-3 py-1">
+              <div class="d-flex flex-column justify-content-center">
+                <h6 class="mb-0 text-sm">{{ goal.target_date|date:"d-m-Y" }}</h6>
+              </div>
+            </div>
+         </td>
+          <td>
+            <div class="d-flex px-3 py-1">
+              <div class="d-flex flex-column justify-content-center">
+                <h6 class="mb-0 text-sm">{{ goal.target_amount }}</h6>
+              </div>
+            </div>
+         </td>
+         <td>
+            <div class="d-flex px-3 py-1">
+              <div class="d-flex flex-column justify-content-center">
+                <h6 class="mb-0 text-sm"><a href="{%  url 'update_goal' pk=goal.id %}">Edit</a></h6>
+              </div>
+            </div>
+         </td>
+         <td>
+            <div class="d-flex px-3 py-1">
+              <div class="d-flex flex-column justify-content-center">
+                <h6 class="mb-0 text-sm"><a href="{%  url 'delete_goal' pk=goal.id %}">Delete</a></h6>
+              </div>
+            </div>
+         </td>
+      </tr>
+  {% endfor %}
+{% else %}
+    <p>No transaction to view</p>
+    <div class="col-md-6">
+         <button type="button" class="btn btn-secondary active" style="width: 100px">
+            <a href="{% url 'create_goal' %}" style="color:#fff">Add new</a>
+         </button>
+    </div>
+{% endif %}
+{% endblock tableData %}

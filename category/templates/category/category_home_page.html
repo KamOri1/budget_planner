@@ -1,63 +1,58 @@
-{% extends 'base.html' %}
+{% extends 'tables.html' %}
 {% load static %}
 
-{% block content %}
-<main class="main-content  mt-0">
-    <section>
-      <div class=" min-vh-100">
-          <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12"  style="margin-bottom:40px">
-                    <div class="jumbotron">
-                        <h2>
-                            Account's manager
-                        </h2>
 
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            {% if categorys %}
-                                <table style="width:80%">
-                                    <tr>
-                                        <td>
-                                            <tr style="border-bottom: #000 1px solid;">
-                                                <td>Name</td>
-                                                <td>Type</td>
-                                                <td>Id</td>
-                                            <td colspan="2"><a href="{% url 'create_category' %}" style="color:#000; ">Add new <b>+</b></a></td>
-                                    </tr>
-                                            {% for category in categorys %}
-                                            <tr>
-                                                <td>{{ category.category_name }}</td>
-                                                <td>{{ category.category_type }}</td>
-                                                <td>{{ category.id }}</td>
+{% block topTitle %}
+    Categories manager
+{% endblock topTitle %}
 
-                                                    <td><a href="{%  url 'update_category' pk=category.id %}">Edit</a></td>
+{% block tableTitle %}
+    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
+    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
+    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" colspan="2"></th>
 
-                                                    <td><a href="{%  url 'delete_category' pk=category.id %}">Delete</a></td>
+{% endblock tableTitle %}
 
-                                            </tr>
-                                            {% endfor %}
-
-                                        </td>
-                                    </tr>
-                                </table>
-                            {% else %}
-                                <p>No category to view</p>
-                                <div>
-                            <button type="button" class="btn btn-secondary active" style="width: 100px">
-                                <a href="{% url 'create_category' %}" style="color:#fff">Add new</a>
-                            </button>
-                        </div>
-                            {% endif %}
-                        </div>
-			        </div>
-
-
-                </div>
+{% block tableData %}
+{% if categories %}
+  {% for category in categories %}
+      <tr>
+         <td>
+            <div class="d-flex px-3 py-1">
+              <div class="d-flex flex-column justify-content-center ">
+                <h6 class="mb-0 text-sm">{{ category.category_name }}</h6>
+              </div>
             </div>
-          </div>
-      </div>
-    </section>
-</main>
-{% endblock content %}
+         </td>
+         <td>
+            <div class="d-flex px-3 py-1">
+              <div class="d-flex flex-column justify-content-center">
+                <h6 class="mb-0 text-sm">{{ category.category_type }}</h6>
+              </div>
+            </div>
+         </td>
+         <td>
+            <div class="d-flex px-3 py-1">
+              <div class="d-flex flex-column justify-content-center">
+                <h6 class="mb-0 text-sm"><a href="{%  url 'update_category' pk=category.id %}">Edit</a></h6>
+              </div>
+            </div>
+         </td>
+         <td>
+            <div class="d-flex px-3 py-1">
+              <div class="d-flex flex-column justify-content-center">
+                <h6 class="mb-0 text-sm"><a href="{%  url 'delete_category' pk=category.id %}">Delete</a></h6>
+              </div>
+            </div>
+         </td>
+      </tr>
+  {% endfor %}
+{% else %}
+    <p>No transaction to view</p>
+    <div class="col-md-6">
+         <button type="button" class="btn btn-secondary active" style="width: 100px">
+            <a href="{% url 'create_category' %}" style="color:#fff">Add new</a>
+         </button>
+    </div>
+{% endif %}
+{% endblock tableData %}

@@ -22,7 +22,7 @@ class CategoryCreateView(CreateView):
 class CategoryListView(ListView):
     model = Category
     template_name = "category/category_home_page.html"
-    context_object_name = "categorys"
+    context_object_name = "categories"
     ordering = ["-category_name"]
 
     def get_queryset(self):
