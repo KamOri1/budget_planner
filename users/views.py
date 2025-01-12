@@ -31,7 +31,7 @@ class LoginView(DjangoLoginView):
 
 class LogoutView(View):
     @staticmethod
-    def get(request):
+    def post(request):
         logout(request)
         messages.success(request, "you been logged out.")
         return redirect("login")
