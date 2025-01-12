@@ -8,10 +8,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bank_account/templates/bank_account/account_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/bank_account/templates/bank_account/account_home_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/category/templates/category/category_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/category/templates/category/category_home_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications/templates/notifications/notifications_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/notifications/templates/notifications/notifications_home_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/possession_status/templates/possession_status/possession_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/possession_status/templates/possession_status/possession_home_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/regular_expenses/templates/regular_expenses/expenses_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/regular_expenses/templates/regular_expenses/expenses_home_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/saving_goal/templates/saving_goal/goal_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/saving_goal/templates/saving_goal/goal_home_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/templates/wallet/wallet_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/templates/wallet/wallet_home_page.html" afterDir="false" />
     </list>
     <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +137,7 @@
       <workItem from="1734382532262" duration="1292000" />
       <workItem from="1734819683353" duration="97117000" />
       <workItem from="1736287100985" duration="1981000" />
-      <workItem from="1736444177010" duration="14127000" />
+      <workItem from="1736444177010" duration="18138000" />
     </task>
     <servers />
   </component>

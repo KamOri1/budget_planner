@@ -13,7 +13,7 @@
                   <p class="mb-0">Edit name or value</p>
                 </div>
                 <div class="card-body">
-                  <form role="form" method="POST" action = ''>
+                  <form role="form" method="POST">
                     {% csrf_token %}
                     <div class="input-group input-group-outline mb-3" style="display:grid">
                         {{ form.account_name.label }}
