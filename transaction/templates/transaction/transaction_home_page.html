@@ -3,15 +3,22 @@
 
 
 {% block topTitle %}
-    Transaction's manager
+        Transaction's manager
 {% endblock topTitle %}
 
-{% block tableTitle %}
-    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
-    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Value</th>
-    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
-    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" colspan="2"></th>
+{% block button %}
+    <button type="button" class="btn btn-secondary active" style="width: 100px; margin-bottom: 0;">
+        <a href="{% url 'create_transaction' %}" style="color:#fff">Add new</a>
+    </button>
+{% endblock button %}
 
+{% block tableTitle %}
+    {% if transactions %}
+        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
+        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Value</th>
+        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
+        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" colspan="2"></th>
+    {% endif %}
 {% endblock tableTitle %}
 
 {% block tableData %}
