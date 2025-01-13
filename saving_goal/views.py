@@ -20,6 +20,7 @@ class SavingGoalCreateView(CreateView):
 
 
 class SavingGoalListView(ListView):
+    paginate_by = 10
     model = SavingGoal
     template_name = "saving_goal/goal_home_page.html"
     context_object_name = "goals"

@@ -31,6 +31,7 @@ class WalletCreateView(CreateView):
 
 
 class WalletListView(ListView):
+    paginate_by = 10
     model = Wallet
     template_name = "wallet/wallet_home_page.html"
     context_object_name = "wallets"

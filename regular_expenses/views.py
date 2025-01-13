@@ -21,6 +21,7 @@ class RegularExpensesCreateView(CreateView):
 
 
 class RegularExpensesListView(ListView):
+    paginate_by = 10
     model = RegularExpenses
     template_name = "regular_expenses/expenses_home_page.html"
     context_object_name = "expenses"

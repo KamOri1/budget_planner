@@ -6,6 +6,10 @@
      Saving goal's manager
 {% endblock topTitle %}
 
+{% block button %}
+    {% url 'create_goal' %}
+{% endblock button %}
+
 {% block tableTitle %}
     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>

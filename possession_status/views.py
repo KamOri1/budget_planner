@@ -21,6 +21,7 @@ class PossessionsCreateView(CreateView):
 
 
 class PossessionsListView(ListView):
+    paginate_by = 10
     model = PossessionStatus
     template_name = "possession_status/possession_home_page.html"
     context_object_name = "possessions"

@@ -21,6 +21,7 @@ class NotificationCreateView(CreateView):
 
 
 class NotificationListView(ListView):
+    paginate_by = 10
     model = Notification
     template_name = "notifications/notifications_home_page.html"
     context_object_name = "notifications"

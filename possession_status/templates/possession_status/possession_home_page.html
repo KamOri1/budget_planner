@@ -6,11 +6,14 @@
      Possession status manager
 {% endblock topTitle %}
 
+{% block button %}
+    {% url 'create_possessions' %}
+{% endblock button %}
+
 {% block tableTitle %}
     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Value</th>
     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" colspan="2"></th>
-
 {% endblock tableTitle %}
 
 {% block tableData %}

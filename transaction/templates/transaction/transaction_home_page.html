@@ -3,13 +3,11 @@
 
 
 {% block topTitle %}
-        Transaction's manager
+    Transaction's manager
 {% endblock topTitle %}
 
 {% block button %}
-    <button type="button" class="btn btn-secondary active" style="width: 100px; margin-bottom: 0;">
-        <a href="{% url 'create_transaction' %}" style="color:#fff">Add new</a>
-    </button>
+    {% url 'create_transaction' %}
 {% endblock button %}
 
 {% block tableTitle %}

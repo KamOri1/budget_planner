@@ -6,6 +6,10 @@
     Account's manager
 {% endblock topTitle %}
 
+{% block button %}
+    {% url 'create_account' %}
+{% endblock button %}
+
 {% block tableTitle %}
     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Number</th>
