@@ -21,14 +21,15 @@ class TransactionCreateView(CreateView):
 
 
 class TransactionListView(ListView):
+    paginate_by = 10
     model = Transaction
     template_name = "transaction/transaction_home_page.html"
     context_object_name = "transactions"
-    ordering = ["-transaction_name"]
+    ordering = ["-transaction_date"]
 
     def get_queryset(self):
         return Transaction.objects.filter(user_id=self.request.user).order_by(
-            "-transaction_name"
+            "-transaction_date"
         )
 
 

@@ -20,6 +20,7 @@ class CategoryCreateView(CreateView):
 
 
 class CategoryListView(ListView):
+    paginate_by = 10
     model = Category
     template_name = "category/category_home_page.html"
     context_object_name = "categories"

@@ -20,6 +20,7 @@ class AccountCreateView(CreateView):
 
 
 class AccountListView(ListView):
+    paginate_by = 10
     model = BankAccount
     template_name = "bank_account/account_home_page.html"
     context_object_name = "accounts"
