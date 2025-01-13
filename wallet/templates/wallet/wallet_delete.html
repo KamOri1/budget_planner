@@ -4,40 +4,33 @@
 {% block content %}
 <main class="main-content  mt-0">
     <section>
-      <div class=" min-vh-100">
-        <div class="container">
-
-            <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column  me-auto ">
-              <div class="card card-plain">
-                <div class="card-header">
-                  <h4 class="font-weight-bolder">Delete wallet</h4>
-                </div>
-
+      <div class="container-fluid py-2">
+      <div class="row">
+        <div class="col-12">
+          <div class="card my-4">
+                  <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                    <div class="bg-gradient-dark shadow-dark border-radius-lg pt-3 pb-3">
+                        <div style="display: inline-grid;grid-template-columns: auto auto; width: 100%">
+                            <div style="align-content: center">
+                                <h6 class="text-white text-capitalize ps-3" style="margin-bottom:0">
+                                    Delete wallet
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
                 <div class="card-body">
-
-
-
-<form method="post">{% csrf_token %}
-
-
-
-
-<p>Are you sure you want to delete "{{ object }}"?</p>
-
-
-
-
-    <button type="submit" value="Submit" class="btn btn-lg bg-gradient-dark btn-lg w-100 mt-4 mb-0">Confirm</button>
-    <a href="{% url 'wallet-home' %}" class="btn btn-lg bg-gradient-dark btn-lg w-100 mt-4 mb-0">Back</a>
-</form>
-
-
- </div>
+                    <form method="post" style="width:30%">
+                        {% csrf_token %}
+                        <p>Are you sure you want to delete: "{{ object }}"?</p>
+                        <button type="submit" value="Submit" class="btn btn-lg bg-gradient-dark btn-lg w-100 mt-4 mb-0">Confirm</button>
+                        <a href="{% url 'wallet-home' %}" class="btn btn-lg bg-gradient-dark btn-lg w-100 mt-4 mb-0">Back</a>
+                    </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
     </section>
   </main>
 {% endblock content %}
