@@ -2,6 +2,7 @@
 {% load static %}
 
 
+
 {% block topTitle %}
     Transaction's manager
 {% endblock topTitle %}
@@ -11,8 +12,17 @@
 {% endblock button %}
 
 {% block tableTitle %}
+    <form method="get" >
+        {{ form.transaction_name }}
+        {{ form.transaction_date }}
+        {{ form.sum_amount }}
+        <button type="submit" class="btn btn-secondary active" style="width: 80px; margin-bottom: 0;">Filter
+                            </button>
+
+    </form>
+
     {% if transactions %}
-        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
+        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"><a href="{{ 'transaction-home' }}">Name</a></th>
         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Value</th>
         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" colspan="2"></th>

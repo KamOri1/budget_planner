@@ -2,6 +2,7 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
+from .filters import TransactionFilter
 from .forms import CreateTransactionForm, UpdateTransactionForm
 from .models import Transaction
 
@@ -20,17 +21,36 @@ class TransactionCreateView(CreateView):
         return super().form_valid(form)
 
 
+# class TransactionListView(ListView):
+#     paginate_by = 10
+#     queryset = Transaction.objects.all()
+#     model = Transaction
+#     template_name = "transaction/transaction_home_page.html"
+#     context_object_name = "transactions"
+#     ordering = ["-transaction_date"]
+#
+#     def get_queryset(self):
+#         return Transaction.objects.filter(user_id=self.request.user).order_by(
+#             "-transaction_date"
+#         )
+
+
 class TransactionListView(ListView):
-    paginate_by = 10
-    model = Transaction
+    paginate_by = 5
+    queryset = Transaction.objects.all()
     template_name = "transaction/transaction_home_page.html"
     context_object_name = "transactions"
-    ordering = ["-transaction_date"]
 
     def get_queryset(self):
-        return Transaction.objects.filter(user_id=self.request.user).order_by(
-            "-transaction_date"
-        )
+        queryset = super().get_queryset()
+        self.filterset = TransactionFilter(self.request.GET, queryset=queryset)
+        return self.filterset.qs
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["form"] = self.filterset.form
+        if Transaction.objects.filter(user_id=self.request.user):
+            return context
 
 
 class TransactionUpdateView(UpdateView):
