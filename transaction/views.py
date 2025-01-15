@@ -36,7 +36,7 @@ class TransactionCreateView(CreateView):
 
 
 class TransactionListView(ListView):
-    paginate_by = 5
+    paginate_by = 10
     queryset = Transaction.objects.all()
     template_name = "transaction/transaction_home_page.html"
     context_object_name = "transactions"

@@ -10,4 +10,4 @@ class TransactionFilter(django_filters.FilterSet):
 
     class Meta:
         model = Transaction
-        fields = ["sum_amount", "transaction_date"]
+        fields = ["sum_amount", "transaction_date", "transaction_name"]
