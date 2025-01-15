@@ -22,8 +22,7 @@
                     <div><div>Name</div><div> {{ form.transaction_name }}</div></div>
                     <div><div>Value</div><div>{{ form.sum_amount }}</div></div>
                     <div><div>Date</div><div>{{ form.transaction_date }}</div></div>
-
-                      <div style="display: flex;flex-direction: column;justify-content: flex-end;">
+                    <div style="display: flex;flex-direction: column;justify-content: flex-end;">
                         <button type="submit" class="btn btn-secondary active" style="width: 80px; margin-bottom: 0;">Submit</button>
                     </div>
                 </div>
@@ -81,10 +80,5 @@
   {% endfor %}
 {% else %}
     <p>No transaction to view</p>
-    <div class="col-md-6">
-         <button type="button" class="btn btn-secondary active" style="width: 100px">
-            <a href="{% url 'create_transaction' %}" style="color:#fff">Add new</a>
-         </button>
-    </div>
 {% endif %}
 {% endblock tableData %}
