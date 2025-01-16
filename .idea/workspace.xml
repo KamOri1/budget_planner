@@ -6,17 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bank_account/templates/bank_account/account_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/bank_account/templates/bank_account/account_home_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/templates/category/category_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/category/templates/category/category_home_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notifications/templates/notifications/notifications_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/notifications/templates/notifications/notifications_home_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/possession_status/templates/possession_status/possession_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/possession_status/templates/possession_status/possession_home_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/regular_expenses/templates/regular_expenses/expenses_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/regular_expenses/templates/regular_expenses/expenses_home_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saving_goal/templates/saving_goal/goal_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/saving_goal/templates/saving_goal/goal_home_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet/templates/wallet/wallet_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/templates/wallet/wallet_home_page.html" afterDir="false" />
     </list>
-    <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="" />
+    <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="">
+      <change beforePath="$PROJECT_DIR$/transaction/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transaction/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,38 +37,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Django Server.budget_planner.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Kaspi/Desktop/budget_planner/templates&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.budget_planner.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "django.template.preview.state": "SHOW_EDITOR",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Kaspi/Desktop/budget_planner/dashboard",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Kaspi\Desktop\budget_planner\dashboard" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\templates" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\possession_status\templates\possession_status" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\regural_expenses\templates\regural_expenses" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\saving_goal\templates\saving_goal" />
-      <recent name="C:\Users\Kaspi\Desktop\budget_planner\transaction\templates\transaction" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\api" />
@@ -137,7 +132,7 @@
       <workItem from="1734382532262" duration="1292000" />
       <workItem from="1734819683353" duration="97117000" />
       <workItem from="1736287100985" duration="1981000" />
-      <workItem from="1736444177010" duration="18138000" />
+      <workItem from="1736444177010" duration="69659000" />
     </task>
     <servers />
   </component>

@@ -10,4 +10,5 @@ class TransactionFilter(django_filters.FilterSet):
 
     class Meta:
         model = Transaction
+        ordering = ["-create_at"]
         fields = ["sum_amount", "transaction_date", "transaction_name"]

@@ -44,7 +44,12 @@ class TransactionListView(ListView):
     def get_queryset(self):
         queryset = super().get_queryset()
         self.filterset = TransactionFilter(self.request.GET, queryset=queryset)
-        return self.filterset.qs
+
+        if not self.filterset.qs.query.order_by:
+            queryset = self.filterset.qs.order_by("-create_at")
+        else:
+            queryset = self.filterset.qs
+        return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
