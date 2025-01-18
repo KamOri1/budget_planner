@@ -4,18 +4,23 @@
 {% block content %}
 <main class="main-content  mt-0">
     <section>
-      <div class=" min-vh-100">
-        <div class="container">
-
-            <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column  me-auto ">
-              <div class="card card-plain">
-                <div class="card-header">
-                  <h4 class="font-weight-bolder">Update transaction</h4>
-                  <p class="mb-0">Edit name or value</p>
-                </div>
-
+       <div class="container-fluid py-2">
+      <div class="row">
+        <div class="col-12">
+          <div class="card my-4">
+                  <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                    <div class="bg-gradient-dark shadow-dark border-radius-lg pt-3 pb-3">
+                        <div style="display: inline-grid;grid-template-columns: auto auto; width: 100%">
+                            <div style="align-content: center">
+                                <h6 class="text-white text-capitalize ps-3" style="margin-bottom:0">
+                                    Update transaction
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
                 <div class="card-body">
-                  <form role="form" method="POST" action = ''>
+                  <form role="form" method="POST" style="width:30%">
                     {% csrf_token %}
                     <div class="input-group input-group-outline mb-3" style="display:grid">
                         {{ form.transaction_name.label }}
@@ -43,14 +48,12 @@
                       <button type="submit" value="Submit" class="btn btn-lg bg-gradient-dark btn-lg w-100 mt-4 mb-0">Save</button>
                       <a href="{% url 'transaction-home'  %}" class="btn btn-lg bg-gradient-dark btn-lg w-100 mt-4 mb-0">Back</a>
                     </div>
-                  </form>
-
+             </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
     </section>
   </main>
 {% endblock content %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main-content  mt-0">
+    <section>
+       <div class="container-fluid py-2">
+      <div class="row">
+        <div class="col-12">
+          <div class="card my-4">
+                  <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                    <div class="bg-gradient-dark shadow-dark border-radius-lg pt-3 pb-3">
+                        <div style="display: inline-grid;grid-template-columns: auto auto; width: 100%">
+                            <div style="align-content: center">
+                                <h6 class="text-white text-capitalize ps-3" style="margin-bottom:0">
+                                    {% block heading %}
+                                    {% endblock heading %}
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                <div class="card-body">
+                 {% block form %}
+                 {% endblock form %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+  </main>
+{% endblock content %}
