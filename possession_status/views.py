@@ -2,6 +2,7 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
+from .filters import PossessionStatusFilter
 from .forms import CreatePossessionStatusForm, UpdatePossessionStatusForm
 from .models import PossessionStatus
 
@@ -22,15 +23,25 @@ class PossessionsCreateView(CreateView):
 
 class PossessionsListView(ListView):
     paginate_by = 10
-    model = PossessionStatus
+    queryset = PossessionStatus.objects.all()
     template_name = "possession_status/possession_home_page.html"
     context_object_name = "possessions"
-    ordering = ["-asset_name"]
 
     def get_queryset(self):
-        return PossessionStatus.objects.filter(user=self.request.user).order_by(
-            "-asset_name"
-        )
+        queryset = super().get_queryset()
+        self.filterset = PossessionStatusFilter(self.request.GET, queryset=queryset)
+
+        if not self.filterset.qs.query.order_by:
+            queryset = self.filterset.qs.order_by("-asset_name")
+        else:
+            queryset = self.filterset.qs
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["form"] = self.filterset.form
+        if PossessionStatus.objects.filter(user_id=self.request.user):
+            return context
 
 
 class PossessionsUpdateView(UpdateView):
