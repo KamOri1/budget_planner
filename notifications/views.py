@@ -2,6 +2,7 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
+from .filters import NotificationFilter
 from .forms import CreateNotificationForm, UpdateNotificationForm
 from .models import Notification
 
@@ -22,13 +23,25 @@ class NotificationCreateView(CreateView):
 
 class NotificationListView(ListView):
     paginate_by = 10
-    model = Notification
+    queryset = Notification.objects.all()
     template_name = "notifications/notifications_home_page.html"
     context_object_name = "notifications"
-    ordering = ["-name"]
 
     def get_queryset(self):
-        return Notification.objects.filter(user=self.request.user).order_by("-name")
+        queryset = super().get_queryset()
+        self.filterset = NotificationFilter(self.request.GET, queryset=queryset)
+
+        if not self.filterset.qs.query.order_by:
+            queryset = self.filterset.qs.order_by("-name")
+        else:
+            queryset = self.filterset.qs
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["form"] = self.filterset.form
+        if Notification.objects.filter(user_id=self.request.user):
+            return context
 
 
 class NotificationUpdateView(UpdateView):
