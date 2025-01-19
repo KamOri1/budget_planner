@@ -1,6 +1,7 @@
 from django.shortcuts import redirect
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
+from .filters import AccountFilter
 from .forms import UpdateAccountForm
 from .models import BankAccount
 
@@ -21,15 +22,25 @@ class AccountCreateView(CreateView):
 
 class AccountListView(ListView):
     paginate_by = 10
-    model = BankAccount
+    queryset = BankAccount.objects.all()
     template_name = "bank_account/account_home_page.html"
     context_object_name = "accounts"
-    ordering = ["-account_name"]
 
     def get_queryset(self):
-        return BankAccount.objects.filter(user_id_id=self.request.user).order_by(
-            "-account_name"
-        )
+        queryset = super().get_queryset()
+        self.filterset = AccountFilter(self.request.GET, queryset=queryset)
+
+        if not self.filterset.qs.query.order_by:
+            queryset = self.filterset.qs.order_by("-account_name")
+        else:
+            queryset = self.filterset.qs
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["form"] = self.filterset.form
+        if BankAccount.objects.filter(user_id=self.request.user):
+            return context
 
 
 class AccountUpdateView(UpdateView):
