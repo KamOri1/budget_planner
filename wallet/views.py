@@ -7,9 +7,9 @@ from django.views.generic import (
     UpdateView,
 )
 
-from wallet.models import Wallet
-
+from .filters import WalletFilter
 from .forms import UpdateWalletForm
+from .models import Wallet
 
 
 class WalletHomeView(TemplateView):
@@ -32,15 +32,25 @@ class WalletCreateView(CreateView):
 
 class WalletListView(ListView):
     paginate_by = 10
-    model = Wallet
+    queryset = Wallet.objects.all()
     template_name = "wallet/wallet_home_page.html"
     context_object_name = "wallets"
-    ordering = ["-portfolio_value"]
 
     def get_queryset(self):
-        return Wallet.objects.filter(user_id_id=self.request.user).order_by(
-            "-portfolio_value"
-        )
+        queryset = super().get_queryset()
+        self.filterset = WalletFilter(self.request.GET, queryset=queryset)
+
+        if not self.filterset.qs.query.order_by:
+            queryset = self.filterset.qs.order_by("-portfolio_value")
+        else:
+            queryset = self.filterset.qs
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["form"] = self.filterset.form
+        if Wallet.objects.filter(user_id=self.request.user):
+            return context
 
 
 class WalletUpdateView(UpdateView):
