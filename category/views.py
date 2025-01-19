@@ -1,6 +1,7 @@
 from django.shortcuts import redirect
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
+from .filters import CategoryFilter
 from .forms import UpdateCategoryForm
 from .models import Category
 
@@ -21,15 +22,25 @@ class CategoryCreateView(CreateView):
 
 class CategoryListView(ListView):
     paginate_by = 10
-    model = Category
+    queryset = Category.objects.all()
     template_name = "category/category_home_page.html"
     context_object_name = "categories"
-    ordering = ["-category_name"]
 
     def get_queryset(self):
-        return Category.objects.filter(user_id_id=self.request.user).order_by(
-            "-category_name"
-        )
+        queryset = super().get_queryset()
+        self.filterset = CategoryFilter(self.request.GET, queryset=queryset)
+
+        if not self.filterset.qs.query.order_by:
+            queryset = self.filterset.qs.order_by("-category_name")
+        else:
+            queryset = self.filterset.qs
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["form"] = self.filterset.form
+        if Category.objects.filter(user_id=self.request.user):
+            return context
 
 
 class CategoryUpdateView(UpdateView):
