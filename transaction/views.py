@@ -21,20 +21,6 @@ class TransactionCreateView(CreateView):
         return super().form_valid(form)
 
 
-# class TransactionListView(ListView):
-#     paginate_by = 10
-#     queryset = Transaction.objects.all()
-#     model = Transaction
-#     template_name = "transaction/transaction_home_page.html"
-#     context_object_name = "transactions"
-#     ordering = ["-transaction_date"]
-#
-#     def get_queryset(self):
-#         return Transaction.objects.filter(user_id=self.request.user).order_by(
-#             "-transaction_date"
-#         )
-
-
 class TransactionListView(ListView):
     paginate_by = 10
     queryset = Transaction.objects.all()

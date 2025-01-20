@@ -2,6 +2,7 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
+from .filters import RegularExpensesFilter
 from .forms import CreateRegularExpensesForm, UpdateRegularExpensesForm
 from .models import RegularExpenses
 
@@ -22,13 +23,25 @@ class RegularExpensesCreateView(CreateView):
 
 class RegularExpensesListView(ListView):
     paginate_by = 10
-    model = RegularExpenses
+    queryset = RegularExpenses.objects.all()
     template_name = "regular_expenses/expenses_home_page.html"
     context_object_name = "expenses"
-    ordering = ["-name"]
 
     def get_queryset(self):
-        return RegularExpenses.objects.filter(user=self.request.user).order_by("-name")
+        queryset = super().get_queryset()
+        self.filterset = RegularExpensesFilter(self.request.GET, queryset=queryset)
+
+        if not self.filterset.qs.query.order_by:
+            queryset = self.filterset.qs.order_by("-name")
+        else:
+            queryset = self.filterset.qs
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["form"] = self.filterset.form
+        if RegularExpenses.objects.filter(user_id=self.request.user):
+            return context
 
 
 class RegularExpensesUpdateView(UpdateView):
