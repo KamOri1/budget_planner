@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saving_goal/templates/saving_goal/goal_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/saving_goal/templates/saving_goal/goal_home_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saving_goal/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/saving_goal/views.py" afterDir="false" />
     </list>
-    <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="">
-      <change beforePath="$PROJECT_DIR$/transaction/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/filters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/views.py" afterDir="false" />
-    </list>
+    <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -48,7 +45,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "django.template.preview.state": "SHOW_EDITOR",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Kaspi/Desktop/budget_planner/dashboard",
+    "last_opened_file_path": "C:/Users/Kaspi/Desktop/budget_planner/saving_goal",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,11 +61,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Kaspi\Desktop\budget_planner\dashboard" />
-      <recent name="C:\Users\Kaspi\Desktop\budget_planner\templates" />
-      <recent name="C:\Users\Kaspi\Desktop\budget_planner\possession_status\templates\possession_status" />
-      <recent name="C:\Users\Kaspi\Desktop\budget_planner\regural_expenses\templates\regural_expenses" />
-      <recent name="C:\Users\Kaspi\Desktop\budget_planner\saving_goal\templates\saving_goal" />
+      <recent name="C:\Users\Kaspi\Desktop\budget_planner\saving_goal" />
+      <recent name="C:\Users\Kaspi\Desktop\budget_planner\regular_expenses" />
+      <recent name="C:\Users\Kaspi\Desktop\budget_planner\possession_status" />
+      <recent name="C:\Users\Kaspi\Desktop\budget_planner\notifications" />
+      <recent name="C:\Users\Kaspi\Desktop\budget_planner\category" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\api" />
@@ -133,6 +130,7 @@
       <workItem from="1734819683353" duration="97117000" />
       <workItem from="1736287100985" duration="1981000" />
       <workItem from="1736444177010" duration="69659000" />
+      <workItem from="1737234758522" duration="17695000" />
     </task>
     <servers />
   </component>
@@ -146,6 +144,14 @@
           <url>file://$PROJECT_DIR$/users/templates/users/register.html</url>
           <line>24</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/bank_account/filters.py</url>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/saving_goal/filters.py</url>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
