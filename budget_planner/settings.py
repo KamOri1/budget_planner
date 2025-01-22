@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap4",
     "django_extensions",
+    "django_plotly_dash.apps.DjangoPlotlyDashConfig",
 ]
 
 INSTALLED_EXTENSIONS = [
@@ -45,6 +46,7 @@ INSTALLED_EXTENSIONS = [
     "possession_status.apps.PossessionStatusConfig",
     "users.apps.UsersConfig",
     "api.apps.ApiConfig",
+    "budget_planner",
 ]
 
 INSTALLED_APPS += INSTALLED_EXTENSIONS
@@ -138,3 +140,4 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 LOGIN_REDIRECT_URL = "dashboard"
+X_FRAME_OPTIONS = "SAMEORIGIN"
