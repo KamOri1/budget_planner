@@ -1,5 +1,7 @@
 from django.shortcuts import redirect, render
 
+from .utils.today_money import TodayMoney
+
 
 def get_title(request):
     return request.path.strip("/").title()
@@ -13,10 +15,14 @@ def main_view(request):
 
 
 def dashboard(request):
-    return render(
-        request=request,
-        template_name="dashboard.html",
-    )
+    today_profit = TodayMoney()
+
+    context = {
+        "today_profit": today_profit.today_profit,
+        "monthly_income": today_profit.sum_of_profit(),
+        "monthly_expenses": today_profit.sum_of_expenses(),
+    }
+    return render(request=request, template_name="dashboard.html", context=context)
 
 
 def billing(request):
