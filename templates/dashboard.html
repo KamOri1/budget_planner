@@ -16,7 +16,7 @@
               <div class="d-flex justify-content-between">
                 <div>
                   <p class="text-sm mb-0 text-capitalize">Today's Money</p>
-                  <h4 class="mb-0">{{ today_profit }}</h4>
+                  <h4 class="mb-0 ">{{ today_profit }}</h4>
 
                 </div>
                 <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
@@ -36,7 +36,7 @@
               <div class="d-flex justify-content-between">
                 <div>
                   <p class="text-sm mb-0 text-capitalize">Monthly income</p>
-                  <h4 class="mb-0">{{ monthly_income }}</h4>
+                  <h4 class="mb-0 text-success">{{ monthly_income }}</h4>
                 </div>
                 <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
                   <i class="material-symbols-rounded opacity-10">person</i>
@@ -45,7 +45,12 @@
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-2 ps-3">
-              <p class="mb-0 text-sm"><span class="text-success font-weight-bolder">+3% </span>than last month</p>
+              <p class="mb-0 text-sm"><span class="{% if monthly_compare >= 0 %}
+                                                       text-success
+                                                    {% else %}
+                                                        text-danger
+                                                    {% endif %}
+                                                    font-weight-bolder">{{ monthly_compare }}% </span>than last month</p>
             </div>
           </div>
         </div>
@@ -55,7 +60,7 @@
               <div class="d-flex justify-content-between">
                 <div>
                   <p class="text-sm mb-0 text-capitalize">Monthly expenses</p>
-                  <h4 class="mb-0">{{ monthly_expenses }}</h4>
+                  <h4 class="mb-0 text-danger">{{ monthly_expenses }}</h4>
                 </div>
                 <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
                   <i class="material-symbols-rounded opacity-10">leaderboard</i>

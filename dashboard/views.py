@@ -21,7 +21,9 @@ def dashboard(request):
         "today_profit": today_profit.today_profit,
         "monthly_income": today_profit.sum_of_profit(),
         "monthly_expenses": today_profit.sum_of_expenses(),
+        "monthly_compare": today_profit.compare_monthly_profit(),
     }
+
     return render(request=request, template_name="dashboard.html", context=context)
 
 

@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from django.db.models import QuerySet
 
@@ -35,3 +35,22 @@ class TodayMoney:
                     month_expenses += transaction.sum_amount
 
         return month_expenses
+
+    def compare_monthly_profit(self) -> float:
+        current_month_profit = self.sum_of_profit()
+        previous_month = datetime.now() - timedelta(days=30)
+        previous_month_str = previous_month.strftime("%Y-%m")
+
+        previous_month_profit = 0
+        for transaction in self.transactions:
+            if transaction.category_id in self.category.filter(category_type="profit"):
+                if transaction.transaction_date.strftime("%Y-%m") == previous_month_str:
+                    previous_month_profit += transaction.sum_amount
+
+        if previous_month_profit == 0:
+            return 0
+        else:
+            profit_percentage_change = (
+                (current_month_profit - previous_month_profit) / previous_month_profit
+            ) * 100
+            return round(profit_percentage_change)
