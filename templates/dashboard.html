@@ -26,7 +26,12 @@
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-2 ps-3">
-              <p class="mb-0 text-sm"><span class="text-success font-weight-bolder">+55% </span>than last week</p>
+              <p class="mb-0 text-sm"><span class="{% if today_profit_compare >= 0 %}
+                                                       text-success
+                                                    {% else %}
+                                                        text-danger
+                                                    {% endif %}
+                                                    font-weight-bolder">{{ today_profit_compare }}% </span>than last month</p>
             </div>
           </div>
         </div>
@@ -45,12 +50,12 @@
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-2 ps-3">
-              <p class="mb-0 text-sm"><span class="{% if monthly_compare >= 0 %}
+              <p class="mb-0 text-sm"><span class="{% if monthly_income_compare >= 0 %}
                                                        text-success
                                                     {% else %}
                                                         text-danger
                                                     {% endif %}
-                                                    font-weight-bolder">{{ monthly_compare }}% </span>than last month</p>
+                                                    font-weight-bolder">{{ monthly_income_compare }}% </span>than last month</p>
             </div>
           </div>
         </div>
@@ -69,7 +74,12 @@
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-2 ps-3">
-              <p class="mb-0 text-sm"><span class="text-danger font-weight-bolder">-2% </span>than yesterday</p>
+              <p class="mb-0 text-sm"><span class="{% if monthly_expenses_compare >= 0 %}
+                                                       text-danger
+                                                    {% else %}
+                                                        text-success
+                                                    {% endif %}
+                                                    font-weight-bolder">{{ monthly_expenses_compare }}% </span>than last month</p>
             </div>
           </div>
         </div>
