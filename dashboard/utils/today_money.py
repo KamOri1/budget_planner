@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import datetime
 
 from django.db.models import QuerySet
 
@@ -37,14 +37,24 @@ class TodayMoney:
         return month_expenses
 
     def compare_monthly_profit(self) -> float:
-        current_month_profit = self.sum_of_profit()
-        previous_month = datetime.now() - timedelta(days=30)
-        previous_month_str = previous_month.strftime("%Y-%m")
+        current_month_profit: float = self.sum_of_profit()
+        previous_month_profit: float = 0
+        current_month = datetime.now().strftime("%m")
+        current_years = datetime.now().strftime("%Y")
 
-        previous_month_profit = 0
+        if int(current_month) == 1:
+            previous_month: str = "12"
+            previous_years: str = str(int(current_years) - 1)
+        else:
+            previous_month: str = str(int(current_month) - 1)
+            previous_years: str = current_years
+
         for transaction in self.transactions:
             if transaction.category_id in self.category.filter(category_type="profit"):
-                if transaction.transaction_date.strftime("%Y-%m") == previous_month_str:
+                if (
+                    transaction.transaction_date.strftime("%Y-%m")
+                    == f"{previous_years}-{previous_month}"
+                ):
                     previous_month_profit += transaction.sum_amount
 
         if previous_month_profit == 0:
