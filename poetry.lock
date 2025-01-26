@@ -16,13 +16,13 @@ tests = ["mypy (>=0.800)", "pytest", "pytest-asyncio"]
 
 [[package]]
 name = "attrs"
-version = "24.3.0"
+version = "25.1.0"
 description = "Classes Without Boilerplate"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "attrs-24.3.0-py3-none-any.whl", hash = "sha256:ac96cd038792094f438ad1f6ff80837353805ac950cd2aa0e0625ef19850c308"},
-    {file = "attrs-24.3.0.tar.gz", hash = "sha256:8f5c07333d543103541ba7be0e2ce16eeee8130cb0b3f9238ab904ce1e85baff"},
+    {file = "attrs-25.1.0-py3-none-any.whl", hash = "sha256:c75a69e28a550a7e93789579c22aa26b0f5b83b75dc4e08fe092980051e1090a"},
+    {file = "attrs-25.1.0.tar.gz", hash = "sha256:1c97078a80c814273a76b2a298a932eb681c87415c11dee0a6921de7f1b02c3e"},
 ]
 
 [package.extras]
@@ -626,6 +626,17 @@ files = [
 
 [package.dependencies]
 djangorestframework = "*"
+
+[[package]]
+name = "django-verify-email"
+version = "3.0.3"
+description = "A Django app for email verification."
+optional = false
+python-versions = "*"
+files = [
+    {file = "Django_Verify_Email-3.0.3-py3-none-any.whl", hash = "sha256:297af609c3cfbb8918cbe4f21c1a5b2a13da3a3847880bd9f399fbf9f6ebc4e3"},
+    {file = "django_verify_email-3.0.3.tar.gz", hash = "sha256:6627b9f6a5cbb7120e5556b00d05514119f7f848913167287e14688d7981401b"},
+]
 
 [[package]]
 name = "djangorestframework"
@@ -1627,4 +1638,4 @@ testing = ["coverage[toml]", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11.6"
-content-hash = "7efaaaca6a28c02fca67b24c1c9060924953f87247c9e73733de872789fc422e"
+content-hash = "b72a413041d1b22722b35259a3031720fae9b1dd02299c9d1d5dbb1f76ec3e8a"
