@@ -15,7 +15,7 @@ class CreateTransactionForm(forms.ModelForm):
             "description",
         ]
         widgets = {
-            "transaction_date": forms.DateInput(attrs={"type": "date"}),
+            "transaction_date": forms.DateTimeInput(attrs={"type": "datetime-local"}),
         }
 
 
@@ -31,5 +31,5 @@ class UpdateTransactionForm(forms.ModelForm):
             "description",
         ]
         widgets = {
-            "transaction_date": forms.DateInput(attrs={"type": "date"}),
+            "transaction_date": forms.DateTimeInput(attrs={"type": "datetime-local"}),
         }

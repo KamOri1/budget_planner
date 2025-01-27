@@ -20,6 +20,7 @@ urlpatterns = [
     path("expenses/", include("regular_expenses.urls")),
     path("possessions/", include("possession_status.urls")),
     path("notifications/", include("notifications.urls")),
+    path("django_plotly_dash/", include("django_plotly_dash.urls")),
 ]
 
 if settings.DEBUG:

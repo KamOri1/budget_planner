@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
+{%load plotly_dash%}
 
 
 {% block content %}
+    {%plotly_app name="SimpleExample"%}
     <div class="container-fluid py-2">
       <div class="row">
           <div class="my-4">
