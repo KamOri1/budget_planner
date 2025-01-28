@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {%load plotly_dash%}
-
+{% plotly_header %}
 
 {% block content %}
-    {%plotly_app name="SimpleExample"%}
+
     <div class="container-fluid py-2">
       <div class="row">
           <div class="my-4">
@@ -111,22 +111,20 @@
         </div>
       </div>
       <div class="row">
+
         <div class="col-lg-4 col-md-6 mt-4 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h6 class="mb-0 ">Website Views</h6>
-              <p class="text-sm ">Last Campaign Performance</p>
-              <div class="pe-2">
-                <div class="chart">
-                  <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
-                </div>
+
+          <div class="card" style="height:300px">
+              <div class="card-body">
+                <h6 class="mb-0 "> Daily transactions </h6>
               </div>
-              <hr class="dark horizontal">
-              <div class="d-flex ">
-                <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
-                <p class="mb-0 text-sm"> campaign sent 2 days ago </p>
-              </div>
-            </div>
+
+                       {%plotly_direct name="SimpleExample"%}
+
+
+
+
+
           </div>
         </div>
         <div class="col-lg-4 col-md-6 mt-4 mb-4">
@@ -167,4 +165,6 @@
         </div>
       </div>
     </div>
+    {% plotly_footer %}
+
 {% endblock %}
