@@ -13,10 +13,6 @@ app = DjangoDash("SimpleExample")
 transactions = TodayTransactions()
 daily_transactions = pd.DataFrame(transactions.daily_transactions())
 daily_transactions = daily_transactions.drop_duplicates(subset=["name"], keep="first")
-print(daily_transactions["name"])
-print(daily_transactions["value"])
-print(daily_transactions["type"])
-print(transactions.transaction_color())
 
 df = pd.DataFrame(
     {
@@ -24,20 +20,25 @@ df = pd.DataFrame(
         "Values": daily_transactions["value"],
     }
 )
-
-
 fig = px.bar(
     df,
     x="Name",
     y="Values",
     barmode="group",
+    color="Name",
     color_discrete_map=transactions.transaction_color(),
+    title="Daily transactions",
 )
-
+fig.update_layout(showlegend=False)
 app.layout = html.Div(
     children=[
         dcc.Graph(
-            id="example-graph", figure=fig, style={"width": "100%", "height": "100%"}
+            id="example-graph",
+            figure=fig,
+            style={
+                "width": "100%",
+                "height": "100%",
+            },
         ),
     ]
 )

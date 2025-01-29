@@ -37,6 +37,10 @@ class TodayTransactions:
                         "type": category_type,
                     }
                 )
+        if not self.transaction_list:
+            self.transaction_list = [
+                {"name": "No transaction to view", "value": 0, "type": "profit"}
+            ]
 
         return self.transaction_list
 
