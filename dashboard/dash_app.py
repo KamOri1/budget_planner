@@ -30,7 +30,11 @@ fig = px.bar(
     color_discrete_map=transactions.transaction_color(),
     title="Daily transactions",
 )
-fig.update_layout(showlegend=False)
+fig.update_layout(
+    xaxis_tickangle=45, xaxis=dict(tickfont=dict(size=8)), showlegend=False
+)
+
+
 app.layout = html.Div(
     children=[
         dcc.Graph(

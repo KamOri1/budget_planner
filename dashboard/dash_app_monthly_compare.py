@@ -32,8 +32,28 @@ fig = px.bar(
     color="Name",
     # color_discrete_map=transactions.transaction_color(),
     title="Monthly Compare",
+    text="Values",
 )
-fig.update_layout(showlegend=False, autosize=True)
+fig.update_layout(
+    xaxis_tickangle=45,
+    xaxis=dict(tickfont=dict(size=8)),
+    showlegend=False,
+)
+fig.update_traces(
+    texttemplate="%{text:.2f}",  # Formatujemy wartości jako liczby z dwoma miejscami po przecinku
+    # textposition='outside'  # Umieszczamy tekst na zewnątrz słupków
+)
+
+# Ukrywamy oś X i jej etykiety
+fig.update_layout(
+    # xaxis_visible=False,
+    # title_y=0.0,
+    # title_x=0.5,
+    showlegend=False,
+    # margin=dict(
+    #     b=100
+    # )
+)
 app_monthly_compare.layout = html.Div(
     children=[
         dcc.Graph(
