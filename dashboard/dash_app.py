@@ -5,7 +5,7 @@ from django_plotly_dash import DjangoDash
 
 from dashboard.utils.today_transactions import TodayTransactions
 
-app = DjangoDash("SimpleExample")
+app = DjangoDash("Dailytransactions")
 
 # assume you have a "long-form" data frame
 # see https://plotly.com/python/px-arguments/ for more options
@@ -20,6 +20,7 @@ df = pd.DataFrame(
         "Values": daily_transactions["value"],
     }
 )
+
 fig = px.bar(
     df,
     x="Name",
@@ -40,5 +41,6 @@ app.layout = html.Div(
                 "height": "100%",
             },
         ),
-    ]
+    ],
+    className="m-4",
 )

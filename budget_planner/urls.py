@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 from dashboard.dash_app import app  # noqa
+from dashboard.dash_app_monthly_compare import app_monthly_compare  # noqa
 from dashboard.views import billing, dashboard, main_view, notifications
 
 urlpatterns = [
