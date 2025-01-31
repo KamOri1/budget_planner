@@ -31,7 +31,7 @@ fig = px.bar(
     title="Daily transactions",
 )
 fig.update_layout(
-    xaxis_tickangle=45, xaxis=dict(tickfont=dict(size=8)), showlegend=False
+    xaxis_tickangle=45, xaxis=dict(tickfont=dict(size=9)), showlegend=False
 )
 
 
