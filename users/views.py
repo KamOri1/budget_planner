@@ -7,6 +7,10 @@ from django.views.generic import CreateView, View
 
 from .forms import UserRegisterForm
 
+# def activate_email(request, user, to_email):
+#     messages.success(request, f'{user} Activate your email account. {to_email}')
+#     print('Activate your email account.')
+
 
 class RegisterView(CreateView):
     form_class = UserRegisterForm
@@ -14,10 +18,18 @@ class RegisterView(CreateView):
     success_url = reverse_lazy("login")
 
     def form_valid(self, form):
+        # user = form.save()
+        # messages.success(self.request, f"Account created for {user.username}")
+        # return redirect(self.success_url)
 
-        user = form.save()
-        messages.success(self.request, f"Account created for {user.username}")
+        # POCZĄTEK kodu autoryzacji email
+        user = form.save(commit=False)
+        user.is_active = False
+        user.save()
+        messages.success(self.request, f"{user} Activate your email account.")
         return redirect(self.success_url)
+
+        # KONIEC kodu autoryzacji emiali
 
     def form_invalid(self, form):
 

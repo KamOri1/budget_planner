@@ -40,11 +40,11 @@
                 <div class="card-header">
                     <div class="col-md-8">
                         {% if messages %}
-                            {% for message in messages %}
-                                <div class="alert alert-{{ message.tags }}">
-                                    {{ message }}
-                                </div>
-                            {% endfor %}
+                             {% for message in messages %}
+                                 <div class="text-center alert alert-{{ message.tags }}">
+                                     {{ message|safe }}
+                                 </div>
+                             {% endfor %}
                         {% endif %}
                     </div>
                   <p class="mb-0">Enter your name and password to register</p>
