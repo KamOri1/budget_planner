@@ -37,5 +37,5 @@ class CategoryCompare:
 
         if not self.category_values_list:
             self.category_values_list = [{"name": "No category to view", "value": 0}]
-        print(self.category_values_list)
+
         return self.category_values_list
