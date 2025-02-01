@@ -48,8 +48,8 @@ class TodayTransactions:
         color_dict: dict = {}
         for item in self.transaction_list:
             if item["type"] == "profit":
-                color_dict[item["name"]] = "green"
+                color_dict[item["name"]] = "#4CAF50"
             else:
-                color_dict[item["name"]] = "red"
+                color_dict[item["name"]] = "#F44335"
 
         return color_dict

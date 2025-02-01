@@ -43,18 +43,18 @@ class TodayMoney:
         current_years = datetime.now().strftime("%Y")
 
         if int(current_month) == 1:
-            previous_month: str = "12"
-            previous_years: str = str(int(current_years) - 1)
+            previous_month: str = f"{str(int(current_years) - 1)}-12"
+
         else:
-            previous_month: str = str(int(current_month) - 1)
-            previous_years: str = current_years
+            previous_month: str = f"{current_years}-{str(int(current_month) - 1)}"
+
+        previous_month: datetime = datetime.strptime(previous_month, "%Y-%m")
 
         for transaction in self.transactions:
             if transaction.category_id in self.category.filter(category_type="profit"):
-                if (
-                    transaction.transaction_date.strftime("%Y-%m")
-                    == f"{previous_years}-{previous_month}"
-                ):
+                if transaction.transaction_date.strftime(
+                    "%Y-%m"
+                ) == previous_month.strftime("%Y-%m"):
                     previous_month_profit += transaction.sum_amount
 
         if previous_month_profit == 0:
@@ -72,18 +72,18 @@ class TodayMoney:
         current_years = datetime.now().strftime("%Y")
 
         if int(current_month) == 1:
-            previous_month: str = "12"
-            previous_years: str = str(int(current_years) - 1)
+            previous_month: str = f"{str(int(current_years) - 1)}-12"
+
         else:
-            previous_month: str = str(int(current_month) - 1)
-            previous_years: str = current_years
+            previous_month: str = f"{current_years}-{str(int(current_month) - 1)}"
+
+        previous_month: datetime = datetime.strptime(previous_month, "%Y-%m")
 
         for transaction in self.transactions:
             if transaction.category_id in self.category.filter(category_type="cost"):
-                if (
-                    transaction.transaction_date.strftime("%Y-%m")
-                    == f"{previous_years}-{previous_month}"
-                ):
+                if transaction.transaction_date.strftime(
+                    "%Y-%m"
+                ) == previous_month.strftime("%Y-%m"):
                     previous_month_expenses += transaction.sum_amount
 
         if previous_month_expenses == 0:
@@ -102,17 +102,20 @@ class TodayMoney:
         current_years = datetime.now().strftime("%Y")
 
         if int(current_month) == 1:
-            previous_month: str = "12"
-            previous_years: str = str(int(current_years) - 1)
+            previous_month: str = f"{str(int(current_years) - 1)}-12"
+
         else:
-            previous_month: str = str(int(current_month) - 1)
-            previous_years: str = current_years
+            previous_month: str = f"{current_years}-{str(int(current_month) - 1)}"
+
+        previous_month: datetime = datetime.strptime(previous_month, "%Y-%m")
 
         for transaction in self.transactions:
             if transaction.category_id in self.category.filter(category_type="profit"):
                 if transaction.transaction_date.strftime(
                     "%Y-%m"
-                ) == f"{previous_years}-{previous_month}" and transaction.transaction_date.strftime(
+                ) == previous_month.strftime(
+                    "%Y-%m"
+                ) and transaction.transaction_date.strftime(
                     "%d"
                 ) <= datetime.now().strftime(
                     "%d"

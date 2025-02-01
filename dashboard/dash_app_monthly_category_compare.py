@@ -27,7 +27,7 @@ fig = px.pie(
 )
 
 
-fig.update_traces(textinfo="percent+value", insidetextorientation="radial")
+fig.update_traces(textinfo="percent", insidetextorientation="radial")
 
 fig.update_layout(
     showlegend=False,

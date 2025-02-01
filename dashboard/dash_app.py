@@ -7,9 +7,6 @@ from dashboard.utils.today_transactions import TodayTransactions
 
 app = DjangoDash("Dailytransactions")
 
-# assume you have a "long-form" data frame
-# see https://plotly.com/python/px-arguments/ for more options
-
 transactions = TodayTransactions()
 daily_transactions = pd.DataFrame(transactions.daily_transactions())
 daily_transactions = daily_transactions.drop_duplicates(subset=["name"], keep="first")
@@ -25,13 +22,12 @@ fig = px.bar(
     df,
     x="Name",
     y="Values",
-    barmode="group",
     color="Name",
     color_discrete_map=transactions.transaction_color(),
     title="Daily transactions",
 )
 fig.update_layout(
-    xaxis_tickangle=45, xaxis=dict(tickfont=dict(size=9)), showlegend=False
+    xaxis_tickangle=45, xaxis=dict(tickfont=dict(size=9)), showlegend=False, bargap=0
 )
 
 

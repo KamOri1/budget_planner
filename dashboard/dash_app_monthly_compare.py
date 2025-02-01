@@ -7,9 +7,6 @@ from dashboard.utils.today_money import TodayMoney
 
 app_monthly_compare = DjangoDash("MonthlyCompare")
 
-# assume you have a "long-form" data frame
-# see https://plotly.com/python/px-arguments/ for more options
-
 compare = TodayMoney()
 data_compare = [
     {"name": "Monthly Profit", "value": compare.sum_of_profit()},
@@ -27,18 +24,19 @@ df = pd.DataFrame(
 
 fig = px.pie(
     df,
-    color_discrete_map={"Monthly Profit": "green", "Monthly expenses": "red"},
     names="Name",
     values="Values",
     title="Monthly Compare",
-    hole=0.3,
+    hole=0.5,
+    color_discrete_sequence=["#4CAF50", "#F44335"],
 )
 
 
-fig.update_traces(textinfo="percent+value", insidetextorientation="radial")
+fig.update_traces(textinfo="percent", insidetextorientation="radial")
 
 fig.update_layout(
-    showlegend=False,
+    showlegend=True,
+    legend=dict(orientation="h", yanchor="top", y=0, xanchor="left", x=0),
 )
 app_monthly_compare.layout = html.Div(
     children=[
