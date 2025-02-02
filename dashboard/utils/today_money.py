@@ -8,8 +8,8 @@ from transaction.models import Transaction
 
 class TodayMoney:
     def __init__(self):
-        self.category: QuerySet = Category.objects.all()
-        self.transactions: QuerySet = Transaction.objects.all()
+        self.category: QuerySet = Category.objects.filter()
+        self.transactions: QuerySet = Transaction.objects.filter()
         self.today_profit: float = self.sum_of_profit() - self.sum_of_expenses()
 
     def sum_of_profit(self) -> float:

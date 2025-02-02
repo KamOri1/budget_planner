@@ -26,6 +26,7 @@ channels-redis = "^4.2.1"
 pandas = "^2.2.3"
 dash-bootstrap-components = "^1.7.1"
 django-verify-email = "^3.0.3"
+six = "^1.17.0"
 
 
 [build-system]
