@@ -11,7 +11,7 @@ from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.views.generic import CreateView, View
 
-from .forms import UserRegisterForm
+from .forms import UserLoginForm, UserRegisterForm
 from .token import account_activation_token
 
 
@@ -79,6 +79,7 @@ class RegisterView(CreateView):
 
 class LoginView(DjangoLoginView):
     template_name = "users/login.html"
+    form_class = UserLoginForm
     redirect_authenticated_user = True
     success_url = reverse_lazy("dashboard")
 

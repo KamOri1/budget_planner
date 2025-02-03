@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/dash_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/dash_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/utils/today_transactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/utils/today_transactions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/img/illustrations/illustration-signup.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="" />
@@ -78,11 +78,11 @@
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\possession_status" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kaspi\Desktop\budget_planner\static\assets\img\illustrations" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\api" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\templates" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\dashboard\templates\dashboard" />
-      <recent name="C:\Users\Kaspi\Desktop\budget_planner\dashboard" />
     </key>
   </component>
   <component name="RunManager" selected="Django Server.budget_planner">
@@ -193,7 +193,7 @@
       <workItem from="1736287100985" duration="1981000" />
       <workItem from="1736444177010" duration="69659000" />
       <workItem from="1737234758522" duration="75315000" />
-      <workItem from="1738091645494" duration="85293000" />
+      <workItem from="1738091645494" duration="88090000" />
     </task>
     <servers />
   </component>

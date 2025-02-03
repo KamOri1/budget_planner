@@ -26,7 +26,6 @@
 </head>
 
 <body class="">
-
   <main class="main-content  mt-0">
     <section>
       <div class="page-header min-vh-100">
@@ -42,7 +41,6 @@
                   <h4 class="font-weight-bolder">Sign Up</h4>
                   <p class="mb-0">Enter name, email and password to register</p>
                 </div>
-
                 <div class="card-body">
                   <form role="form" method="POST" >
                     {% csrf_token %}
@@ -62,7 +60,6 @@
                       <button type="submit" value="Submit" class="btn btn-lg bg-gradient-dark btn-lg w-100 mt-4 mb-0">Sign Up</button>
                     </div>
                   </form>
-
                 </div>
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-2 text-sm mx-auto">
@@ -77,24 +74,5 @@
       </div>
     </section>
   </main>
-  <!--   Core JS Files   -->
-  <script src="{% static 'assets/js/core/popper.min.js' %}"></script>
-  <script src="{% static 'assets/js/core/bootstrap.min.js' %}"></script>
-  <script src="{% static 'assets/js/plugins/perfect-scrollbar.min.js' %}"></script>
-  <script src="{% static 'assets/js/plugins/smooth-scrollbar.min.js' %}"></script>
-  <script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-      var options = {
-        damping: '0.5'
-      }
-      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
-  </script>
-  <!-- Github buttons -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="{% static 'assets/js/material-dashboard.min.js?v=3.2.0' %}"></script>
 </body>
-
 </html>
