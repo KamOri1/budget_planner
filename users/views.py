@@ -15,44 +15,43 @@ from .forms import UserRegisterForm
 from .token import account_activation_token
 
 
-def active(request, uidb64, token):
-    try:
-        uid = force_str(urlsafe_base64_decode(uidb64))
-        user = User.objects.get(pk=uid)
-    except (TypeError, ValueError, OverflowError, User.DoesNotExist):
-        user = None
+class ActiveView(View):
+    def get(self, request, uidb64, token):
+        try:
+            uid = force_str(urlsafe_base64_decode(uidb64))
+            user = User.objects.get(pk=uid)
+        except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+            user = None
 
-    if user is not None and account_activation_token.check_token(user, token):
-        user.is_active = True
-        user.save()
-        messages.success(request, "Your account has been confirmed. You can now login.")
-        return redirect(reverse_lazy("login"))
-    else:
-        messages.error(request, "Activation link is invalid.")
+        if user is not None and account_activation_token.check_token(user, token):
+            user.is_active = True
+            user.save()
+            messages.success(
+                self.request, "Your account has been confirmed. You can now login."
+            )
+            return redirect(reverse_lazy("login"))
+        else:
+            messages.error(self.request, "Activation link is invalid.")
 
-    return redirect(reverse_lazy("register"))
+        return redirect(reverse_lazy("register"))
 
 
-def activate_email(request, user, to_email):
-    mail_subject = "Activate your Budget Planner account."
-    message = render_to_string(
-        "users/template_activate_account.html",
-        {
-            "user": user.username,
-            "domain": get_current_site(request).domain,
-            "uid": urlsafe_base64_encode(force_bytes(user.pk)),
-            "token": account_activation_token.make_token(user),
-            "protocol": "https" if request.is_secure() else "http",
-        },
-    )
-    email = EmailMessage(mail_subject, message, to=[to_email])
-    if email.send():
-        messages.success(request, f"{user} Activate your email account. {to_email}")
-    else:
-        messages.error(
-            request,
-            f"Problem sending email to {to_email}, check if your typed it correctly",
-        )
+# def active(request, uidb64, token):
+#     try:
+#         uid = force_str(urlsafe_base64_decode(uidb64))
+#         user = User.objects.get(pk=uid)
+#     except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+#         user = None
+#
+#     if user is not None and account_activation_token.check_token(user, token):
+#         user.is_active = True
+#         user.save()
+#         messages.success(request, "Your account has been confirmed. You can now login.")
+#         return redirect(reverse_lazy("login"))
+#     else:
+#         messages.error(request, "Activation link is invalid.")
+#
+#     return redirect(reverse_lazy("register"))
 
 
 class RegisterView(CreateView):
@@ -69,7 +68,7 @@ class RegisterView(CreateView):
         user = form.save(commit=False)
         user.is_active = False
         user.save()
-        activate_email(self.request, user, user.email)
+        self._activate_email(user, user.email)
         print(self.success_url)
         return redirect(self.success_url)
 
@@ -78,6 +77,29 @@ class RegisterView(CreateView):
     def form_invalid(self, form):
 
         return self.render_to_response(self.get_context_data(form=form))
+
+    def _activate_email(self, user, to_email):
+        mail_subject = "Activate your Budget Planner account."
+        message = render_to_string(
+            "users/template_activate_account.html",
+            {
+                "user": user.username,
+                "domain": get_current_site(self.request).domain,
+                "uid": urlsafe_base64_encode(force_bytes(user.pk)),
+                "token": account_activation_token.make_token(user),
+                "protocol": "https" if self.request.is_secure() else "http",
+            },
+        )
+        email = EmailMessage(mail_subject, message, to=[to_email])
+        if email.send():
+            messages.success(
+                self.request, f"{user} Activate your email account. {to_email}"
+            )
+        else:
+            messages.error(
+                self.request,
+                f"Problem sending email to {to_email}, check if your typed it correctly",
+            )
 
 
 class LoginView(DjangoLoginView):

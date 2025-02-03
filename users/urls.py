@@ -11,5 +11,5 @@ urlpatterns = [
         name="login",
     ),
     path("logout/", user_views.LogoutView.as_view(), name="logout"),
-    path("activate/<uidb64>/<token>", user_views.active, name="activate"),
+    path("activate/<uidb64>/<token>", user_views.ActiveView.as_view(), name="activate"),
 ]

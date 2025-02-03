@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from django.contrib.auth.models import User
 from django.db.models import QuerySet
 
 from category.models import Category
@@ -7,9 +8,9 @@ from transaction.models import Transaction
 
 
 class TodayMoney:
-    def __init__(self):
-        self.category: QuerySet = Category.objects.filter()
-        self.transactions: QuerySet = Transaction.objects.filter()
+    def __init__(self, user: "User" = None):
+        self.category: QuerySet = Category.objects.filter(user_id=user)
+        self.transactions: QuerySet = Transaction.objects.filter(user_id=user)
         self.today_profit: float = self.sum_of_profit() - self.sum_of_expenses()
 
     def sum_of_profit(self) -> float:
