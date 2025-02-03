@@ -11,16 +11,6 @@ app_monthly_compare = DjangoDash("MonthlyCompare")
 app_monthly_compare.layout = html.Div(
     [
         dcc.Graph(id="example"),
-        # children=[
-        #     dcc.Graph(
-        #         id="example-graph",
-        #         figure=fig,
-        #         style={
-        #             "width": "100%",
-        #             "height": "100%",
-        #         },
-        #     ),
-        # ]
     ]
 )
 
