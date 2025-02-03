@@ -15,7 +15,7 @@ def main_view(request):
 
 
 def dashboard(request):
-    today_profit = TodayMoney()
+    today_profit = TodayMoney(request.user)
 
     context = {
         "today_profit": today_profit.today_profit,

@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from django.contrib.auth.models import User
 from django.db.models import QuerySet
 
 from category.models import Category
@@ -7,16 +8,15 @@ from transaction.models import Transaction
 
 
 class TodayTransactions:
-    def __init__(self):
+    def __init__(self, user: "User" = None):
         self.today = datetime.now()
-        self.category: QuerySet = Category.objects.all()
-        self.transactions: QuerySet = Transaction.objects.all()
+        self.category: QuerySet = Category.objects.filter(user_id=user)
+        self.transactions: QuerySet = Transaction.objects.filter(user_id=user)
         self.transaction_list: list = []
 
     def daily_transactions(self) -> list:
 
         for transaction in self.transactions:
-
             if transaction.transaction_date.strftime(
                 "%Y-%m-%d"
             ) == datetime.now().strftime("%Y-%m-%d"):

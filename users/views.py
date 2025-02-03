@@ -36,43 +36,18 @@ class ActiveView(View):
         return redirect(reverse_lazy("register"))
 
 
-# def active(request, uidb64, token):
-#     try:
-#         uid = force_str(urlsafe_base64_decode(uidb64))
-#         user = User.objects.get(pk=uid)
-#     except (TypeError, ValueError, OverflowError, User.DoesNotExist):
-#         user = None
-#
-#     if user is not None and account_activation_token.check_token(user, token):
-#         user.is_active = True
-#         user.save()
-#         messages.success(request, "Your account has been confirmed. You can now login.")
-#         return redirect(reverse_lazy("login"))
-#     else:
-#         messages.error(request, "Activation link is invalid.")
-#
-#     return redirect(reverse_lazy("register"))
-
-
 class RegisterView(CreateView):
     form_class = UserRegisterForm
     template_name = "users/register.html"
     success_url = reverse_lazy("login")
 
     def form_valid(self, form):
-        # user = form.save()
-        # messages.success(self.request, f"Account created for {user.username}")
-        # return redirect(self.success_url)
-
-        # POCZĄTEK kodu autoryzacji email
         user = form.save(commit=False)
         user.is_active = False
         user.save()
         self._activate_email(user, user.email)
-        print(self.success_url)
-        return redirect(self.success_url)
 
-        # KONIEC kodu autoryzacji emiali
+        return redirect(self.success_url)
 
     def form_invalid(self, form):
 

@@ -6,19 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/budget_planner/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget_planner/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/dash_app_monthly_category_compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/dash_app_monthly_category_compare.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/utils/category_compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/utils/category_compare.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/utils/today_money.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/utils/today_money.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/dash_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/dash_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/utils/today_transactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/utils/today_transactions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="" />
-    <list id="df12f125-9c31-4dd7-a15d-10586d317a47" name="Changes by vene" comment="">
-      <change beforePath="$PROJECT_DIR$/dashboard/dash_app_monthly_compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/dash_app_monthly_compare.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/utils/today_money.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/utils/today_money.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
-    </list>
+    <list id="df12f125-9c31-4dd7-a15d-10586d317a47" name="Changes by vene" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,24 +28,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/users/views.py">
-      <ranges>
-        <range start1="17" end1="23" start2="17" end2="24" changelist="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" />
-        <range start1="24" end1="31" start2="25" end2="32" changelist="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" />
-        <range start1="32" end1="33" start2="33" end2="54" changelist="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" />
-        <range start1="35" end1="55" start2="56" end2="56" changelist="df12f125-9c31-4dd7-a15d-10586d317a47" />
-        <range start1="71" end1="72" start2="72" end2="73" changelist="df12f125-9c31-4dd7-a15d-10586d317a47" />
-        <range start1="80" end1="80" start2="81" end2="102" changelist="df12f125-9c31-4dd7-a15d-10586d317a47" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/dashboard/utils/today_money.py">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="3" changelist="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" />
-        <range start1="9" end1="12" start2="10" end2="13" changelist="df12f125-9c31-4dd7-a15d-10586d317a47" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -217,7 +193,7 @@
       <workItem from="1736287100985" duration="1981000" />
       <workItem from="1736444177010" duration="69659000" />
       <workItem from="1737234758522" duration="75315000" />
-      <workItem from="1738091645494" duration="83047000" />
+      <workItem from="1738091645494" duration="85293000" />
     </task>
     <servers />
   </component>
