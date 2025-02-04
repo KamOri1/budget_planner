@@ -30,49 +30,48 @@
     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Value</th>
     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" colspan="2"></th>
-
 {% endblock tableTitle %}
 
 {% block tableData %}
-{% if wallets %}
-  {% for wallet in wallets %}
-      <tr>
-         <td>
-            <div class="d-flex px-3 py-1">
-              <div class="d-flex flex-column justify-content-center ">
-                <h6 class="mb-0 text-sm">{{ wallet.wallet_name }}</h6>
-              </div>
-            </div>
-         </td>
-         <td>
-            <div class="d-flex px-3 py-1">
-              <div class="d-flex flex-column justify-content-center">
-                <h6 class="mb-0 text-sm">{{ wallet.portfolio_value }}</h6>
-              </div>
-            </div>
-         </td>
-         <td>
-            <div class="d-flex px-3 py-1">
-              <div class="d-flex flex-column justify-content-center ms-auto text-end" >
-                  <a class="btn btn-link text-dark px-3 mb-0" href="{%  url 'update_wallet' pk=wallet.id %}"><i class="material-symbols-rounded text-sm me-2">edit</i>Edit</a>
-              </div>
-            </div>
-         </td>
-         <td>
-            <div class="d-flex px-3 py-1">
-              <div class="d-flex flex-column justify-content-center ms-auto text-end">
-                  <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="{%  url 'delete_wallet' pk=wallet.id %}"><i class="material-symbols-rounded text-sm me-2">delete</i>Delete</a>
-              </div>
-            </div>
-         </td>
-      </tr>
-  {% endfor %}
-{% else %}
-    <p>No transaction to view</p>
-    <div class="col-md-6">
-         <button type="button" class="btn btn-secondary active" style="width: 100px">
-            <a href="{% url 'create_wallet' %}" style="color:#fff">Add new</a>
-         </button>
-    </div>
-{% endif %}
+    {% if wallets %}
+      {% for wallet in wallets %}
+          <tr>
+             <td>
+                <div class="d-flex px-3 py-1">
+                  <div class="d-flex flex-column justify-content-center ">
+                    <h6 class="mb-0 text-sm">{{ wallet.wallet_name }}</h6>
+                  </div>
+                </div>
+             </td>
+             <td>
+                <div class="d-flex px-3 py-1">
+                  <div class="d-flex flex-column justify-content-center">
+                    <h6 class="mb-0 text-sm">{{ wallet.portfolio_value }}</h6>
+                  </div>
+                </div>
+             </td>
+             <td>
+                <div class="d-flex px-3 py-1">
+                  <div class="d-flex flex-column justify-content-center ms-auto text-end" >
+                      <a class="btn btn-link text-dark px-3 mb-0" href="{%  url 'update_wallet' pk=wallet.id %}"><i class="material-symbols-rounded text-sm me-2">edit</i>Edit</a>
+                  </div>
+                </div>
+             </td>
+             <td>
+                <div class="d-flex px-3 py-1">
+                  <div class="d-flex flex-column justify-content-center ms-auto text-end">
+                      <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="{%  url 'delete_wallet' pk=wallet.id %}"><i class="material-symbols-rounded text-sm me-2">delete</i>Delete</a>
+                  </div>
+                </div>
+             </td>
+          </tr>
+      {% endfor %}
+    {% else %}
+        <p>No transaction to view</p>
+        <div class="col-md-6">
+             <button type="button" class="btn btn-secondary active" style="width: 100px">
+                <a href="{% url 'create_wallet' %}" style="color:#fff">Add new</a>
+             </button>
+        </div>
+    {% endif %}
 {% endblock tableData %}

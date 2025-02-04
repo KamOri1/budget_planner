@@ -9,7 +9,7 @@
     <form role="form" method="POST" style="width:30%" >
         {% csrf_token %}
         <p>Are you sure you want to delete "{{ object }}"?</p>
-            <button type="submit" value="Submit" class="btn btn-lg bg-gradient-dark btn-lg w-100 mt-4 mb-0">Confirm</button>
-            <a href="{% url 'expenses_home' %}" class="btn btn-lg bg-gradient-dark btn-lg w-100 mt-4 mb-0">Back</a>
+        <button type="submit" value="Submit" class="btn btn-lg bg-gradient-dark btn-lg w-100 mt-4 mb-0">Confirm</button>
+        <a href="{% url 'expenses_home' %}" class="btn btn-lg bg-gradient-dark btn-lg w-100 mt-4 mb-0">Back</a>
     </form>
 {% endblock form %}
