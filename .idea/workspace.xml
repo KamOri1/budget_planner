@@ -6,18 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bank_account/templates/bank_account/account_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/bank_account/templates/bank_account/account_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bank_account/templates/bank_account/account_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/bank_account/templates/bank_account/account_home_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/templates/category/category_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/category/templates/category/category_home_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notifications/templates/notifications/notifications_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/notifications/templates/notifications/notifications_home_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/possession_status/templates/possession_status/possession_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/possession_status/templates/possession_status/possession_home_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/regular_expenses/templates/regular_expenses/expenses_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/regular_expenses/templates/regular_expenses/expenses_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/regular_expenses/templates/regular_expenses/expenses_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/regular_expenses/templates/regular_expenses/expenses_home_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction/templates/transaction/transaction_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/templates/transaction/transaction_home_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet/templates/wallet/wallet_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/templates/wallet/wallet_home_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bank_account/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/bank_account/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
     </list>
     <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="" />
     <list id="df12f125-9c31-4dd7-a15d-10586d317a47" name="Changes by vene" comment="" />
@@ -201,7 +191,10 @@
       <workItem from="1736287100985" duration="1981000" />
       <workItem from="1736444177010" duration="69659000" />
       <workItem from="1737234758522" duration="75315000" />
-      <workItem from="1738091645494" duration="91029000" />
+      <workItem from="1738091645494" duration="99017000" />
+      <workItem from="1739113183677" duration="732000" />
+      <workItem from="1739129213701" duration="40000" />
+      <workItem from="1739129270341" duration="2281000" />
     </task>
     <servers />
   </component>
