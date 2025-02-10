@@ -13,12 +13,12 @@ class TestModels(TestCase):
         bank_account = BankAccount.objects.create(
             user_id=user,
             account_name="Shopping",
-            account_number="102030",
-            sum_of_funds="144",
+            account_number=102030,
+            sum_of_funds=144,
         )
 
         self.assertEqual(str(bank_account.user_id), user.username)
         self.assertEqual(str(bank_account), "Shopping")
-        self.assertEqual(str(bank_account.account_number), "102030")
-        self.assertEqual(str(bank_account.sum_of_funds), "144")
+        self.assertEqual(int(bank_account.account_number), 102030)
+        self.assertEqual(int(bank_account.sum_of_funds), 144)
         self.assertTrue(isinstance(bank_account, BankAccount))
