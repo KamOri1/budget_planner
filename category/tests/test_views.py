@@ -1,43 +1,35 @@
+"""
+Tests for views.
+"""
+
 from django.contrib.auth.models import User
 from django.test import Client, TestCase
 from rest_framework.reverse import reverse_lazy
 
-from .models import Category
+from ..models import Category
 
 
-class TestModels(TestCase):
-    def test_model_Category(self):
-        user = User.objects.create_user(
-            username="Test", password="password", email="test@gmail.com"
-        )
+class TestCategoryCreateView(TestCase):
+    """Test category views."""
 
-        category = Category.objects.create(
-            user_id=user,
-            category_name="Salary",
-            category_type="profit",
-        )
-
-        self.assertEqual(str(category.user_id), user.username)
-        self.assertEqual(str(category), "Salary")
-        self.assertEqual(str(category.category_type), "profit")
-        self.assertTrue(isinstance(category, Category))
-
-
-class TestView(TestCase):
     def setUp(self):
+        """Set up test data.Including a logged-in user"""
+
         self.client = Client()
         self.user = User.objects.create_user(
             username="Test1", password="password", email="test1@gmail.com"
         )
-        self.client.force_login(self.user)  # Log the user in
-        self.index_url = reverse_lazy("create_category")  # Use reverse
+        self.client.force_login(self.user)
+        self.index_url = reverse_lazy("create_category")
 
-    def test_CategoryCreateView(self):
+    def test_form_valid(self):
+        """Ensure that the GET request correctly renders the form template."""
+
         response = self.client.get(self.index_url)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "category/category_add.html")
 
-    def test_add_category_POST(self):
+    def test_post_valid_data_creates_category(self):
         data = {
             "category_name": "Test Category",
             "category_type": "profit",
