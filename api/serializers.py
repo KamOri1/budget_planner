@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
-from wallet.models import BankAccount, Wallet
+from bank_account.models import BankAccount
+from wallet.models import Wallet
 
 
 class WalletSerializer(serializers.ModelSerializer):

@@ -3,7 +3,8 @@ from rest_framework.mixins import CreateModelMixin, DestroyModelMixin, ListModel
 from rest_framework.viewsets import GenericViewSet
 
 from api.serializers import BankAccountSerializer, WalletSerializer
-from wallet.models import BankAccount, Wallet
+from bank_account.models import BankAccount
+from wallet.models import Wallet
 
 
 class WalletViewSet(
