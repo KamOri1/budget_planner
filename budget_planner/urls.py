@@ -17,7 +17,7 @@ urlpatterns = [
     path("users/", include("users.urls")),
     path("wallets/", include("wallet.urls")),
     path("accounts/", include("bank_account.urls")),
-    path("categorys/", include("category.urls")),  # <- categories
+    path("categories/", include("category.urls")),  # <- categories
     path("transactions/", include("transaction.urls")),
     path("goals/", include("saving_goal.urls")),
     path("expenses/", include("regular_expenses.urls")),
