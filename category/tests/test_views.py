@@ -8,7 +8,7 @@ from django.test import Client, TestCase
 from rest_framework.reverse import reverse_lazy
 
 from ..models import Category
-from ..views import CategoryUpdateView
+from ..views import CategoryDeleteView, CategoryUpdateView
 
 
 class TestCategoryCreateView(TestCase):
@@ -48,7 +48,7 @@ class TestCategoryUpdateView(TestCase):
     """
     Test cases for the Category update view.
     These tests verify the behavior of updating an existing Category, correct redirections,
-    form handling, and database updates for both valid and invalid data.
+    form handling, and database updates.
     """
 
     def setUp(self):
@@ -124,3 +124,68 @@ class TestCategoryUpdateView(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertEqual(updated_category.category_name, "Updated Category Name Check")
         self.assertEqual(updated_category.category_type, "Income")
+
+
+class TestCategoryDeleteView(TestCase):
+    """
+    Test cases for the Category delete view.
+    These tests verify the behavior of deleting an existing Category, correct redirections,
+    form handling, and database updates
+    """
+
+    def setUp(self):
+        """Set up test data."""
+        self.success_url = reverse_lazy("category-home")
+
+        self.client = Client()
+        self.user1 = User.objects.create_user(
+            username="Test1", password="password", email="test1@gmail.com"
+        )
+        self.user2 = User.objects.create_user(
+            username="Test2", password="password", email="test2@gmail.com"
+        )
+        self.request = HttpRequest()
+
+        self.category1 = Category.objects.create(
+            category_name="New Category 1 for user 1",
+            category_type="profit",
+            user_id=self.user1,
+        )
+        self.category2 = Category.objects.create(
+            category_name="New Category 1 user 2",
+            category_type="profit",
+            user_id=self.user2,
+        )
+
+    def test_get_queryset(self):
+        """The test simulates user logging in and checks that only the categories he has added are available"""
+
+        users = [self.user1, self.user2]
+
+        for user in users:
+
+            self.request.user = user
+            view = CategoryDeleteView()
+            view.request = self.request
+            queryset = view.get_queryset()
+
+            expected_count = Category.objects.filter(user_id=user).count()
+
+            self.assertEqual(queryset.count(), expected_count)
+
+            for category in queryset:
+                self.assertEqual(category.user_id, user)
+
+    def test_delete_category(self):
+        """Checks whether the selected category has been deleted."""
+
+        self.client.force_login(self.user1)
+        delete_url = reverse_lazy("delete_category", args=[self.category1.pk])
+        response = self.client.post(delete_url)
+
+        self.assertEqual(response.status_code, 302)
+
+        with self.assertRaises(Category.DoesNotExist):
+            Category.objects.get(pk=self.category1.pk)
+
+        self.assertEqual(Category.objects.filter(user_id=self.user1.id).count(), 0)
