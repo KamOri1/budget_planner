@@ -54,7 +54,6 @@ class TestCategoryUpdateView(TestCase):
     def setUp(self):
         """Set up test data."""
         self.success_url = reverse_lazy("category-home")
-        self.update_url = reverse_lazy("update_category")
 
         self.client = Client()
         self.user1 = User.objects.create_user(
@@ -65,17 +64,17 @@ class TestCategoryUpdateView(TestCase):
         )
         self.request = HttpRequest()
 
-        Category.objects.create(
+        self.category1 = Category.objects.create(
             category_name="New Category 1 for user 1",
             category_type="profit",
             user_id=self.user1,
         )
-        Category.objects.create(
+        self.category2 = Category.objects.create(
             category_name="New Category 1 user 2",
             category_type="profit",
             user_id=self.user1,
         )
-        Category.objects.create(
+        self.category3 = Category.objects.create(
             category_name="New Category 2 for user 2",
             category_type="profit",
             user_id=self.user2,
@@ -107,3 +106,21 @@ class TestCategoryUpdateView(TestCase):
         response = self.client.get(self.success_url, pk=self.user1)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "category/category_home_page.html")
+
+    def test_update_category(self):
+        """Checks whether the selected category has been updated."""
+
+        updated_data = {
+            "category_name": "Updated Category Name Check",
+            "category_type": "Income",
+        }
+
+        self.client.force_login(self.user1)
+
+        update_url = reverse_lazy("update_category", args=[self.category1.pk])
+        response = self.client.post(update_url, data=updated_data)
+        updated_category = Category.objects.get(pk=self.category1.pk)
+
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(updated_category.category_name, "Updated Category Name Check")
+        self.assertEqual(updated_category.category_type, "Income")
