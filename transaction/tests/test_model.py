@@ -26,7 +26,6 @@ class TestModels(TestCase):
             category_name="Salary",
             category_type="profit",
         )
-        self.create_at_value = datetime(2025, 2, 12, 10, 30, 0, tzinfo=timezone.utc)
         self.transaction_date_value = datetime(
             2025, 2, 10, 11, 35, 10, tzinfo=timezone.utc
         )
@@ -40,11 +39,10 @@ class TestModels(TestCase):
             sum_amount=433.33,
             description="something to test",
             transaction_name="Shopping",
-            create_at=self.create_at_value,
             transaction_date=self.transaction_date_value,
         )
         self.assertEqual(str(transaction.user_id), self.user.username)
-        # self.assertEqual(transaction.create_at, self.create_at_value)
+        self.assertIsNotNone(transaction.create_at)
         self.assertEqual(transaction.transaction_date, self.transaction_date_value)
         self.assertEqual(str(transaction), "Shopping")
         self.assertEqual(str(transaction.description), "something to test")
