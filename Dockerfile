@@ -1,28 +1,21 @@
-# Use the official Python runtime image
-FROM python:3.11 AS builder
+FROM python:3.13.2-bullseye
 
+WORKDIR /app
 # Upgrade pip
 RUN pip install --upgrade pip
 
-# Copy the Django project  and install dependencies
-COPY requirements.txt  /app/
+## Copy the Django project  and install dependencies
+#COPY requirements.txt  /app/
 
 # run this command to install all dependencies
-RUN pip install --no-cache-dir -r requirements.txt
-
-
-FROM python:3.11-alpine3.15
-# Create the app directory
-RUN mkdir /app
-
-# Set the working directory inside the container
-WORKDIR /app
-
-# Set environment variables
-# Prevents Python from writing pyc files to disk
+#RUN pip install --no-cache-dir -r requirements.txt
+ENV POETRY_VIRTUALENVS_CREATE=false
 ENV PYTHONDONTWRITEBYTECODE=1
-#Prevents Python from buffering stdout and stderr
 ENV PYTHONUNBUFFERED=1
+
+COPY pyproject.toml poetry.lock /app/
+RUN pip3 install poetry
+RUN poetry install --no-root
 
 
 # Copy the Django project to the container
