@@ -24,12 +24,10 @@ class TodayTransactions:
                     if transaction_item["name"] == transaction.transaction_name:
                         transaction_item["value"] += transaction.sum_amount
 
-                if transaction.category_id in self.category.filter(
-                    category_type="cost"
-                ):
-                    category_type = "cost"
+                if transaction.category_id in self.category.filter(category_type="1"):
+                    category_type = "1"
                 else:
-                    category_type = "profit"
+                    category_type = "2"
                 self.transaction_list.append(
                     {
                         "name": transaction.transaction_name,
@@ -39,7 +37,7 @@ class TodayTransactions:
                 )
         if not self.transaction_list:
             self.transaction_list = [
-                {"name": "No transaction to view", "value": 0, "type": "profit"}
+                {"name": "No transaction to view", "value": 0, "type": "2"}
             ]
 
         return self.transaction_list
@@ -47,7 +45,7 @@ class TodayTransactions:
     def transaction_color(self):
         color_dict: dict = {}
         for item in self.transaction_list:
-            if item["type"] == "profit":
+            if item["type"] == "2":
                 color_dict[item["name"]] = "#4CAF50"
             else:
                 color_dict[item["name"]] = "#F44335"

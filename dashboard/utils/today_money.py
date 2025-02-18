@@ -17,7 +17,7 @@ class TodayMoney:
         month_profit: float = 0
 
         for transaction in self.transactions:
-            if transaction.category_id in self.category.filter(category_type="profit"):
+            if transaction.category_id in self.category.filter(category_type="2"):
                 if transaction.transaction_date.strftime(
                     "%Y-%m"
                 ) == datetime.now().strftime("%Y-%m"):
@@ -29,7 +29,7 @@ class TodayMoney:
         month_expenses: float = 0
 
         for transaction in self.transactions:
-            if transaction.category_id in self.category.filter(category_type="cost"):
+            if transaction.category_id in self.category.filter(category_type="1"):
                 if transaction.transaction_date.strftime(
                     "%Y-%m"
                 ) == datetime.now().strftime("%Y-%m"):
@@ -52,7 +52,7 @@ class TodayMoney:
         previous_month: datetime = datetime.strptime(previous_month, "%Y-%m")
 
         for transaction in self.transactions:
-            if transaction.category_id in self.category.filter(category_type="profit"):
+            if transaction.category_id in self.category.filter(category_type="2"):
                 if transaction.transaction_date.strftime(
                     "%Y-%m"
                 ) == previous_month.strftime("%Y-%m"):
@@ -81,7 +81,7 @@ class TodayMoney:
         previous_month: datetime = datetime.strptime(previous_month, "%Y-%m")
 
         for transaction in self.transactions:
-            if transaction.category_id in self.category.filter(category_type="cost"):
+            if transaction.category_id in self.category.filter(category_type="1"):
                 if transaction.transaction_date.strftime(
                     "%Y-%m"
                 ) == previous_month.strftime("%Y-%m"):
@@ -111,7 +111,7 @@ class TodayMoney:
         previous_month: datetime = datetime.strptime(previous_month, "%Y-%m")
 
         for transaction in self.transactions:
-            if transaction.category_id in self.category.filter(category_type="profit"):
+            if transaction.category_id in self.category.filter(category_type="2"):
                 if transaction.transaction_date.strftime(
                     "%Y-%m"
                 ) == previous_month.strftime(
