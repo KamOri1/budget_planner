@@ -9,6 +9,7 @@ from django.test import Client, TestCase
 from rest_framework.reverse import reverse_lazy
 
 from category.models import Category
+from transaction.models import Transaction
 
 
 class TestTransactionCreateView(TestCase):
@@ -44,8 +45,8 @@ class TestTransactionCreateView(TestCase):
         """Test create Transaction"""
 
         transaction = {
-            "user_id": self.user,
-            "category_id": self.category,
+            "user_id": self.user.id,
+            "category_id": self.category.id,
             "sum_amount": 433.33,
             "description": "something to test",
             "transaction_name": "Shopping",
@@ -53,4 +54,11 @@ class TestTransactionCreateView(TestCase):
         }
         response = self.client.post(self.index_url, transaction, force=True)
 
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(Transaction.objects.count(), 1)
+        self.assertEqual(Transaction.objects.last().transaction_name, "Shopping")
+        self.assertEqual(Transaction.objects.last().user_id, self.user)
+        self.assertEqual(Transaction.objects.last().category_id, self.category)
+        self.assertEqual(
+            Transaction.objects.last().transaction_date, self.transaction_date_value
+        )

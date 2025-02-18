@@ -5,7 +5,10 @@ from django_plotly_dash import DjangoDash
 
 from dashboard.utils.category_compare import CategoryCompare
 
-app_category_compare = DjangoDash("MonthlyCategoryCompare")
+app_category_compare = DjangoDash(
+    "MonthlyCategoryCompare",
+    external_scripts=["https://cdn.plot.ly/plotly-basic-2.18.2.min.js"],
+)
 
 app_category_compare.layout = html.Div(
     [
