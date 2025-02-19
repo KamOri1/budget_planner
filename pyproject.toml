@@ -28,6 +28,7 @@ dash-bootstrap-components = "^1.7.1"
 django-verify-email = "^3.0.3"
 six = "^1.17.0"
 dash = "^2.18"
+factory-boy = "^3.3.3"
 
 
 [build-system]

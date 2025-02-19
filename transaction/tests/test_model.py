@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 from django.contrib.auth.models import User
 from django.test import TestCase
 
-from category.models import Category
+from category.models import Category, CategoryType
 
 from ..models import Transaction
 
@@ -21,10 +21,11 @@ class TestModels(TestCase):
         self.user = User.objects.create_user(
             username="Test", password="password", email="test@gmail.com"
         )
+        self.categoryType = CategoryType.objects.create(type="profit")
         self.category = Category.objects.create(
             user_id=self.user,
             category_name="Salary",
-            category_type="profit",
+            category_type=self.categoryType,
         )
         self.transaction_date_value = datetime(
             2025, 2, 10, 11, 35, 10, tzinfo=timezone.utc

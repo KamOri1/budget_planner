@@ -20,6 +20,9 @@ class TestTransactionCreateView(TestCase):
     def setUp(self):
         """Set up test data."""
 
+        self.categoryType = CategoryType.objects.create(
+            type="profit",
+        )
         self.success_url = reverse_lazy("transaction-home")
         self.index_url = reverse_lazy("create_transaction")
         self.client = Client()
@@ -30,7 +33,7 @@ class TestTransactionCreateView(TestCase):
         self.category = Category.objects.create(
             user_id=self.user,
             category_name="Salary",
-            category_type="profit",
+            category_type=self.categoryType,
         )
         self.transaction_date_value = datetime(
             2025, 2, 10, 11, 35, 10, tzinfo=timezone.utc

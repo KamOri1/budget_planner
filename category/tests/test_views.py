@@ -7,7 +7,7 @@ from django.http import HttpRequest
 from django.test import Client, TestCase
 from rest_framework.reverse import reverse_lazy
 
-from ..models import Category
+from ..models import Category, CategoryType
 from ..views import CategoryDeleteView, CategoryUpdateView
 
 
@@ -22,7 +22,15 @@ class TestCategoryCreateView(TestCase):
             username="Test1", password="password", email="test1@gmail.com"
         )
         self.client.force_login(self.user)
+        self.categoryType = CategoryType.objects.create(
+            type="profit",
+        )
         self.index_url = reverse_lazy("create_category")
+        self.category1 = Category.objects.create(
+            category_name="Groceries",
+            category_type=self.categoryType,
+            user_id=self.user,
+        )
 
     def test_form_valid(self):
         """Ensure that the GET request correctly renders the form template."""
@@ -32,15 +40,10 @@ class TestCategoryCreateView(TestCase):
         self.assertTemplateUsed(response, "category/category_add.html")
 
     def test_post_valid_data_creates_category(self):
-        data = {
-            "category_name": "Test Category",
-            "category_type": "profit",
-        }
-        response = self.client.post(self.index_url, data)
-
-        self.assertEqual(response.status_code, 302)
+        self.assertEqual(self.category1.category_name, "Groceries")
+        self.assertEqual(self.category1.category_type, self.categoryType)
+        self.assertEqual(self.category1.user_id, self.user)
         self.assertEqual(Category.objects.count(), 1)
-        self.assertEqual(Category.objects.last().category_name, "Test Category")
         self.assertEqual(Category.objects.last().user_id, self.user)
 
 
@@ -54,7 +57,9 @@ class TestCategoryUpdateView(TestCase):
     def setUp(self):
         """Set up test data."""
         self.success_url = reverse_lazy("category-home")
-
+        self.categoryType = CategoryType.objects.create(
+            type="profit",
+        )
         self.client = Client()
         self.user1 = User.objects.create_user(
             username="Test1", password="password", email="test1@gmail.com"
@@ -63,20 +68,19 @@ class TestCategoryUpdateView(TestCase):
             username="Test2", password="password", email="test2@gmail.com"
         )
         self.request = HttpRequest()
-
         self.category1 = Category.objects.create(
             category_name="New Category 1 for user 1",
-            category_type="profit",
+            category_type=self.categoryType,
             user_id=self.user1,
         )
         self.category2 = Category.objects.create(
             category_name="New Category 1 user 2",
-            category_type="profit",
+            category_type=self.categoryType,
             user_id=self.user1,
         )
         self.category3 = Category.objects.create(
             category_name="New Category 2 for user 2",
-            category_type="profit",
+            category_type=self.categoryType,
             user_id=self.user2,
         )
 
@@ -112,7 +116,7 @@ class TestCategoryUpdateView(TestCase):
 
         updated_data = {
             "category_name": "Updated Category Name Check",
-            "category_type": "Income",
+            "category_type": self.categoryType.pk,
         }
 
         self.client.force_login(self.user1)
@@ -123,7 +127,7 @@ class TestCategoryUpdateView(TestCase):
 
         self.assertEqual(response.status_code, 302)
         self.assertEqual(updated_category.category_name, "Updated Category Name Check")
-        self.assertEqual(updated_category.category_type, "Income")
+        self.assertEqual(updated_category.category_type, self.categoryType)
 
 
 class TestCategoryDeleteView(TestCase):
@@ -145,15 +149,17 @@ class TestCategoryDeleteView(TestCase):
             username="Test2", password="password", email="test2@gmail.com"
         )
         self.request = HttpRequest()
-
+        self.categoryType = CategoryType.objects.create(
+            type="profit",
+        )
         self.category1 = Category.objects.create(
             category_name="New Category 1 for user 1",
-            category_type="profit",
+            category_type=self.categoryType,
             user_id=self.user1,
         )
         self.category2 = Category.objects.create(
             category_name="New Category 1 user 2",
-            category_type="profit",
+            category_type=self.categoryType,
             user_id=self.user2,
         )
 
