@@ -100,7 +100,7 @@ class TestTransactionUpdateView(TestCase):
         self.request = HttpRequest()
 
     def test_get_queryset(self):
-        """The test simulates user logging in and checks that only the categories he has added are available"""
+        """The test simulates user logging in and checks that only the transaction he has added are available"""
 
         self.request.user = self.user
         view = TransactionUpdateView()
@@ -113,3 +113,40 @@ class TestTransactionUpdateView(TestCase):
 
         for transaction in queryset:
             self.assertEqual(transaction.user_id, self.user)
+
+    def test_uses_correct_template_in_response(self):
+        """Ensure that the GET request correctly renders the form template."""
+
+        response = self.client.get(self.success_url, pk=self.user)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "transaction/transaction_home_page.html")
+
+    def test_update_category(self):
+        """Checks whether the selected transaction has been updated."""
+
+        transaction = Transaction.objects.create(
+            user_id=self.user,
+            category_id=self.category,
+            sum_amount=433.33,
+            description="something to test",
+            transaction_name="Shopping",
+            transaction_date=self.transaction_date_value,
+        )
+        updated_data = {
+            "user_id": self.user.id,
+            "category_id": self.category.id,
+            "sum_amount": 10.45,
+            "description": "Another description",
+            "transaction_name": "Shopping",
+            "transaction_date": self.transaction_date_value,
+        }
+
+        self.client.force_login(self.user)
+
+        update_url = reverse_lazy("update_transaction", args=[transaction.pk])
+        response = self.client.post(update_url, data=updated_data)
+        updated_transaction = Transaction.objects.get(pk=transaction.pk)
+
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(updated_transaction.description, "Another description")
+        self.assertEqual(updated_transaction.sum_amount, 10.45)
