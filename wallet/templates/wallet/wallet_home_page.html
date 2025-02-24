@@ -67,11 +67,6 @@
           </tr>
       {% endfor %}
     {% else %}
-        <p>No transaction to view</p>
-        <div class="col-md-6">
-             <button type="button" class="btn btn-secondary active" style="width: 100px">
-                <a href="{% url 'create_wallet' %}" style="color:#fff">Add new</a>
-             </button>
-        </div>
+        <p>No wallet to view</p>
     {% endif %}
 {% endblock tableData %}
