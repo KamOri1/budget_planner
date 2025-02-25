@@ -2,10 +2,10 @@
 Tests for views.
 """
 
-from django.contrib.auth.models import User
 from django.test import Client, TestCase
 from rest_framework.reverse import reverse_lazy
 
+from users.factories import RandomUserFactory
 from wallet.models import Wallet
 
 
@@ -18,9 +18,7 @@ class TestWalletCreateView(TestCase):
         self.success_url = reverse_lazy("wallet-home")
         self.index_url = reverse_lazy("create_wallet")
         self.client = Client()
-        self.user = User.objects.create_user(
-            username="Test1", password="password", email="test1@gmail.com"
-        )
+        self.user = RandomUserFactory()
         self.client.force_login(self.user)
 
     def test_form_valid(self):
