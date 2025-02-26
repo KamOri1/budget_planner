@@ -2,11 +2,13 @@
 Tests for views.
 """
 
-from django.contrib.auth.models import User
 from django.http import HttpRequest
 from django.test import Client, TestCase
 from rest_framework.reverse import reverse_lazy
 
+from users.factories import RandomUserFactory
+
+from ..factories import RandomCategoryFactory
 from ..models import Category, CategoryType
 from ..views import CategoryDeleteView, CategoryUpdateView
 
@@ -18,19 +20,23 @@ class TestCategoryCreateView(TestCase):
         """Set up test data.Including a logged-in user"""
 
         self.client = Client()
-        self.user = User.objects.create_user(
-            username="Test1", password="password", email="test1@gmail.com"
-        )
+        self.user = RandomUserFactory()
         self.client.force_login(self.user)
         self.categoryType = CategoryType.objects.create(
             type="profit",
         )
         self.index_url = reverse_lazy("create_category")
-        self.category1 = Category.objects.create(
-            category_name="Groceries",
-            category_type=self.categoryType,
+        self.category1 = RandomCategoryFactory(
             user_id=self.user,
+            category_type=self.categoryType,
+            category_name="Groceries",
         )
+        #     (
+        #     Category.objects.create(
+        #     category_name="Groceries",
+        #     category_type=self.categoryType,
+        #     user_id=self.user,
+        # ))
 
     def test_form_valid(self):
         """Ensure that the GET request correctly renders the form template."""
@@ -61,27 +67,17 @@ class TestCategoryUpdateView(TestCase):
             type="profit",
         )
         self.client = Client()
-        self.user1 = User.objects.create_user(
-            username="Test1", password="password", email="test1@gmail.com"
-        )
-        self.user2 = User.objects.create_user(
-            username="Test2", password="password", email="test2@gmail.com"
-        )
+        self.user1 = self.user = RandomUserFactory()
+        self.user2 = self.user = RandomUserFactory()
         self.request = HttpRequest()
-        self.category1 = Category.objects.create(
-            category_name="New Category 1 for user 1",
-            category_type=self.categoryType,
-            user_id=self.user1,
+        self.category1 = RandomCategoryFactory(
+            user_id=self.user1, category_type=self.categoryType
         )
-        self.category2 = Category.objects.create(
-            category_name="New Category 1 user 2",
-            category_type=self.categoryType,
-            user_id=self.user1,
+        self.category2 = RandomCategoryFactory(
+            user_id=self.user1, category_type=self.categoryType
         )
-        self.category3 = Category.objects.create(
-            category_name="New Category 2 for user 2",
-            category_type=self.categoryType,
-            user_id=self.user2,
+        self.category3 = RandomCategoryFactory(
+            user_id=self.user2, category_type=self.categoryType
         )
 
     def test_get_queryset(self):
@@ -142,25 +138,17 @@ class TestCategoryDeleteView(TestCase):
         self.success_url = reverse_lazy("category-home")
 
         self.client = Client()
-        self.user1 = User.objects.create_user(
-            username="Test1", password="password", email="test1@gmail.com"
-        )
-        self.user2 = User.objects.create_user(
-            username="Test2", password="password", email="test2@gmail.com"
-        )
+        self.user1 = self.user = RandomUserFactory()
+        self.user2 = self.user = RandomUserFactory()
         self.request = HttpRequest()
         self.categoryType = CategoryType.objects.create(
             type="profit",
         )
-        self.category1 = Category.objects.create(
-            category_name="New Category 1 for user 1",
-            category_type=self.categoryType,
-            user_id=self.user1,
+        self.category1 = RandomCategoryFactory(
+            user_id=self.user1, category_type=self.categoryType
         )
-        self.category2 = Category.objects.create(
-            category_name="New Category 1 user 2",
-            category_type=self.categoryType,
-            user_id=self.user2,
+        self.category2 = RandomCategoryFactory(
+            user_id=self.user2, category_type=self.categoryType
         )
 
     def test_get_queryset(self):
