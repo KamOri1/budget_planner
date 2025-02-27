@@ -3,14 +3,14 @@ Tests for views.
 """
 
 from django.http import HttpRequest
-from django.test import Client, TestCase
+from django.test import Client, RequestFactory, TestCase
 from rest_framework.reverse import reverse_lazy
 
 from users.factories import RandomUserFactory
 
 from ..factories import RandomCategoryFactory
 from ..models import Category, CategoryType
-from ..views import CategoryDeleteView, CategoryUpdateView
+from ..views import CategoryDeleteView, CategoryListView, CategoryUpdateView
 
 
 class TestCategoryCreateView(TestCase):
@@ -183,3 +183,59 @@ class TestCategoryDeleteView(TestCase):
             Category.objects.get(pk=self.category1.pk)
 
         self.assertEqual(Category.objects.filter(user_id=self.user1.id).count(), 0)
+
+
+class CategoryListViewTest(TestCase):
+    """
+    Test cases for the Category list view.
+    """
+
+    def setUp(self):
+        """
+        Set up test data.
+        """
+        self.factory = RequestFactory()
+        self.user = RandomUserFactory()
+        self.categoryType = CategoryType.objects.create(
+            type="profit",
+        )
+        self.category1 = RandomCategoryFactory(
+            user_id=self.user, category_type=self.categoryType
+        )
+        self.category2 = RandomCategoryFactory(
+            user_id=self.user, category_type=self.categoryType
+        )
+        self.category3 = RandomCategoryFactory(
+            user_id=self.user, category_type=self.categoryType
+        )
+        self.url = reverse_lazy("category-home")
+
+    def test_category_list_view_get(self):
+        """
+        test checking that the GET request correctly renders the form template
+        """
+        request = self.factory.get(self.url)
+        request.user = self.user
+        response = CategoryListView.as_view()(request)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("categories", response.context_data)
+        self.assertIn("form", response.context_data)
+        self.assertEqual(len(response.context_data["categories"]), 3)
+
+    def test_category_list_view_filter(self):
+        """
+        test verifies that the form correctly filters the data
+        """
+        request = self.factory.get(
+            self.url, {"category_name": self.category1.category_name}
+        )
+        request.user = self.user
+        response = CategoryListView.as_view()(request)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.context_data["categories"]), 1)
+        self.assertEqual(
+            response.context_data["categories"][0].category_name,
+            self.category1.category_name,
+        )
