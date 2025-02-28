@@ -11,7 +11,7 @@ def main_view(request):
     if request.user.is_authenticated:
         return redirect("/dashboard")
     else:
-        return redirect("/login")
+        return redirect("login")
 
 
 def dashboard(request):

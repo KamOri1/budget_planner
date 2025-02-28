@@ -9,9 +9,11 @@ RUN pip install --upgrade pip
 
 # run this command to install all dependencies
 #RUN pip install --no-cache-dir -r requirements.txt
+ENV PYTHONHTTPSVERIFY=0
 ENV POETRY_VIRTUALENVS_CREATE=false
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
+
 
 COPY pyproject.toml poetry.lock /app/
 RUN pip3 install poetry
