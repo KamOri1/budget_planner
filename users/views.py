@@ -63,14 +63,17 @@ class RegisterView(CreateView):
                 "uid": urlsafe_base64_encode(force_bytes(user.pk)),
                 "token": account_activation_token.make_token(user),
                 "protocol": "https" if self.request.is_secure() else "http",
+                # "protocol": "http",
             },
         )
         email = EmailMessage(mail_subject, message, to=[to_email])
         if email.send():
+            print(self.request)
             messages.success(
                 self.request, f"{user} Activate your email account. {to_email}"
             )
         else:
+            print(self.request)
             messages.error(
                 self.request,
                 f"Problem sending email to {to_email}, check if your typed it correctly",

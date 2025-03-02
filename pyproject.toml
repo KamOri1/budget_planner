@@ -29,6 +29,7 @@ django-verify-email = "^3.0.3"
 six = "^1.17.0"
 dash = "^2.18"
 factory-boy = "^3.3.3"
+certifi = "^2025.1.31"
 
 
 [build-system]
