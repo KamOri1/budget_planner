@@ -10,9 +10,11 @@ class CategoryType(models.Model):
 
 
 class Category(models.Model):
-    category_name = models.CharField(max_length=100)
-    category_type = models.ForeignKey(CategoryType, on_delete=models.PROTECT)
-    user_id = models.ForeignKey(
+    category_name = models.CharField(max_length=100)  # TODO category_name -> name
+    category_type = models.ForeignKey(
+        CategoryType, on_delete=models.PROTECT
+    )  # TODO cateogry_type -> type
+    user_id = models.ForeignKey(  # TODO user_id -> user
         User, on_delete=models.CASCADE, related_name="categories"
     )
 
