@@ -30,6 +30,7 @@ class TodayMoney:
 
         for transaction in self.transactions:
             if transaction.category_id in self.category.filter(category_type="1"):
+                print(self.category)
                 if transaction.transaction_date.strftime(
                     "%Y-%m"
                 ) == datetime.now().strftime("%Y-%m"):

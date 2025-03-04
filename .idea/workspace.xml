@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/category/tests/test_factories.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.dev" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/tests/test_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/tests/test_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/utils/today_money.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/utils/today_money.py" afterDir="false" />
     </list>
-    <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="">
-      <change beforePath="$PROJECT_DIR$/budget_planner/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget_planner/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/factories.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/factories.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/tests/test_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/tests/test_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/factories.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/factories.py" afterDir="false" />
-    </list>
+    <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="" />
     <list id="df12f125-9c31-4dd7-a15d-10586d317a47" name="Changes by vene" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,16 +39,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/category/tests/test_model.py">
-      <ranges>
-        <range start1="8" end1="9" start2="8" end2="8" changelist="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" />
-        <range start1="18" end1="21" start2="17" end2="17" changelist="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" />
-        <range start1="25" end1="26" start2="21" end2="22" changelist="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" />
-        <range start1="28" end1="33" start2="24" end2="25" changelist="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -340,7 +321,8 @@
       <workItem from="1740771190864" duration="919000" />
       <workItem from="1740773380359" duration="3821000" />
       <workItem from="1740866140411" duration="5095000" />
-      <workItem from="1740946249820" duration="13162000" />
+      <workItem from="1740946249820" duration="14147000" />
+      <workItem from="1741123147609" duration="2562000" />
     </task>
     <servers />
   </component>
