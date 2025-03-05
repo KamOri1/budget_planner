@@ -6,7 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/factories.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/factories.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/templates/category/category_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/category/templates/category/category_add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/templates/category/category_home_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/category/templates/category/category_home_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/templates/category/category_update_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/category/templates/category/category_update_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/tests/test_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/tests/test_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/tests/test_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/tests/test_views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/utils/category_compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/utils/category_compare.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/utils/today_money.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/utils/today_money.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard/utils/today_transactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/utils/today_transactions.py" afterDir="false" />
     </list>
     <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="" />
     <list id="df12f125-9c31-4dd7-a15d-10586d317a47" name="Changes by vene" comment="" />
@@ -322,7 +334,7 @@
       <workItem from="1740773380359" duration="3821000" />
       <workItem from="1740866140411" duration="5095000" />
       <workItem from="1740946249820" duration="14147000" />
-      <workItem from="1741123147609" duration="2562000" />
+      <workItem from="1741123147609" duration="6116000" />
     </task>
     <servers />
   </component>

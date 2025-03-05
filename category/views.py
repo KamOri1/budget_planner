@@ -8,7 +8,7 @@ from .models import Category
 
 class CategoryCreateView(CreateView):
     model = Category
-    fields = ["category_name", "category_type"]
+    fields = ["name", "type"]
     template_name = "category/category_add.html"
     success_url = "category-home"
 
@@ -31,7 +31,7 @@ class CategoryListView(ListView):
         self.filterset = CategoryFilter(self.request.GET, queryset=queryset)
 
         if not self.filterset.qs.query.order_by:
-            queryset = self.filterset.qs.order_by("-category_name")
+            queryset = self.filterset.qs.order_by("-name")
         else:
             queryset = self.filterset.qs
         return queryset
@@ -46,7 +46,7 @@ class CategoryListView(ListView):
 class CategoryUpdateView(UpdateView):
     model = Category
     form = UpdateCategoryForm
-    fields = ["category_name", "category_type"]
+    fields = ["name", "type"]
     template_name = "category/category_update_form.html"
     success_url = "category-home"
 

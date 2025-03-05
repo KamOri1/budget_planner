@@ -28,7 +28,7 @@ class CategoryCompare:
                         break
 
                 if not found:
-                    name = transaction.category_id.category_name
+                    name = transaction.category_id.name
                     self.category_values_list.append(
                         {
                             "name": name,

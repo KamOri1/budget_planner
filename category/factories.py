@@ -26,5 +26,5 @@ class CategoryFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Category
 
-    category_name = factory.LazyAttribute(lambda x: secrets.choice(CATEGORY_NAMES))
-    category_type = factory.SubFactory(CategoryTypeFactory)
+    name = factory.LazyAttribute(lambda x: secrets.choice(CATEGORY_NAMES))
+    type = factory.SubFactory(CategoryTypeFactory)

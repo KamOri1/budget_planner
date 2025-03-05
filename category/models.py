@@ -10,8 +10,8 @@ class CategoryType(models.Model):
 
 
 class Category(models.Model):
-    category_name = models.CharField(max_length=100)  # TODO category_name -> name
-    category_type = models.ForeignKey(
+    name = models.CharField(max_length=100)
+    type = models.ForeignKey(
         CategoryType, on_delete=models.PROTECT
     )  # TODO cateogry_type -> type
     user_id = models.ForeignKey(  # TODO user_id -> user
@@ -19,4 +19,4 @@ class Category(models.Model):
     )
 
     def __str__(self) -> str:
-        return self.category_name
+        return self.name

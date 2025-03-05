@@ -7,11 +7,11 @@ class CreateCategoryForm(forms.ModelForm):
 
     class Meta:
         model = Category
-        fields = ["category_name", "category_type"]
+        fields = ["name", "type"]
 
 
 class UpdateCategoryForm(forms.ModelForm):
 
     class Meta:
         model = Category
-        fields = ["category_name", "category_type"]
+        fields = ["name", "type"]

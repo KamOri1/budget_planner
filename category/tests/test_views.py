@@ -28,8 +28,8 @@ class TestCategoryCreateView(TestCase):
         self.index_url = reverse_lazy("create_category")
         self.category1 = RandomCategoryFactory(
             user_id=self.user,
-            category_type=self.categoryType,
-            category_name="Groceries",
+            type=self.categoryType,
+            name="Groceries",
         )
         #     (
         #     Category.objects.create(
@@ -46,8 +46,8 @@ class TestCategoryCreateView(TestCase):
         self.assertTemplateUsed(response, "category/category_add.html")
 
     def test_post_valid_data_creates_category(self):
-        self.assertEqual(self.category1.category_name, "Groceries")
-        self.assertEqual(self.category1.category_type, self.categoryType)
+        self.assertEqual(self.category1.name, "Groceries")
+        self.assertEqual(self.category1.type, self.categoryType)
         self.assertEqual(self.category1.user_id, self.user)
         self.assertEqual(Category.objects.count(), 1)
         self.assertEqual(Category.objects.last().user_id, self.user)
@@ -71,13 +71,13 @@ class TestCategoryUpdateView(TestCase):
         self.user2 = self.user = RandomUserFactory()
         self.request = HttpRequest()
         self.category1 = RandomCategoryFactory(
-            user_id=self.user1, category_type=self.categoryType
+            user_id=self.user1, type=self.categoryType
         )
         self.category2 = RandomCategoryFactory(
-            user_id=self.user1, category_type=self.categoryType
+            user_id=self.user1, type=self.categoryType
         )
         self.category3 = RandomCategoryFactory(
-            user_id=self.user2, category_type=self.categoryType
+            user_id=self.user2, type=self.categoryType
         )
 
     def test_get_queryset(self):
@@ -111,8 +111,8 @@ class TestCategoryUpdateView(TestCase):
         """Checks whether the selected category has been updated."""
 
         updated_data = {
-            "category_name": "Updated Category Name Check",
-            "category_type": self.categoryType.pk,
+            "name": "Updated Category Name Check",
+            "type": self.categoryType.pk,
         }
 
         self.client.force_login(self.user1)
@@ -122,8 +122,8 @@ class TestCategoryUpdateView(TestCase):
         updated_category = Category.objects.get(pk=self.category1.pk)
 
         self.assertEqual(response.status_code, 302)
-        self.assertEqual(updated_category.category_name, "Updated Category Name Check")
-        self.assertEqual(updated_category.category_type, self.categoryType)
+        self.assertEqual(updated_category.name, "Updated Category Name Check")
+        self.assertEqual(updated_category.type, self.categoryType)
 
 
 class TestCategoryDeleteView(TestCase):
@@ -145,10 +145,10 @@ class TestCategoryDeleteView(TestCase):
             type="profit",
         )
         self.category1 = RandomCategoryFactory(
-            user_id=self.user1, category_type=self.categoryType
+            user_id=self.user1, type=self.categoryType
         )
         self.category2 = RandomCategoryFactory(
-            user_id=self.user2, category_type=self.categoryType
+            user_id=self.user2, type=self.categoryType
         )
 
     def test_get_queryset(self):
@@ -200,13 +200,13 @@ class CategoryListViewTest(TestCase):
             type="profit",
         )
         self.category1 = RandomCategoryFactory(
-            user_id=self.user, category_type=self.categoryType
+            user_id=self.user, type=self.categoryType
         )
         self.category2 = RandomCategoryFactory(
-            user_id=self.user, category_type=self.categoryType
+            user_id=self.user, type=self.categoryType
         )
         self.category3 = RandomCategoryFactory(
-            user_id=self.user, category_type=self.categoryType
+            user_id=self.user, type=self.categoryType
         )
         self.url = reverse_lazy("category-home")
 
@@ -227,15 +227,13 @@ class CategoryListViewTest(TestCase):
         """
         test verifies that the form correctly filters the data
         """
-        request = self.factory.get(
-            self.url, {"category_name": self.category1.category_name}
-        )
+        request = self.factory.get(self.url, {"category_name": self.category1.name})
         request.user = self.user
         response = CategoryListView.as_view()(request)
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(response.context_data["categories"]), 1)
         self.assertEqual(
-            response.context_data["categories"][0].category_name,
-            self.category1.category_name,
+            response.context_data["categories"][0].name,
+            self.category1.name,
         )
