@@ -12,7 +12,7 @@ CATEGORY_NAMES = [
     "car",
 ]
 
-CATEGORY_TYPES = ["profit", "cost"]
+CATEGORY_TYPES = ["1", "2"]
 
 
 class CategoryTypeFactory(factory.django.DjangoModelFactory):

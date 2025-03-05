@@ -8,7 +8,7 @@ from rest_framework.reverse import reverse_lazy
 
 from users.factories import RandomUserFactory
 
-from ..factories import RandomCategoryFactory
+from ..factories import CategoryFactory
 from ..models import Category, CategoryType
 from ..views import CategoryDeleteView, CategoryListView, CategoryUpdateView
 
@@ -26,17 +26,11 @@ class TestCategoryCreateView(TestCase):
             type="profit",
         )
         self.index_url = reverse_lazy("create_category")
-        self.category1 = RandomCategoryFactory(
+        self.category1 = CategoryFactory(
             user_id=self.user,
             type=self.categoryType,
             name="Groceries",
         )
-        #     (
-        #     Category.objects.create(
-        #     category_name="Groceries",
-        #     category_type=self.categoryType,
-        #     user_id=self.user,
-        # ))
 
     def test_form_valid(self):
         """Ensure that the GET request correctly renders the form template."""
@@ -70,15 +64,9 @@ class TestCategoryUpdateView(TestCase):
         self.user1 = self.user = RandomUserFactory()
         self.user2 = self.user = RandomUserFactory()
         self.request = HttpRequest()
-        self.category1 = RandomCategoryFactory(
-            user_id=self.user1, type=self.categoryType
-        )
-        self.category2 = RandomCategoryFactory(
-            user_id=self.user1, type=self.categoryType
-        )
-        self.category3 = RandomCategoryFactory(
-            user_id=self.user2, type=self.categoryType
-        )
+        self.category1 = CategoryFactory(user_id=self.user1, type=self.categoryType)
+        self.category2 = CategoryFactory(user_id=self.user1, type=self.categoryType)
+        self.category3 = CategoryFactory(user_id=self.user2, type=self.categoryType)
 
     def test_get_queryset(self):
         """The test simulates user logging in and checks that only the categories he has added are available"""
@@ -144,12 +132,8 @@ class TestCategoryDeleteView(TestCase):
         self.categoryType = CategoryType.objects.create(
             type="profit",
         )
-        self.category1 = RandomCategoryFactory(
-            user_id=self.user1, type=self.categoryType
-        )
-        self.category2 = RandomCategoryFactory(
-            user_id=self.user2, type=self.categoryType
-        )
+        self.category1 = CategoryFactory(user_id=self.user1, type=self.categoryType)
+        self.category2 = CategoryFactory(user_id=self.user2, type=self.categoryType)
 
     def test_get_queryset(self):
         """The test simulates user logging in and checks that only the categories he has added are available"""
@@ -197,17 +181,11 @@ class CategoryListViewTest(TestCase):
         self.factory = RequestFactory()
         self.user = RandomUserFactory()
         self.categoryType = CategoryType.objects.create(
-            type="profit",
+            type="1",
         )
-        self.category1 = RandomCategoryFactory(
-            user_id=self.user, type=self.categoryType
-        )
-        self.category2 = RandomCategoryFactory(
-            user_id=self.user, type=self.categoryType
-        )
-        self.category3 = RandomCategoryFactory(
-            user_id=self.user, type=self.categoryType
-        )
+        self.category1 = CategoryFactory(user_id=self.user, type=self.categoryType)
+        self.category2 = CategoryFactory(user_id=self.user, type=self.categoryType)
+        self.category3 = CategoryFactory(user_id=self.user, type=self.categoryType)
         self.url = reverse_lazy("category-home")
 
     def test_category_list_view_get(self):
@@ -227,7 +205,7 @@ class CategoryListViewTest(TestCase):
         """
         test verifies that the form correctly filters the data
         """
-        request = self.factory.get(self.url, {"category_name": self.category1.name})
+        request = self.factory.get(self.url, {"name": self.category1.name})
         request.user = self.user
         response = CategoryListView.as_view()(request)
 

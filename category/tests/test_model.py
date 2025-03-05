@@ -15,13 +15,11 @@ class TestModels(TestCase):
     def setUp(self):
         """Set up test data."""
         self.user = RandomUserFactory()
-        self.categoryType = CategoryType.objects.create(type="profit")
+        self.categoryType = CategoryType.objects.create(type="1")
 
     def test_model_Category(self):
         """Test create category"""
-        category = CategoryType(
-            user_id=self.user, type=self.categoryType, name="Salary"
-        )
+        category = Category(user_id=self.user, type=self.categoryType, name="Salary")
 
         self.assertEqual(str(category.user_id), self.user.username)
         self.assertEqual(str(category), "Salary")

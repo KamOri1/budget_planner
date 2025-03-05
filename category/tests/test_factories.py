@@ -1,19 +1,21 @@
 from django.test import TestCase
 
+from users.factories import RandomUserFactory
+
 from ..factories import CategoryFactory
 from ..models import Category, CategoryType
 
 
 class TestCategoryFactory(TestCase):
     def test_single_object_create(self):
-        category = CategoryFactory.create()
+        category = CategoryFactory.create(user_id=RandomUserFactory())
 
         self.assertTrue(isinstance(category, Category))
         self.assertEqual(1, Category.objects.count())
         self.assertEqual(1, CategoryType.objects.count())
 
     def test_batch_object_create(self):
-        categories = CategoryFactory.create_batch(5)
+        categories = CategoryFactory.create_batch(5, user_id=RandomUserFactory())
 
         self.assertEqual(5, len(categories))
         self.assertEqual(5, Category.objects.count())
