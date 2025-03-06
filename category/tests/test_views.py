@@ -42,9 +42,9 @@ class TestCategoryCreateView(TestCase):
     def test_post_valid_data_creates_category(self):
         self.assertEqual(self.category1.name, "Groceries")
         self.assertEqual(self.category1.type, self.categoryType)
-        self.assertEqual(self.category1.user_id, self.user)
+        self.assertEqual(self.category1.user, self.user)
         self.assertEqual(Category.objects.count(), 1)
-        self.assertEqual(Category.objects.last().user_id, self.user)
+        self.assertEqual(Category.objects.last().user, self.user)
 
 
 class TestCategoryUpdateView(TestCase):
@@ -85,7 +85,7 @@ class TestCategoryUpdateView(TestCase):
             self.assertEqual(queryset.count(), expected_count)
 
             for category in queryset:
-                self.assertEqual(category.user_id, user)
+                self.assertEqual(category.user, user)
 
     def test_uses_correct_template_in_response(self):
         """Ensure that the GET request correctly renders the form template."""
@@ -152,7 +152,7 @@ class TestCategoryDeleteView(TestCase):
             self.assertEqual(queryset.count(), expected_count)
 
             for category in queryset:
-                self.assertEqual(category.user_id, user)
+                self.assertEqual(category.user, user)
 
     def test_delete_category(self):
         """Checks whether the selected category has been deleted."""

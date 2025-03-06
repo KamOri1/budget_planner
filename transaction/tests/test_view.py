@@ -112,7 +112,7 @@ class TestTransactionUpdateView(TestCase):
         self.assertEqual(queryset.count(), expected_count)
 
         for transaction in queryset:
-            self.assertEqual(transaction.user_id, self.user)
+            self.assertEqual(transaction.user, self.user)
 
     def test_uses_correct_template_in_response(self):
         """Ensure that the GET request correctly renders the form template."""
@@ -203,7 +203,7 @@ class TestCategoryDeleteView(TestCase):
         self.assertEqual(queryset.count(), expected_count)
 
         for transaction in queryset:
-            self.assertEqual(transaction.user_id, self.user)
+            self.assertEqual(transaction.user, self.user)
 
     def test_delete_transaction(self):
         """Checks whether the selected transaction has been deleted."""

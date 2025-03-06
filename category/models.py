@@ -14,9 +14,7 @@ class Category(models.Model):
     type = models.ForeignKey(
         CategoryType, on_delete=models.PROTECT
     )  # TODO cateogry_type -> type
-    user_id = models.ForeignKey(  # TODO user_id -> user
-        User, on_delete=models.CASCADE, related_name="categories"
-    )
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="categories")
 
     def __str__(self) -> str:
         return self.name

@@ -21,7 +21,7 @@ class TestModels(TestCase):
         """Test create category"""
         category = Category(user_id=self.user, type=self.categoryType, name="Salary")
 
-        self.assertEqual(str(category.user_id), self.user.username)
+        self.assertEqual(str(category.user), self.user.username)
         self.assertEqual(str(category), "Salary")
         self.assertEqual(str(category.type), self.categoryType.type)
         self.assertTrue(isinstance(category, Category))
