@@ -27,7 +27,7 @@ class TestCategoryCreateView(TestCase):
         )
         self.index_url = reverse_lazy("create_category")
         self.category1 = CategoryFactory(
-            user_id=self.user,
+            user=self.user,
             type=self.categoryType,
             name="Groceries",
         )
@@ -58,15 +58,15 @@ class TestCategoryUpdateView(TestCase):
         """Set up test data."""
         self.success_url = reverse_lazy("category-home")
         self.categoryType = CategoryType.objects.create(
-            type="profit",
+            type="1",
         )
         self.client = Client()
         self.user1 = self.user = RandomUserFactory()
         self.user2 = self.user = RandomUserFactory()
         self.request = HttpRequest()
-        self.category1 = CategoryFactory(user_id=self.user1, type=self.categoryType)
-        self.category2 = CategoryFactory(user_id=self.user1, type=self.categoryType)
-        self.category3 = CategoryFactory(user_id=self.user2, type=self.categoryType)
+        self.category1 = CategoryFactory(user=self.user1, type=self.categoryType)
+        self.category2 = CategoryFactory(user=self.user1, type=self.categoryType)
+        self.category3 = CategoryFactory(user=self.user2, type=self.categoryType)
 
     def test_get_queryset(self):
         """The test simulates user logging in and checks that only the categories he has added are available"""
@@ -80,7 +80,7 @@ class TestCategoryUpdateView(TestCase):
             view.request = self.request
             queryset = view.get_queryset()
 
-            expected_count = Category.objects.filter(user_id=user).count()
+            expected_count = Category.objects.filter(user=user).count()
 
             self.assertEqual(queryset.count(), expected_count)
 
@@ -132,8 +132,8 @@ class TestCategoryDeleteView(TestCase):
         self.categoryType = CategoryType.objects.create(
             type="profit",
         )
-        self.category1 = CategoryFactory(user_id=self.user1, type=self.categoryType)
-        self.category2 = CategoryFactory(user_id=self.user2, type=self.categoryType)
+        self.category1 = CategoryFactory(user=self.user1, type=self.categoryType)
+        self.category2 = CategoryFactory(user=self.user2, type=self.categoryType)
 
     def test_get_queryset(self):
         """The test simulates user logging in and checks that only the categories he has added are available"""
@@ -147,7 +147,7 @@ class TestCategoryDeleteView(TestCase):
             view.request = self.request
             queryset = view.get_queryset()
 
-            expected_count = Category.objects.filter(user_id=user).count()
+            expected_count = Category.objects.filter(user=user).count()
 
             self.assertEqual(queryset.count(), expected_count)
 
@@ -166,7 +166,7 @@ class TestCategoryDeleteView(TestCase):
         with self.assertRaises(Category.DoesNotExist):
             Category.objects.get(pk=self.category1.pk)
 
-        self.assertEqual(Category.objects.filter(user_id=self.user1.id).count(), 0)
+        self.assertEqual(Category.objects.filter(user=self.user1.id).count(), 0)
 
 
 class CategoryListViewTest(TestCase):
@@ -183,9 +183,9 @@ class CategoryListViewTest(TestCase):
         self.categoryType = CategoryType.objects.create(
             type="1",
         )
-        self.category1 = CategoryFactory(user_id=self.user, type=self.categoryType)
-        self.category2 = CategoryFactory(user_id=self.user, type=self.categoryType)
-        self.category3 = CategoryFactory(user_id=self.user, type=self.categoryType)
+        self.category1 = CategoryFactory(user=self.user, type=self.categoryType)
+        self.category2 = CategoryFactory(user=self.user, type=self.categoryType)
+        self.category3 = CategoryFactory(user=self.user, type=self.categoryType)
         self.url = reverse_lazy("category-home")
 
     def test_category_list_view_get(self):

@@ -19,7 +19,7 @@ class TestModels(TestCase):
 
     def test_model_Category(self):
         """Test create category"""
-        category = Category(user_id=self.user, type=self.categoryType, name="Salary")
+        category = Category(user=self.user, type=self.categoryType, name="Salary")
 
         self.assertEqual(str(category.user), self.user.username)
         self.assertEqual(str(category), "Salary")

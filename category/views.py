@@ -39,7 +39,7 @@ class CategoryListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["form"] = self.filterset.form
-        if Category.objects.filter(user_id=self.request.user):
+        if Category.objects.filter(user=self.request.user):
             return context
 
 
@@ -51,7 +51,7 @@ class CategoryUpdateView(UpdateView):
     success_url = "category-home"
 
     def get_queryset(self):
-        return Category.objects.filter(user_id_id=self.request.user)
+        return Category.objects.filter(user_id=self.request.user)
 
     def form_valid(self, form):
         form.save()
@@ -65,7 +65,7 @@ class CategoryDeleteView(DeleteView):
     success_url = "category-home"
 
     def get_queryset(self):
-        return Category.objects.filter(user_id_id=self.request.user)
+        return Category.objects.filter(user_id=self.request.user)
 
     def form_valid(self, form):
         self.object.delete()

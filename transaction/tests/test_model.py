@@ -21,11 +21,11 @@ class TestModels(TestCase):
         self.user = User.objects.create_user(
             username="Test", password="password", email="test@gmail.com"
         )
-        self.categoryType = CategoryType.objects.create(type="profit")
+        self.categoryType = CategoryType.objects.create(type="1")
         self.category = Category.objects.create(
-            user_id=self.user,
-            category_name="Salary",
-            category_type=self.categoryType,
+            user=self.user,
+            name="Salary",
+            type=self.categoryType,
         )
         self.transaction_date_value = datetime(
             2025, 2, 10, 11, 35, 10, tzinfo=timezone.utc

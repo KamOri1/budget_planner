@@ -31,9 +31,9 @@ class TestTransactionCreateView(TestCase):
         )
         self.client.force_login(self.user)
         self.category = Category.objects.create(
-            user_id=self.user,
-            category_name="Salary",
-            category_type=self.categoryType,
+            user=self.user,
+            name="Salary",
+            type=self.categoryType,
         )
         self.transaction_date_value = datetime(
             2025, 2, 10, 11, 35, 10, tzinfo=timezone.utc
@@ -89,9 +89,9 @@ class TestTransactionUpdateView(TestCase):
         )
         self.client.force_login(self.user)
         self.category = Category.objects.create(
-            user_id=self.user,
-            category_name="test",
-            category_type=self.categoryType,
+            user=self.user,
+            name="test",
+            type=self.categoryType,
         )
         self.transaction_date_value = datetime(
             2025, 2, 10, 11, 35, 10, tzinfo=timezone.utc
@@ -162,7 +162,7 @@ class TestCategoryDeleteView(TestCase):
     def setUp(self):
         """Set up test data."""
         self.categoryType = CategoryType.objects.create(
-            type="profit",
+            type="1",
         )
         self.success_url = reverse_lazy("transaction-home")
         self.index_url = reverse_lazy("create_transaction")
@@ -172,9 +172,9 @@ class TestCategoryDeleteView(TestCase):
         )
         self.client.force_login(self.user)
         self.category = Category.objects.create(
-            user_id=self.user,
-            category_name="test",
-            category_type=self.categoryType,
+            user=self.user,
+            name="test",
+            type=self.categoryType,
         )
         self.transaction_date_value = datetime(
             2025, 2, 10, 11, 35, 10, tzinfo=timezone.utc
@@ -203,7 +203,7 @@ class TestCategoryDeleteView(TestCase):
         self.assertEqual(queryset.count(), expected_count)
 
         for transaction in queryset:
-            self.assertEqual(transaction.user, self.user)
+            self.assertEqual(transaction.user_id, self.user)
 
     def test_delete_transaction(self):
         """Checks whether the selected transaction has been deleted."""

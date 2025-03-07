@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/category/tests/test_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/tests/test_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/category/tests/test_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/tests/test_views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction/tests/test_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/transaction/tests/test_view.py" afterDir="false" />
     </list>
     <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="" />
     <list id="df12f125-9c31-4dd7-a15d-10586d317a47" name="Changes by vene" comment="" />
@@ -139,7 +137,28 @@
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Django tests.Test: category.tests.test_views.CategoryListViewTest">
+  <component name="RunManager" selected="Django tests.Test: category.tests.test_views.TestCategoryUpdateView.test_get_queryset">
+    <configuration name="Test: category.tests.test_model.TestModels.test_model_Category" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="budget_planner" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="category.tests.test_model.TestModels.test_model_Category" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Test: category.tests.test_views.CategoryListViewTest" type="DjangoTestsConfigurationType" temporary="true">
       <module name="budget_planner" />
       <option name="ENV_FILES" value="" />
@@ -161,7 +180,7 @@
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: category.tests.test_views.CategoryListViewTest.test_category_list_view_filter" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: category.tests.test_views.TestCategoryCreateView" type="DjangoTestsConfigurationType" temporary="true">
       <module name="budget_planner" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -175,49 +194,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="category.tests.test_views.CategoryListViewTest.test_category_list_view_filter" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test: category.tests.test_views.CategoryListViewTest.test_category_list_view_get" type="DjangoTestsConfigurationType" temporary="true">
-      <module name="budget_planner" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="category.tests.test_views.CategoryListViewTest.test_category_list_view_get" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test: category.tests.test_views.TestCategoryDeleteView" type="DjangoTestsConfigurationType" temporary="true">
-      <module name="budget_planner" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="category.tests.test_views.TestCategoryDeleteView" />
+      <option name="TARGET" value="category.tests.test_views.TestCategoryCreateView" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
@@ -239,6 +216,27 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="TARGET" value="category.tests.test_views.TestCategoryUpdateView" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: category.tests.test_views.TestCategoryUpdateView.test_get_queryset" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="budget_planner" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="category.tests.test_views.TestCategoryUpdateView.test_get_queryset" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
@@ -272,11 +270,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Django tests.Test: category.tests.test_views.CategoryListViewTest" />
-        <item itemvalue="Django tests.Test: category.tests.test_views.CategoryListViewTest.test_category_list_view_get" />
-        <item itemvalue="Django tests.Test: category.tests.test_views.CategoryListViewTest.test_category_list_view_filter" />
-        <item itemvalue="Django tests.Test: category.tests.test_views.TestCategoryDeleteView" />
+        <item itemvalue="Django tests.Test: category.tests.test_views.TestCategoryUpdateView.test_get_queryset" />
         <item itemvalue="Django tests.Test: category.tests.test_views.TestCategoryUpdateView" />
+        <item itemvalue="Django tests.Test: category.tests.test_views.TestCategoryCreateView" />
+        <item itemvalue="Django tests.Test: category.tests.test_model.TestModels.test_model_Category" />
+        <item itemvalue="Django tests.Test: category.tests.test_views.CategoryListViewTest" />
       </list>
     </recent_temporary>
   </component>
@@ -328,7 +326,8 @@
       <workItem from="1740866140411" duration="5095000" />
       <workItem from="1740946249820" duration="14147000" />
       <workItem from="1741123147609" duration="7857000" />
-      <workItem from="1741296310227" duration="308000" />
+      <workItem from="1741296310227" duration="832000" />
+      <workItem from="1741379057615" duration="1499000" />
     </task>
     <servers />
   </component>
