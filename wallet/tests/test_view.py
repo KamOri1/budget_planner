@@ -32,14 +32,14 @@ class TestWalletCreateView(TestCase):
         """Test create Wallet"""
 
         wallet = {
-            "user_id": self.user.id,
-            "wallet_name": "smart wallet",
+            "user": self.user,
+            "name": "smart wallet",
             "portfolio_value": 433,
         }
         response = self.client.post(self.index_url, wallet, force=True)
 
         self.assertEqual(response.status_code, 302)
         self.assertEqual(Wallet.objects.count(), 1)
-        self.assertEqual(Wallet.objects.last().wallet_name, "smart wallet")
-        self.assertEqual(Wallet.objects.last().user_id, self.user)
+        self.assertEqual(Wallet.objects.last().name, "smart wallet")
+        self.assertEqual(Wallet.objects.last().user, self.user)
         self.assertEqual(Wallet.objects.last().portfolio_value, 433)

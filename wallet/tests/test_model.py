@@ -28,11 +28,11 @@ class TestModels(TestCase):
         """Test create Wallet"""
 
         wallet = Wallet.objects.create(
-            user_id=self.user,
-            wallet_name="Test1",
+            user=self.user,
+            name="Test1",
             portfolio_value=12330,
         )
-        self.assertEqual(str(wallet.user_id), self.user.username)
-        self.assertEqual(wallet.wallet_name, "Test1")
+        self.assertEqual(str(wallet.user), self.user.username)
+        self.assertEqual(wallet.name, "Test1")
         self.assertEqual(wallet.portfolio_value, 12330)
         self.assertTrue(isinstance(wallet, Wallet))

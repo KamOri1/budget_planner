@@ -9,8 +9,8 @@
     <form role="form" method="POST" style="width:30%" action = {{ create_wallet }}>
         {% csrf_token %}
         <div class="input-group input-group-outline mb-3" style="display:grid">
-            {{ form.wallet_name.label }}
-           {{ form.wallet_name }}
+            {{ form.name.label }}
+           {{ form.name }}
         </div>
         <div class="input-group input-group-outline mb-3" style="display:grid">
             {{ form.portfolio_value.label }}

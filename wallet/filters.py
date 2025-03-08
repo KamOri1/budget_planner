@@ -11,4 +11,4 @@ class WalletFilter(django_filters.FilterSet):
 
     class Meta:
         model = Wallet
-        fields = ["wallet_name", "portfolio_value"]
+        fields = ["name", "portfolio_value"]

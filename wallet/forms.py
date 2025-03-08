@@ -7,11 +7,11 @@ class CreateWalletForm(forms.ModelForm):
 
     class Meta:
         model = Wallet
-        fields = ["wallet_name", "portfolio_value"]
+        fields = ["name", "portfolio_value"]
 
 
 class UpdateWalletForm(forms.ModelForm):
 
     class Meta:
         model = Wallet
-        fields = ["wallet_name", "portfolio_value"]
+        fields = ["name", "portfolio_value"]
