@@ -50,8 +50,8 @@ class TestTransactionCreateView(TestCase):
         """Test create Transaction"""
 
         transaction = {
-            "user_id": self.user.id,
-            "category_id": self.category.id,
+            "user": self.user.id,
+            "category": self.category.id,
             "sum_amount": 433.33,
             "description": "something to test",
             "transaction_name": "Shopping",
@@ -62,8 +62,8 @@ class TestTransactionCreateView(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertEqual(Transaction.objects.count(), 1)
         self.assertEqual(Transaction.objects.last().transaction_name, "Shopping")
-        self.assertEqual(Transaction.objects.last().user_id, self.user)
-        self.assertEqual(Transaction.objects.last().category_id, self.category)
+        self.assertEqual(Transaction.objects.last().user, self.user)
+        self.assertEqual(Transaction.objects.last().category, self.category)
         self.assertEqual(
             Transaction.objects.last().transaction_date, self.transaction_date_value
         )
@@ -107,7 +107,7 @@ class TestTransactionUpdateView(TestCase):
         view.request = self.request
         queryset = view.get_queryset()
 
-        expected_count = Transaction.objects.filter(user_id=self.user).count()
+        expected_count = Transaction.objects.filter(user=self.user).count()
 
         self.assertEqual(queryset.count(), expected_count)
 
@@ -125,16 +125,16 @@ class TestTransactionUpdateView(TestCase):
         """Checks whether the selected transaction has been updated."""
 
         transaction = Transaction.objects.create(
-            user_id=self.user,
-            category_id=self.category,
+            user=self.user,
+            category=self.category,
             sum_amount=433.33,
             description="something to test",
             transaction_name="Shopping",
             transaction_date=self.transaction_date_value,
         )
         updated_data = {
-            "user_id": self.user.id,
-            "category_id": self.category.id,
+            "user": self.user.id,
+            "category": self.category.id,
             "sum_amount": 10.45,
             "description": "Another description",
             "transaction_name": "Shopping",
@@ -181,8 +181,8 @@ class TestCategoryDeleteView(TestCase):
         )
 
         self.transaction = Transaction.objects.create(
-            user_id=self.user,
-            category_id=self.category,
+            user=self.user,
+            category=self.category,
             sum_amount=433.33,
             description="something to test",
             transaction_name="Shopping",
@@ -198,12 +198,12 @@ class TestCategoryDeleteView(TestCase):
         view.request = self.request
         queryset = view.get_queryset()
 
-        expected_count = Transaction.objects.filter(user_id=self.user).count()
+        expected_count = Transaction.objects.filter(user=self.user).count()
 
         self.assertEqual(queryset.count(), expected_count)
 
         for transaction in queryset:
-            self.assertEqual(transaction.user_id, self.user)
+            self.assertEqual(transaction.user, self.user)
 
     def test_delete_transaction(self):
         """Checks whether the selected transaction has been deleted."""
@@ -217,4 +217,4 @@ class TestCategoryDeleteView(TestCase):
         with self.assertRaises(Transaction.DoesNotExist):
             Transaction.objects.get(pk=self.transaction.pk)
 
-        self.assertEqual(Transaction.objects.filter(user_id=self.user.id).count(), 0)
+        self.assertEqual(Transaction.objects.filter(user=self.user.id).count(), 0)

@@ -22,13 +22,13 @@ class CategoryCompare:
                 found = False
 
                 for category_item in self.category_values_list:
-                    if category_item["name"] == transaction.category_id:
+                    if category_item["name"] == transaction.category:
                         category_item["value"] += transaction.sum_amount
                         found = True
                         break
 
                 if not found:
-                    name = transaction.category_id.name
+                    name = transaction.category.name
                     self.category_values_list.append(
                         {
                             "name": name,

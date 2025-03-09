@@ -24,7 +24,7 @@ class TodayTransactions:
                     if transaction_item["name"] == transaction.transaction_name:
                         transaction_item["value"] += transaction.sum_amount
 
-                if transaction.category_id in self.category.filter(type="1"):
+                if transaction.category in self.category.filter(type="1"):
                     category_type = "1"
                 else:
                     category_type = "2"

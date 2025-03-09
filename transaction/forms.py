@@ -10,7 +10,7 @@ class CreateTransactionForm(forms.ModelForm):
         fields = [
             "transaction_name",
             "transaction_date",
-            "category_id",
+            "category",
             "sum_amount",
             "description",
         ]
@@ -26,7 +26,7 @@ class UpdateTransactionForm(forms.ModelForm):
         fields = [
             "transaction_name",
             "transaction_date",
-            "category_id",
+            "category",
             "sum_amount",
             "description",
         ]

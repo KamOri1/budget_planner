@@ -15,7 +15,7 @@ class TransactionCreateView(CreateView):
 
     def form_valid(self, form):
         transaction = form.save(commit=False)
-        transaction.user_id_id = self.request.user.id
+        transaction.user_id = self.request.user.id
         form.save()
 
         return super().form_valid(form)
@@ -40,7 +40,7 @@ class TransactionListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["form"] = self.filterset.form
-        if Transaction.objects.filter(user_id=self.request.user):
+        if Transaction.objects.filter(user=self.request.user):
             return context
 
 
@@ -51,7 +51,7 @@ class TransactionUpdateView(UpdateView):
     success_url = "transaction-home"
 
     def get_queryset(self):
-        return Transaction.objects.filter(user_id_id=self.request.user)
+        return Transaction.objects.filter(user_id=self.request.user)
 
     def form_valid(self, form):
         form.save()
@@ -65,7 +65,7 @@ class TransactionDeleteView(DeleteView):
     success_url = reverse_lazy("transaction-home")
 
     def get_queryset(self):
-        return Transaction.objects.filter(user_id_id=self.request.user)
+        return Transaction.objects.filter(user_id=self.request.user)
 
     def form_valid(self, form):
         self.object.delete()

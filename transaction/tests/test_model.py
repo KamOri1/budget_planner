@@ -35,14 +35,14 @@ class TestModels(TestCase):
         """Test create Transaction"""
 
         transaction = Transaction.objects.create(
-            user_id=self.user,
-            category_id=self.category,
+            user=self.user,
+            category=self.category,
             sum_amount=433.33,
             description="something to test",
             transaction_name="Shopping",
             transaction_date=self.transaction_date_value,
         )
-        self.assertEqual(str(transaction.user_id), self.user.username)
+        self.assertEqual(str(transaction.user), self.user.username)
         self.assertIsNotNone(transaction.create_at)
         self.assertEqual(transaction.transaction_date, self.transaction_date_value)
         self.assertEqual(str(transaction), "Shopping")

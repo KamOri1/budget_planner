@@ -5,8 +5,8 @@ from category.models import Category
 
 
 class Transaction(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     sum_amount = models.FloatField()
     description = models.TextField()
     transaction_name = models.CharField(default="", max_length=100)
