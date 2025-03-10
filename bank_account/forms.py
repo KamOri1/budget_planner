@@ -25,7 +25,7 @@ class CreateAccountForm(forms.Form):
 
     class Meta:
         model = BankAccount
-        fields = ["account_name", "account_number", "sum_of_funds"]
+        fields = ["name", "number", "sum_of_funds"]
 
 
 class UpdateAccountForm(forms.Form):
@@ -50,4 +50,4 @@ class UpdateAccountForm(forms.Form):
 
     class Meta:
         model = BankAccount
-        fields = ["account_name", "account_number", "sum_of_funds"]
+        fields = ["name", "number", "sum_of_funds"]

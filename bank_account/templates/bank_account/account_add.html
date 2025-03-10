@@ -9,12 +9,12 @@
     <form role="form" method="POST" style="width:30%" action = {{ create_account }}>
         {% csrf_token %}
         <div class="input-group input-group-outline mb-3" style="display:grid">
-            {{ form.account_name.label }}
-            {{ form.account_name }}
+            {{ form.name.label }}
+            {{ form.name }}
         </div>
         <div class="input-group input-group-outline mb-3" style="display:grid">
-            {{ form.account_number.label }}
-            {{ form.account_number }}
+            {{ form.number.label }}
+            {{ form.number }}
         </div>
         <div class="input-group input-group-outline mb-3" style="display:grid">
             {{ form.sum_of_funds.label }}

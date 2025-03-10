@@ -18,8 +18,8 @@
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="border: 1px black solid">
             <form method="get" >
                 <div style="display:inline-grid; grid-template-columns: auto auto auto auto; column-gap:10px; padding:0 1rem 0 1rem; width:100%">
-                    <div><div>Name</div><div> {{ form.account_name }}</div></div>
-                    <div><div>Number</div><div>{{ form.account_number }}</div></div>
+                    <div><div>Name</div><div> {{ form.name }}</div></div>
+                    <div><div>Number</div><div>{{ form.number }}</div></div>
                     <div><div>Value</div><div>{{ form.sum_of_funds }}</div></div>
                     <div style="display: flex;flex-direction: column;justify-content: flex-end;">
                         <button type="submit" class="btn btn-secondary active" style="width: 80px; margin-bottom: 0;">Submit</button>
@@ -41,14 +41,14 @@
              <td>
                 <div class="d-flex px-3 py-1">
                   <div class="d-flex flex-column justify-content-center ">
-                    <h6 class="mb-0 text-sm">{{ account.account_name }}</h6>
+                    <h6 class="mb-0 text-sm">{{ account.name }}</h6>
                   </div>
                 </div>
              </td>
              <td>
                 <div class="d-flex px-3 py-1">
                   <div class="d-flex flex-column justify-content-center">
-                    <h6 class="mb-0 text-sm">{{ account.account_number }}</h6>
+                    <h6 class="mb-0 text-sm">{{ account.number }}</h6>
                   </div>
                 </div>
              </td>
