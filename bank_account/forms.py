@@ -4,13 +4,13 @@ from .models import BankAccount
 
 
 class CreateAccountForm(forms.Form):
-    account_name = forms.CharField(
+    name = forms.CharField(
         label="Account name",
         widget=forms.TextInput(
             attrs={"class": "form-control", "placeholder": "Account name"}
         ),
     )
-    account_number = forms.IntegerField(
+    number = forms.IntegerField(
         label="Account number",
         widget=forms.NumberInput(
             attrs={"class": "form-control", "placeholder": "Account number"}
@@ -29,13 +29,13 @@ class CreateAccountForm(forms.Form):
 
 
 class UpdateAccountForm(forms.Form):
-    account_name = forms.CharField(
+    name = forms.CharField(
         label="Account name",
         widget=forms.TextInput(
             attrs={"class": "form-control", "placeholder": "Account name"}
         ),
     )
-    account_number = forms.IntegerField(
+    number = forms.IntegerField(
         label="Account number",
         widget=forms.NumberInput(
             attrs={"class": "form-control", "placeholder": "Account number"}

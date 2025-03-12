@@ -8,7 +8,7 @@ from .models import BankAccount
 
 class AccountCreateView(CreateView):
     model = BankAccount
-    fields = ["account_name", "account_number", "sum_of_funds"]
+    fields = ["name", "number", "sum_of_funds"]
     template_name = "bank_account/account_add.html"
     success_url = "account-home"
 
@@ -39,19 +39,19 @@ class AccountListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["form"] = self.filterset.form
-        if BankAccount.objects.filter(user_id=self.request.user):
+        if BankAccount.objects.filter(user=self.request.user):
             return context
 
 
 class AccountUpdateView(UpdateView):
     model = BankAccount
     form = UpdateAccountForm
-    fields = ["account_name", "account_number", "sum_of_funds"]
+    fields = ["name", "number", "sum_of_funds"]
     template_name = "bank_account/account_update_form.html"
     success_url = "account-home"
 
     def get_queryset(self):
-        return BankAccount.objects.filter(user_id_id=self.request.user)
+        return BankAccount.objects.filter(user_id=self.request.user)
 
     def form_valid(self, form):
         form.save()
@@ -65,7 +65,7 @@ class AccountDeleteView(DeleteView):
     success_url = "account-home"
 
     def get_queryset(self):
-        return BankAccount.objects.filter(user_id_id=self.request.user)
+        return BankAccount.objects.filter(user_id=self.request.user)
 
     def form_valid(self, form):
         self.object.delete()
