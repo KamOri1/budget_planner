@@ -10,7 +10,7 @@ class AccountCreateView(CreateView):
     model = BankAccount
     fields = ["name", "number", "sum_of_funds"]
     template_name = "bank_account/account_add.html"
-    success_url = "account-home"
+    success_url = "home_account"
 
     def form_valid(self, form):
         account = form.save(commit=False)
@@ -48,7 +48,7 @@ class AccountUpdateView(UpdateView):
     form = UpdateAccountForm
     fields = ["name", "number", "sum_of_funds"]
     template_name = "bank_account/account_update_form.html"
-    success_url = "account-home"
+    success_url = "home_account"
 
     def get_queryset(self):
         return BankAccount.objects.filter(user_id=self.request.user)
@@ -62,7 +62,7 @@ class AccountUpdateView(UpdateView):
 class AccountDeleteView(DeleteView):
     model = BankAccount
     template_name = "bank_account/account_delete.html"
-    success_url = "account-home"
+    success_url = "home_account"
 
     def get_queryset(self):
         return BankAccount.objects.filter(user_id=self.request.user)

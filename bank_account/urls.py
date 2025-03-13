@@ -8,7 +8,7 @@ from .views import (
 )
 
 urlpatterns = [
-    path("home/", AccountListView.as_view(), name="account-home"),
+    path("home/", AccountListView.as_view(), name="home_account"),
     path("add/", AccountCreateView.as_view(), name="create_account"),
     path("update/<pk>", AccountUpdateView.as_view(), name="update_account"),
     path("delete/<pk>", AccountDeleteView.as_view(), name="delete_account"),
