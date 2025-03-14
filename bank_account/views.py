@@ -31,7 +31,7 @@ class AccountListView(ListView):
         self.filterset = AccountFilter(self.request.GET, queryset=queryset)
 
         if not self.filterset.qs.query.order_by:
-            queryset = self.filterset.qs.order_by("-account_name")
+            queryset = self.filterset.qs.order_by("-name")
         else:
             queryset = self.filterset.qs
         return queryset

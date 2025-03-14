@@ -82,3 +82,31 @@ class TestBankAccountUpdateView(TestCase):
 
             for category in queryset:
                 self.assertEqual(category.user, user)
+
+    def test_uses_correct_template_in_response(self):
+        """Ensure that the GET request correctly renders the form template."""
+
+        self.client.force_login(self.user1)
+        response = self.client.get(self.index_url, pk=self.user1)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "bank_account/account_home_page.html")
+
+    def test_update_bank_account(self):
+        """Checks whether the selected BankAccount has been updated."""
+
+        updated_data = {
+            "name": "Updated  Name Check",
+            "number": "111",
+            "sum_of_funds": 100,
+        }
+
+        self.client.force_login(self.user1)
+
+        update_url = reverse_lazy("update_account", args=[self.bank_account1.pk])
+        response = self.client.post(update_url, data=updated_data)
+        updated_account = BankAccount.objects.get(pk=self.bank_account1.pk)
+
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(updated_account.name, "Updated  Name Check")
+        self.assertEqual(updated_account.number, 111)
+        self.assertEqual(updated_account.sum_of_funds, 100)
