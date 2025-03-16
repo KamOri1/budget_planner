@@ -3,13 +3,13 @@ Tests for views.
 """
 
 from django.http import HttpRequest
-from django.test import Client, TestCase
+from django.test import Client, RequestFactory, TestCase
 from rest_framework.reverse import reverse_lazy
 
 from users.factories import RandomUserFactory
 
 from ..models import BankAccount
-from ..views import AccountDeleteView, AccountUpdateView
+from ..views import AccountDeleteView, AccountListView, AccountUpdateView
 
 
 class TestBankAccountCreateView(TestCase):
@@ -153,3 +153,65 @@ class TestBankAccountDeleteView(TestCase):
 
             for account in queryset:
                 self.assertEqual(account.user, user)
+
+    def test_delete_BankAccount(self):
+        """Checks whether the selected BankAccount has been deleted."""
+
+        self.client.force_login(self.user1)
+        delete_url = reverse_lazy("delete_account", args=[self.bank_account1.pk])
+        response = self.client.post(delete_url)
+
+        self.assertEqual(response.status_code, 302)
+
+        with self.assertRaises(BankAccount.DoesNotExist):
+            BankAccount.objects.get(pk=self.bank_account1.pk)
+
+        self.assertEqual(BankAccount.objects.filter(user=self.user1.id).count(), 0)
+
+
+class CategoryListViewTest(TestCase):
+    """
+    Test cases for the Category list view.
+    """
+
+    def setUp(self):
+        """
+        Set up test data.
+        """
+        self.url = reverse_lazy("home_account")
+        self.factory = RequestFactory()
+        self.user = RandomUserFactory()
+        self.bank_account1 = BankAccount.objects.create(
+            user=self.user, name="PKO", number="12345", sum_of_funds=12000
+        )
+        self.bank_account2 = BankAccount.objects.create(
+            user=self.user, name="STR", number="5555", sum_of_funds=100
+        )
+
+    def test_category_list_view_get(self):
+        """
+        test checking that the GET request correctly renders the form template
+        """
+        request = self.factory.get(self.url)
+        request.user = self.user
+        response = AccountListView.as_view()(request)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("accounts", response.context_data)
+        self.assertIn("form", response.context_data)
+        self.assertEqual(len(response.context_data["accounts"]), 2)
+
+    def test_category_list_view_filter(self):
+        """
+        test verifies that the form correctly filters the data
+        """
+        request = self.factory.get(self.url, {"name": self.bank_account1.name})
+        request.user = self.user
+        response = AccountListView.as_view()(request)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.context_data["accounts"]), 1)
+        self.assertEqual(
+            response.context_data["accounts"][0].name,
+            self.bank_account1.name,
+        )
