@@ -61,8 +61,8 @@ class TestCategoryUpdateView(TestCase):
             type="1",
         )
         self.client = Client()
-        self.user1 = self.user = RandomUserFactory()
-        self.user2 = self.user = RandomUserFactory()
+        self.user1 = RandomUserFactory()
+        self.user2 = RandomUserFactory()
         self.request = HttpRequest()
         self.category1 = CategoryFactory(user=self.user1, type=self.categoryType)
         self.category2 = CategoryFactory(user=self.user1, type=self.categoryType)
