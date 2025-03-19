@@ -10,7 +10,7 @@ from notifications_type.models import NotificationType
 from users.factories import RandomUserFactory
 
 from ..models import Notification
-from ..views import NotificationUpdateView
+from ..views import NotificationDeleteView, NotificationUpdateView
 
 
 class TestNotificationCreateView(TestCase):
@@ -132,3 +132,68 @@ class TestNotificationUpdateView(TestCase):
         self.assertEqual(updated_notification.name, "Updated test")
         self.assertEqual(updated_notification.type, self.notificationsType)
         self.assertEqual(updated_notification.message, "Updated message")
+
+
+class TestNotificationDeleteView(TestCase):
+    """
+    Test cases for the Notification delete view.
+    These tests verify the behavior of deleting an existing Notification, correct redirections,
+    form handling, and database updates
+    """
+
+    def setUp(self):
+        """Set up test data."""
+        self.success_url = reverse_lazy("notification_home")
+        self.notificationsType = NotificationType.objects.create(
+            name="alert",
+        )
+        self.client = Client()
+        self.user1 = RandomUserFactory()
+        self.user2 = RandomUserFactory()
+        self.request = HttpRequest()
+
+        self.notification1 = Notification.objects.create(
+            user=self.user1,
+            type=self.notificationsType,
+            name="Test1",
+            message="Test message",
+        )
+        self.notification2 = Notification.objects.create(
+            user=self.user2,
+            type=self.notificationsType,
+            name="Test2",
+            message="Test message 2",
+        )
+
+    def test_get_queryset(self):
+        """The test simulates user logging in and checks that only the notifications he has added are available"""
+
+        users = [self.user1, self.user2]
+
+        for user in users:
+
+            self.request.user = user
+            view = NotificationDeleteView()
+            view.request = self.request
+            queryset = view.get_queryset()
+
+            expected_count = Notification.objects.filter(user=user).count()
+
+            self.assertEqual(queryset.count(), expected_count)
+
+            for notification in queryset:
+                self.assertEqual(notification.user, user)
+
+    def test_delete_Notification(self):
+        """Checks whether the selected notification has been deleted."""
+
+        self.client.force_login(self.user1)
+        delete_url = reverse_lazy("delete_notification", args=[self.notification1.pk])
+        response = self.client.post(delete_url)
+
+        self.assertEqual(response.status_code, 302)
+
+        with self.assertRaises(Notification.DoesNotExist):
+            Notification.objects.get(pk=self.notification1.pk)
+
+        self.assertEqual(Notification.objects.filter(user=self.user1.id).count(), 0)
