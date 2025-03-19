@@ -3,14 +3,14 @@ Tests for views.
 """
 
 from django.http import HttpRequest
-from django.test import Client, TestCase
+from django.test import Client, RequestFactory, TestCase
 from rest_framework.reverse import reverse_lazy
 
 from notifications_type.models import NotificationType
 from users.factories import RandomUserFactory
 
 from ..models import Notification
-from ..views import NotificationDeleteView, NotificationUpdateView
+from ..views import NotificationDeleteView, NotificationListView, NotificationUpdateView
 
 
 class TestNotificationCreateView(TestCase):
@@ -197,3 +197,66 @@ class TestNotificationDeleteView(TestCase):
             Notification.objects.get(pk=self.notification1.pk)
 
         self.assertEqual(Notification.objects.filter(user=self.user1.id).count(), 0)
+
+
+class TestNotificationListView(TestCase):
+    """
+    Test cases for the Notification list view.
+    """
+
+    def setUp(self):
+        """
+        Set up test data.
+        """
+        self.factory = RequestFactory()
+        self.user = RandomUserFactory()
+        self.notificationsType = NotificationType.objects.create(
+            name="alert",
+        )
+        self.notification1 = Notification.objects.create(
+            user=self.user,
+            type=self.notificationsType,
+            name="Test1",
+            message="Test message",
+        )
+        self.notification2 = Notification.objects.create(
+            user=self.user,
+            type=self.notificationsType,
+            name="Test2",
+            message="Test message 2",
+        )
+        self.notification3 = Notification.objects.create(
+            user=self.user,
+            type=self.notificationsType,
+            name="Test3",
+            message="Test message 3",
+        )
+        self.url = reverse_lazy("notification_home")
+
+    def test_notification_list_view_get(self):
+        """
+        test checking that the GET request correctly renders the form template
+        """
+        request = self.factory.get(self.url)
+        request.user = self.user
+        response = NotificationListView.as_view()(request)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("notifications", response.context_data)
+        self.assertIn("form", response.context_data)
+        self.assertEqual(len(response.context_data["notifications"]), 3)
+
+    def test_notifications_list_view_filter(self):
+        """
+        test verifies that the form correctly filters the data
+        """
+        request = self.factory.get(self.url, {"name": self.notification1.name})
+        request.user = self.user
+        response = NotificationListView.as_view()(request)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.context_data["notifications"]), 1)
+        self.assertEqual(
+            response.context_data["notifications"][0].name,
+            self.notification1.name,
+        )
