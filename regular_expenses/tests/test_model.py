@@ -22,7 +22,7 @@ class TestModels(TestCase):
         )
 
     def test_model_Category(self):
-        """Test create notification"""
+        """Test create RegularExpenses"""
 
         self.assertEqual(str(self.regularExpenses.name), "Salary")
         self.assertEqual(str(self.regularExpenses.category), self.category.name)
