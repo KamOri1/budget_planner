@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/notifications/tests/test_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/notifications/tests/test_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications_type/tests.py" beforeDir="false" />
     </list>
     <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="" />
     <list id="df12f125-9c31-4dd7-a15d-10586d317a47" name="Changes by vene" comment="" />
@@ -83,6 +85,8 @@
     "Django tests.Test: notifications.tests.test_view.TestCategoryCreateView.executor": "Run",
     "Django tests.Test: notifications.tests.test_view.TestNotificationDeleteView.executor": "Run",
     "Django tests.Test: notifications.tests.test_view.TestNotificationDeleteView.test_get_queryset.executor": "Run",
+    "Django tests.Test: notifications.tests.test_view.TestNotificationListView.test_notification_list_view_get.executor": "Run",
+    "Django tests.Test: notifications.tests.test_view.TestNotificationListView.test_notifications_list_view_filter.executor": "Run",
     "Django tests.Test: notifications.tests.test_view.TestNotificationUpdateView.executor": "Run",
     "Django tests.Test: notifications.tests.test_view.TestNotificationUpdateView.test_get_queryset.executor": "Run",
     "Django tests.Test: notifications.tests.test_view.TestNotificationUpdateView.test_update_category.executor": "Run",
@@ -154,7 +158,7 @@
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Django tests.Test: notifications.tests.test_view.TestNotificationDeleteView">
+  <component name="RunManager" selected="Django tests.Test: notifications.tests.test_view.TestNotificationListView.test_notifications_list_view_filter">
     <configuration name="Test: notifications.tests.test_view.TestNotificationDeleteView" type="DjangoTestsConfigurationType" temporary="true">
       <module name="budget_planner" />
       <option name="ENV_FILES" value="" />
@@ -197,6 +201,48 @@
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Test: notifications.tests.test_view.TestNotificationListView.test_notification_list_view_get" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="budget_planner" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="notifications.tests.test_view.TestNotificationListView.test_notification_list_view_get" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: notifications.tests.test_view.TestNotificationListView.test_notifications_list_view_filter" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="budget_planner" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="notifications.tests.test_view.TestNotificationListView.test_notifications_list_view_filter" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Test: notifications.tests.test_view.TestNotificationUpdateView" type="DjangoTestsConfigurationType" temporary="true">
       <module name="budget_planner" />
       <option name="ENV_FILES" value="" />
@@ -212,48 +258,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="TARGET" value="notifications.tests.test_view.TestNotificationUpdateView" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test: notifications.tests.test_view.TestNotificationUpdateView.test_update_notification" type="DjangoTestsConfigurationType" temporary="true">
-      <module name="budget_planner" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="notifications.tests.test_view.TestNotificationUpdateView.test_update_notification" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test: notifications.tests.test_view.TestNotificationUpdateView.test_uses_correct_template_in_response" type="DjangoTestsConfigurationType" temporary="true">
-      <module name="budget_planner" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="notifications.tests.test_view.TestNotificationUpdateView.test_uses_correct_template_in_response" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
@@ -287,11 +291,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Django tests.Test: notifications.tests.test_view.TestNotificationListView.test_notifications_list_view_filter" />
+        <item itemvalue="Django tests.Test: notifications.tests.test_view.TestNotificationListView.test_notification_list_view_get" />
         <item itemvalue="Django tests.Test: notifications.tests.test_view.TestNotificationDeleteView" />
         <item itemvalue="Django tests.Test: notifications.tests.test_view.TestNotificationDeleteView.test_get_queryset" />
         <item itemvalue="Django tests.Test: notifications.tests.test_view.TestNotificationUpdateView" />
-        <item itemvalue="Django tests.Test: notifications.tests.test_view.TestNotificationUpdateView.test_update_notification" />
-        <item itemvalue="Django tests.Test: notifications.tests.test_view.TestNotificationUpdateView.test_uses_correct_template_in_response" />
       </list>
     </recent_temporary>
   </component>
@@ -348,7 +352,7 @@
       <workItem from="1741469159490" duration="3227000" />
       <workItem from="1741550803355" duration="5080000" />
       <workItem from="1742076774118" duration="4941000" />
-      <workItem from="1742330488933" duration="5263000" />
+      <workItem from="1742330488933" duration="8292000" />
     </task>
     <servers />
   </component>
@@ -413,6 +417,7 @@
     <SUITE FILE_PATH="coverage/budget_planner$Test__transaction_tests_test_view_TestCategoryDeleteView_test_get_queryset.coverage" NAME="Test: transaction.tests.test_view.TestCategoryDeleteView.test_get_queryset Coverage Results" MODIFIED="1741382135190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__notifications_tests_test_model_TestModels.coverage" NAME="Test: notifications.tests.test_model.TestModels Coverage Results" MODIFIED="1742246807579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$tests.coverage" NAME="tests Coverage Results" MODIFIED="1737571861609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/transaction" />
+    <SUITE FILE_PATH="coverage/budget_planner$Test__notifications_tests_test_view_TestNotificationListView_test_notification_list_view_get.coverage" NAME="Test: notifications.tests.test_view.TestNotificationListView.test_notification_list_view_get Coverage Results" MODIFIED="1742414076211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__category_tests_TestView_test_CategoryListView.coverage" NAME="Test: category.tests.TestView.test_CategoryListView Coverage Results" MODIFIED="1739209644401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__category_tests_test_views_TestCategoryUpdateView_test_form_valid.coverage" NAME="Test: category.tests.test_views.TestCategoryUpdateView.test_form_valid Coverage Results" MODIFIED="1739397085854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__category_tests_test_views_TestCategoryCreateView_test_post_valid_data_creates_category.coverage" NAME="Test: category.tests.test_views.TestCategoryCreateView.test_post_valid_data_creates_category Coverage Results" MODIFIED="1740003213190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -449,6 +454,7 @@
     <SUITE FILE_PATH="coverage/budget_planner$Test__category_tests_test_views_TestCategoryUpdateView_test_uses_correct_template_in_response.coverage" NAME="Test: category.tests.test_views.TestCategoryUpdateView.test_uses_correct_template_in_response Coverage Results" MODIFIED="1741381771729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__bank_account_tests_test_model_TestModels_test_model_BankAccount.coverage" NAME="Test: bank_account.tests.test_model.TestModels.test_model_BankAccount Coverage Results" MODIFIED="1741732163660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__wallet_tests_test_view_TestWalletCreateView_test_post_valid_data_creates_wallet.coverage" NAME="Test: wallet.tests.test_view.TestWalletCreateView.test_post_valid_data_creates_wallet Coverage Results" MODIFIED="1741470884367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/budget_planner$Test__notifications_tests_test_view_TestNotificationListView_test_notifications_list_view_filter.coverage" NAME="Test: notifications.tests.test_view.TestNotificationListView.test_notifications_list_view_filter Coverage Results" MODIFIED="1742414148060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__notifications_tests_test_view_TestNotificationUpdateView_test_update_notification.coverage" NAME="Test: notifications.tests.test_view.TestNotificationUpdateView.test_update_notification Coverage Results" MODIFIED="1742411970994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__bank_account_tests_test_view_CategoryListViewTest_test_category_list_view_get.coverage" NAME="Test: bank_account.tests.test_view.CategoryListViewTest.test_category_list_view_get Coverage Results" MODIFIED="1742152246732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__category_tests_test_model_TestModels.coverage" NAME="Test: category.tests.test_model.TestModels Coverage Results" MODIFIED="1741210939603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
