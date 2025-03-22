@@ -37,7 +37,8 @@ class TestRegularExpensesCreateView(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "regular_expenses/expenses_add.html")
 
-    def test_post_valid_data_creates_category(self):
+    def test_post_valid_data_creates_expenses(self):
+        """The test verifies that the parameters fetched by the POST method are consistent with the stored settings"""
         self.assertEqual(str(self.regularExpenses.name), "Salary")
         self.assertEqual(str(self.regularExpenses.category), self.category.name)
         self.assertEqual(str(self.regularExpenses.sum_amount), "122.22")
