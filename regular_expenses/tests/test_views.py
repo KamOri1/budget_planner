@@ -58,7 +58,7 @@ class TestRegularExpensesUpdateView(TestCase):
 
     def setUp(self):
         """Set up test data."""
-        self.success_url = reverse_lazy("create_expenses")
+        self.success_url = reverse_lazy("expenses_home")
         self.client = Client()
         self.user1 = RandomUserFactory()
         self.user2 = RandomUserFactory()
@@ -104,3 +104,11 @@ class TestRegularExpensesUpdateView(TestCase):
 
             for expenses in queryset:
                 self.assertEqual(expenses.user, user)
+
+    def test_uses_correct_template_in_response(self):
+        """Ensure that the GET request correctly renders the form template."""
+
+        self.client.force_login(self.user1)
+        response = self.client.get(self.success_url, pk=self.user1)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "regular_expenses/expenses_home_page.html")
