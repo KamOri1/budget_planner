@@ -62,25 +62,28 @@ class TestRegularExpensesUpdateView(TestCase):
         self.client = Client()
         self.user1 = RandomUserFactory()
         self.user2 = RandomUserFactory()
+        self.category1 = CategoryFactory(user=self.user1)
+        self.category2 = CategoryFactory(user=self.user2)
         self.request = HttpRequest()
         self.client.force_login(self.user1)
+
         self.regularExpenses1 = RegularExpenses.objects.create(
             name="Salary",
-            category=CategoryFactory(user=self.user1),
+            category=self.category1,
             sum_amount=122.22,
             description="test description",
             user=self.user1,
         )
         self.regularExpenses3 = RegularExpenses.objects.create(
             name="Salary2",
-            category=CategoryFactory(user=self.user1),
+            category=self.category1,
             sum_amount=1.22,
             description="test description2",
             user=self.user1,
         )
-        self.regularExpenses1 = RegularExpenses.objects.create(
+        self.regularExpenses3 = RegularExpenses.objects.create(
             name="Salary3",
-            category=CategoryFactory(user=self.user2),
+            category=self.category2,
             sum_amount=99.22,
             description="test description3",
             user=self.user2,
@@ -112,3 +115,25 @@ class TestRegularExpensesUpdateView(TestCase):
         response = self.client.get(self.success_url, pk=self.user1)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "regular_expenses/expenses_home_page.html")
+
+    def test_update_expenses(self):
+        """Checks whether the selected expenses has been updated."""
+
+        updated_data = {
+            "name": "Updated",
+            "category": self.category1.pk,
+            "sum_amount": 200.22,
+            "description": "test description nr 2",
+        }
+
+        self.client.force_login(self.user1)
+
+        update_url = reverse_lazy("update_expenses", args=[self.regularExpenses1.pk])
+        response = self.client.post(update_url, data=updated_data)
+        updated_expenses = RegularExpenses.objects.get(pk=self.regularExpenses1.pk)
+
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(updated_expenses.name, "Updated")
+        self.assertEqual(updated_expenses.category, self.category1)
+        self.assertEqual(updated_expenses.sum_amount, 200.22)
+        self.assertEqual(updated_expenses.description, "test description nr 2")
