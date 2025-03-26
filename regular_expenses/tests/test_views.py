@@ -10,7 +10,7 @@ from category.factories import CategoryFactory
 from users.factories import RandomUserFactory
 
 from ..models import RegularExpenses
-from ..views import RegularExpensesUpdateView
+from ..views import RegularExpensesDeleteView, RegularExpensesUpdateView
 
 
 class TestRegularExpensesCreateView(TestCase):
@@ -137,3 +137,64 @@ class TestRegularExpensesUpdateView(TestCase):
         self.assertEqual(updated_expenses.category, self.category1)
         self.assertEqual(updated_expenses.sum_amount, 200.22)
         self.assertEqual(updated_expenses.description, "test description nr 2")
+
+
+class TestRegularExpensesDeleteView(TestCase):
+    """
+    Test cases for the expenses delete view.
+    These tests verify the behavior of deleting an existing expenses, correct redirections,
+    form handling, and database updates
+    """
+
+    def setUp(self):
+        """Set up test data."""
+
+        self.success_url = reverse_lazy("expenses_home")
+        self.client = Client()
+        self.user1 = RandomUserFactory()
+        self.user2 = RandomUserFactory()
+        self.category1 = CategoryFactory(user=self.user1)
+        self.category2 = CategoryFactory(user=self.user2)
+        self.request = HttpRequest()
+        self.client.force_login(self.user1)
+
+        self.regularExpenses1 = RegularExpenses.objects.create(
+            name="Salary",
+            category=self.category1,
+            sum_amount=122.22,
+            description="test description",
+            user=self.user1,
+        )
+        self.regularExpenses3 = RegularExpenses.objects.create(
+            name="Salary2",
+            category=self.category1,
+            sum_amount=1.22,
+            description="test description2",
+            user=self.user1,
+        )
+        self.regularExpenses3 = RegularExpenses.objects.create(
+            name="Salary3",
+            category=self.category2,
+            sum_amount=99.22,
+            description="test description3",
+            user=self.user2,
+        )
+
+    def test_get_queryset(self):
+        """The test simulates user logging in and checks that only the RegularExpenses he has added are available"""
+
+        users = [self.user1, self.user2]
+
+        for user in users:
+
+            self.request.user = user
+            view = RegularExpensesDeleteView()
+            view.request = self.request
+            queryset = view.get_queryset()
+
+            expected_count = RegularExpenses.objects.filter(user=user).count()
+
+            self.assertEqual(queryset.count(), expected_count)
+
+            for expenses in queryset:
+                self.assertEqual(expenses.user, user)
