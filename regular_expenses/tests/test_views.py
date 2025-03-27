@@ -198,3 +198,17 @@ class TestRegularExpensesDeleteView(TestCase):
 
             for expenses in queryset:
                 self.assertEqual(expenses.user, user)
+
+    def test_delete_expenses(self):
+        """Checks whether the selected expenses has been deleted."""
+
+        self.client.force_login(self.user1)
+        delete_url = reverse_lazy("delete_expenses", args=[self.regularExpenses1.pk])
+        response = self.client.post(delete_url)
+
+        self.assertEqual(response.status_code, 302)
+
+        with self.assertRaises(RegularExpenses.DoesNotExist):
+            RegularExpenses.objects.get(pk=self.regularExpenses1.pk)
+
+        self.assertEqual(RegularExpenses.objects.filter(user=self.user1.id).count(), 1)
