@@ -93,6 +93,7 @@
     "Django tests.Test: regular_expenses.tests.test_model.TestModels.test_model_Category.executor": "Run",
     "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesCreateView.executor": "Run",
     "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesDeleteView.executor": "Run",
+    "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesDeleteView.test_delete_expenses.executor": "Run",
     "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.executor": "Run",
     "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.test_get_queryset.executor": "Run",
     "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.test_update_expenses.executor": "Run",
@@ -162,7 +163,7 @@
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesDeleteView">
+  <component name="RunManager" selected="Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesDeleteView.test_delete_expenses">
     <configuration name="Test: regular_expenses.tests.test_views.TestRegularExpensesDeleteView" type="DjangoTestsConfigurationType" temporary="true">
       <module name="budget_planner" />
       <option name="ENV_FILES" value="" />
@@ -184,7 +185,7 @@
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: regular_expenses.tests.test_views.TestRegularExpensesDeleteView.test_delete_expenses" type="DjangoTestsConfigurationType" temporary="true">
       <module name="budget_planner" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -198,7 +199,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="regular_expenses.tests.test_views.TestRegularExpensesUpdateView" />
+      <option name="TARGET" value="regular_expenses.tests.test_views.TestRegularExpensesDeleteView.test_delete_expenses" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
@@ -295,11 +296,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesDeleteView.test_delete_expenses" />
         <item itemvalue="Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesDeleteView" />
         <item itemvalue="Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.test_update_expenses" />
         <item itemvalue="Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.test_uses_correct_template_in_response" />
         <item itemvalue="Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.test_get_queryset" />
-        <item itemvalue="Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView" />
       </list>
     </recent_temporary>
   </component>
@@ -356,7 +357,7 @@
       <workItem from="1741469159490" duration="3227000" />
       <workItem from="1741550803355" duration="5080000" />
       <workItem from="1742076774118" duration="4941000" />
-      <workItem from="1742330488933" duration="23943000" />
+      <workItem from="1742330488933" duration="26352000" />
     </task>
     <servers />
   </component>
@@ -429,6 +430,7 @@
     <SUITE FILE_PATH="coverage/budget_planner$Test__category_tests_TestView_test_CategoryListView.coverage" NAME="Test: category.tests.TestView.test_CategoryListView Coverage Results" MODIFIED="1739209644401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__category_tests_test_views_TestCategoryUpdateView_test_form_valid.coverage" NAME="Test: category.tests.test_views.TestCategoryUpdateView.test_form_valid Coverage Results" MODIFIED="1739397085854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__category_tests_test_views_TestCategoryCreateView_test_post_valid_data_creates_category.coverage" NAME="Test: category.tests.test_views.TestCategoryCreateView.test_post_valid_data_creates_category Coverage Results" MODIFIED="1740003213190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/budget_planner$Test__regular_expenses_tests_test_views_TestRegularExpensesDeleteView_test_delete_expenses.coverage" NAME="Test: regular_expenses.tests.test_views.TestRegularExpensesDeleteView.test_delete_expenses Coverage Results" MODIFIED="1743112925765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$dash_app.coverage" NAME="dash_app Coverage Results" MODIFIED="1738274643284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dashboard" />
     <SUITE FILE_PATH="coverage/budget_planner$app.coverage" NAME="app Coverage Results" MODIFIED="1737931897580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dashboard" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__transaction_tests_test_view_TestTransactionUpdateView_test_uses_correct_template_in_response.coverage" NAME="Test: transaction.tests.test_view.TestTransactionUpdateView.test_uses_correct_template_in_response Coverage Results" MODIFIED="1740084395061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />

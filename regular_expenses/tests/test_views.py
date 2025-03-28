@@ -3,7 +3,7 @@ Tests for views.
 """
 
 from django.http import HttpRequest
-from django.test import Client, TestCase
+from django.test import Client, RequestFactory, TestCase
 from rest_framework.reverse import reverse_lazy
 
 from category.factories import CategoryFactory
@@ -212,3 +212,41 @@ class TestRegularExpensesDeleteView(TestCase):
             RegularExpenses.objects.get(pk=self.regularExpenses1.pk)
 
         self.assertEqual(RegularExpenses.objects.filter(user=self.user1.id).count(), 1)
+
+
+class TestRegularExpensesListView(TestCase):
+    """
+    Test cases for the Category list view.
+    """
+
+    def setUp(self):
+        """
+        Set up test data.
+        """
+
+        self.factory = RequestFactory()
+        self.user = RandomUserFactory()
+        self.category1 = CategoryFactory(user=self.user)
+        self.url = reverse_lazy("expenses_home")
+
+        self.regularExpenses1 = RegularExpenses.objects.create(
+            name="Salary",
+            category=self.category1,
+            sum_amount=122.22,
+            description="test description",
+            user=self.user,
+        )
+        self.regularExpenses3 = RegularExpenses.objects.create(
+            name="Salary2",
+            category=self.category1,
+            sum_amount=1.22,
+            description="test description2",
+            user=self.user,
+        )
+        self.regularExpenses3 = RegularExpenses.objects.create(
+            name="Salary3",
+            category=self.category1,
+            sum_amount=99.22,
+            description="test description3",
+            user=self.user,
+        )
