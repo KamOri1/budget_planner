@@ -10,7 +10,11 @@ from category.factories import CategoryFactory
 from users.factories import RandomUserFactory
 
 from ..models import RegularExpenses
-from ..views import RegularExpensesDeleteView, RegularExpensesUpdateView
+from ..views import (
+    RegularExpensesDeleteView,
+    RegularExpensesListView,
+    RegularExpensesUpdateView,
+)
 
 
 class TestRegularExpensesCreateView(TestCase):
@@ -250,3 +254,16 @@ class TestRegularExpensesListView(TestCase):
             description="test description3",
             user=self.user,
         )
+
+    def test_regular_expenses_list_view_get(self):
+        """
+        test checking that the GET request correctly renders the form template
+        """
+        request = self.factory.get(self.url)
+        request.user = self.user
+        response = RegularExpensesListView.as_view()(request)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("expenses", response.context_data)
+        self.assertIn("form", response.context_data)
+        self.assertEqual(len(response.context_data["expenses"]), 3)
