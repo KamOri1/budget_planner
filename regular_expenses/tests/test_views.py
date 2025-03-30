@@ -220,7 +220,7 @@ class TestRegularExpensesDeleteView(TestCase):
 
 class TestRegularExpensesListView(TestCase):
     """
-    Test cases for the Category list view.
+    Test cases for the RegularExpenses list view.
     """
 
     def setUp(self):
