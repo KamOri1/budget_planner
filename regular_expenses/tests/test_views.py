@@ -267,3 +267,18 @@ class TestRegularExpensesListView(TestCase):
         self.assertIn("expenses", response.context_data)
         self.assertIn("form", response.context_data)
         self.assertEqual(len(response.context_data["expenses"]), 3)
+
+    def test_regular_expenses_list_view_filter(self):
+        """
+        test verifies that the form correctly filters the data
+        """
+        request = self.factory.get(self.url, {"name": self.regularExpenses3.name})
+        request.user = self.user
+        response = RegularExpensesListView.as_view()(request)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.context_data["expenses"]), 1)
+        self.assertEqual(
+            response.context_data["expenses"][0].name,
+            self.regularExpenses3.name,
+        )
