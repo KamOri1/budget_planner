@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" name="Changes" comment="dock: marging with the main one, as I am working on it on two different computers">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-03-30_22_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2025-03-30_22_57__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saving_goal/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saving_goal/tests/test_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/budget_planner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/budget_planner.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/regular_expenses/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
     </list>
     <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="" />
     <list id="df12f125-9c31-4dd7-a15d-10586d317a47" name="Changes by vene" comment="" />
@@ -126,6 +129,9 @@
     "Django tests.Test: wallet.tests.test_view.TestWalletCreateView.executor": "Run",
     "Django tests.Test: wallet.tests.test_view.TestWalletCreateView.test_form_valid.executor": "Run",
     "Django tests.Test: wallet.tests.test_view.TestWalletCreateView.test_post_valid_data_creates_wallet.executor": "Run",
+    "Python tests.Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_category_list_view_filter.executor": "Run",
+    "Python tests.Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_filter.executor": "Run",
+    "Python tests.Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_get.executor": "Run",
     "Python.app.executor": "Run",
     "Python.category_compare.executor": "Run",
     "Python.dash_app.executor": "Run",
@@ -140,13 +146,13 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "django.template.preview.state": "SHOW_EDITOR",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Kaspi/AppData/Roaming/Python/Scripts/poetry.exe",
+    "last_opened_file_path": "C:/Users/Kaspi/Desktop/budget_planner/saving_goal/tests",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "settings.editor.selected.configurable": "terminal",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -157,11 +163,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Kaspi\Desktop\budget_planner\saving_goal\tests" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\bank_account\tests" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\dashboard" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\budget_planner" />
-      <recent name="C:\Users\Kaspi\Desktop\budget_planner\saving_goal" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\users" />
@@ -171,70 +177,7 @@
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\templates" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Test: regular_expenses.tests.test_views.TestRegularExpensesDeleteView" type="DjangoTestsConfigurationType" temporary="true">
-      <module name="budget_planner" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="regular_expenses.tests.test_views.TestRegularExpensesDeleteView" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test: regular_expenses.tests.test_views.TestRegularExpensesDeleteView.test_delete_expenses" type="DjangoTestsConfigurationType" temporary="true">
-      <module name="budget_planner" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="regular_expenses.tests.test_views.TestRegularExpensesDeleteView.test_delete_expenses" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.test_get_queryset" type="DjangoTestsConfigurationType" temporary="true">
-      <module name="budget_planner" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="regular_expenses.tests.test_views.TestRegularExpensesUpdateView.test_get_queryset" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_get">
     <configuration name="Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.test_update_expenses" type="DjangoTestsConfigurationType" temporary="true">
       <module name="budget_planner" />
       <option name="ENV_FILES" value="" />
@@ -302,11 +245,68 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_category_list_view_filter" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="budget_planner" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;regular_expenses.tests.test_views.TestRegularExpensesListView.test_category_list_view_filter&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_filter" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="budget_planner" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_filter&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_get" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="budget_planner" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="DJANGO_SETTINGS_MODULE" value="budget_planner.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_get&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_get" />
+        <item itemvalue="Python tests.Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_filter" />
+        <item itemvalue="Python tests.Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_category_list_view_filter" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-c69650fc56ca-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15619.17" />
+        <option value="bundled-python-sdk-4f4e415b4190-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.26053.29" />
       </set>
     </attachedChunks>
   </component>
@@ -357,6 +357,7 @@
       <workItem from="1742076774118" duration="4941000" />
       <workItem from="1742330488933" duration="30077000" />
       <workItem from="1743454931050" duration="53000" />
+      <workItem from="1743539735808" duration="8000" />
     </task>
     <servers />
   </component>
