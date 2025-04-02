@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" name="Changes" comment="dock: marging with the main one, as I am working on it on two different computers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saving_goal/tests.py" beforeDir="false" />
     </list>
     <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="" />
     <list id="df12f125-9c31-4dd7-a15d-10586d317a47" name="Changes by vene" comment="" />
@@ -100,10 +99,12 @@
     "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesCreateView.executor": "Run",
     "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesDeleteView.executor": "Run",
     "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesDeleteView.test_delete_expenses.executor": "Run",
+    "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_filter.executor": "Run",
     "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.executor": "Run",
     "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.test_get_queryset.executor": "Run",
     "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.test_update_expenses.executor": "Run",
     "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.test_uses_correct_template_in_response.executor": "Run",
+    "Django tests.Test: saving_goal.tests.test_model.TestModels.test_model_SavingGoal.executor": "Run",
     "Django tests.Test: transaction.tests.test_model.TestModels.test_model_Transaction.executor": "Run",
     "Django tests.Test: transaction.tests.test_view.TestCategoryCreateView.test_form_valid.executor": "Run",
     "Django tests.Test: transaction.tests.test_view.TestCategoryCreateView.test_post_valid_data_creates_transaction.executor": "Run",
@@ -175,7 +176,49 @@
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for saving_goal.tests.test_model.TestModels.test_model_SavingGoal">
+  <component name="RunManager" selected="Django tests.Test: saving_goal.tests.test_model.TestModels.test_model_SavingGoal">
+    <configuration name="Test: regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_filter" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="budget_planner" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_filter" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: saving_goal.tests.test_model.TestModels.test_model_SavingGoal" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="budget_planner" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="saving_goal.tests.test_model.TestModels.test_model_SavingGoal" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="budget_planner" type="Python.DjangoServer" factoryName="Django server">
       <module name="budget_planner" />
       <option name="ENV_FILES" value="" />
@@ -199,38 +242,6 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_category_list_view_filter" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="budget_planner" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;regular_expenses.tests.test_views.TestRegularExpensesListView.test_category_list_view_filter&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_filter" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="budget_planner" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_filter&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_get" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
@@ -289,11 +300,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Django tests.Test: saving_goal.tests.test_model.TestModels.test_model_SavingGoal" />
+        <item itemvalue="Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_filter" />
         <item itemvalue="Python tests.Python tests for saving_goal.tests.test_model.TestModels.test_model_SavingGoal" />
         <item itemvalue="Python tests.Python tests for saving_goal.tests.test_model.TestModels" />
         <item itemvalue="Python tests.Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_get" />
-        <item itemvalue="Python tests.Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_filter" />
-        <item itemvalue="Python tests.Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_category_list_view_filter" />
       </list>
     </recent_temporary>
   </component>
@@ -354,6 +365,7 @@
       <workItem from="1743454931050" duration="53000" />
       <workItem from="1743539735808" duration="8000" />
       <workItem from="1743546026928" duration="294000" />
+      <workItem from="1743625534142" duration="319000" />
     </task>
     <servers />
   </component>
