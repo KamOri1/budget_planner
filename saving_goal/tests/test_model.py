@@ -28,7 +28,7 @@ class TestModels(TestCase):
         """Test create savingGoal"""
 
         self.assertEqual(str(self.savingGoal.name), "Vacation")
-        self.assertEqual(str(self.savingGoal.target_date), self.test_date)
+        self.assertEqual(str(self.savingGoal.target_date), "2024-12-31")
         self.assertEqual(str(self.savingGoal.target_amount), "122.22")
         self.assertEqual(str(self.savingGoal.description), "test description")
         self.assertEqual(self.savingGoal.user_id, self.user.id)
