@@ -5,14 +5,14 @@ Tests for views.
 from datetime import date
 
 from django.http import HttpRequest
-from django.test import Client, TestCase
+from django.test import Client, RequestFactory, TestCase
 from rest_framework.reverse import reverse_lazy
 
 from category.factories import CategoryFactory
 from users.factories import RandomUserFactory
 
 from ..models import SavingGoal
-from ..views import SavingGoalDeleteView, SavingGoalUpdateView
+from ..views import SavingGoalDeleteView, SavingGoalListView, SavingGoalUpdateView
 
 
 class TestSavingGoalCreateView(TestCase):
@@ -210,3 +210,68 @@ class TestSavingGoalDeleteView(TestCase):
             SavingGoal.objects.get(pk=self.savingGoal1.pk)
 
         self.assertEqual(SavingGoal.objects.filter(user=self.user1.id).count(), 1)
+
+
+class TestRegularExpensesListView(TestCase):
+    """
+    Test cases for the SavingGoal list view.
+    """
+
+    def setUp(self):
+        """
+        Set up test data.
+        """
+
+        self.factory = RequestFactory()
+        self.user = RandomUserFactory()
+        self.url = reverse_lazy("goal-home")
+        self.test_date = date(2024, 12, 31)
+        self.savingGoal1 = SavingGoal.objects.create(
+            name="Vacation1",
+            target_date=self.test_date,
+            target_amount=122.22,
+            description="test description1",
+            user=self.user,
+        )
+        self.savingGoal2 = SavingGoal.objects.create(
+            name="Vacation2",
+            target_date=self.test_date,
+            target_amount=982.42,
+            description="test description2",
+            user=self.user,
+        )
+        self.savingGoal3 = SavingGoal.objects.create(
+            name="Vacation3",
+            target_date=self.test_date,
+            target_amount=66.78,
+            description="test description3",
+            user=self.user,
+        )
+
+    def test_saving_goal_list_view_get(self):
+        """
+        test checking that the GET request correctly renders the form template
+        """
+        request = self.factory.get(self.url)
+        request.user = self.user
+        response = SavingGoalListView.as_view()(request)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("goals", response.context_data)
+        self.assertIn("form", response.context_data)
+        self.assertEqual(len(response.context_data["goals"]), 3)
+
+    def test_saving_goal_list_view_filter(self):
+        """
+        test verifies that the form correctly filters the data
+        """
+        request = self.factory.get(self.url, {"name": self.savingGoal3.name})
+        request.user = self.user
+        response = SavingGoalListView.as_view()(request)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.context_data["goals"]), 1)
+        self.assertEqual(
+            response.context_data["goals"][0].name,
+            self.savingGoal3.name,
+        )
