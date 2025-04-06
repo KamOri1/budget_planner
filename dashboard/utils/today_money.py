@@ -22,7 +22,6 @@ class TodayMoney:
                     "%Y-%m"
                 ) == datetime.now().strftime("%Y-%m"):
                     month_profit += transaction.sum_amount
-
         return month_profit
 
     def sum_of_expenses(self) -> float:
@@ -30,7 +29,6 @@ class TodayMoney:
 
         for transaction in self.transactions:
             if transaction.category in self.category.filter(type="1"):
-                print(self.category)
                 if transaction.transaction_date.strftime(
                     "%Y-%m"
                 ) == datetime.now().strftime("%Y-%m"):

@@ -11,9 +11,7 @@ class CategoryType(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
-    type = models.ForeignKey(
-        CategoryType, on_delete=models.PROTECT
-    )  # TODO cateogry_type -> type
+    type = models.ForeignKey(CategoryType, on_delete=models.PROTECT)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="categories")
 
     def __str__(self) -> str:

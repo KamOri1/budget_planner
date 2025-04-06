@@ -14,7 +14,7 @@ class CategoryCreateView(CreateView):
 
     def form_valid(self, form):
         category = form.save(commit=False)
-        category.user_id_id = self.request.user.id
+        category.user_id = self.request.user.id
         form.save()
 
         return redirect(self.success_url)
