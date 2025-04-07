@@ -5,45 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" name="Changes" comment="dock: marging with the main one, as I am working on it on two different computers">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bank_account/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bank_account/migrations/0002_rename_account_name_bankaccount_name_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bank_account/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/budget_planner/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/budget_planner/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/migrations/0002_categorytype_alter_category_category_type.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/migrations/0003_alter_category_category_type_delete_categorytype.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/migrations/0004_categorytype_alter_category_category_type.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/migrations/0005_rename_category_name_category_name.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/migrations/0006_rename_category_type_category_type.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/migrations/0007_rename_user_id_category_user.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/category/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/utils/today_money.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/utils/today_money.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notifications/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notifications/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notifications_type/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notifications_type/migrations/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/possession_status/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/possession_status/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/regular_expenses/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/regular_expenses/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requiremnets.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/saving_goal/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/saving_goal/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/system_notification/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/system_notification/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction/migrations/0002_rename_category_id_transaction_category_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/transaction/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet/migrations/0002_rename_wallet_name_wallet_name_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="" />
     <list id="df12f125-9c31-4dd7-a15d-10586d317a47" name="Changes by vene" comment="" />
@@ -89,129 +53,129 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Django Server.budget_planner.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: bank_account.tests.test_model.TestModels.test_model_BankAccount.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: bank_account.tests.test_view.CategoryListViewTest.test_category_list_view_filter.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: bank_account.tests.test_view.CategoryListViewTest.test_category_list_view_get.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: bank_account.tests.test_view.TestBankAccountDeleteView.test_delete_BankAccount.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: bank_account.tests.test_view.TestBankAccountDeleteView.test_get_queryset.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.TestView.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.TestView.test_CategoryListView.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.TestView.test_add_category_POST.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.test_factories.TestCategoryFactory.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.test_factories.TestCategoryFactory.test_batch_object_create.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.test_model.TestModels.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.test_model.TestModels.test_model_Category.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.test_models.TestModels.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.test_views.CategoryListViewTest.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.test_views.CategoryListViewTest.test_category_list_view_filter.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.test_views.CategoryListViewTest.test_category_list_view_get.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.test_views.TestCategoryCreateView.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.test_views.TestCategoryCreateView.test_form_valid.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.test_views.TestCategoryCreateView.test_post_valid_data_creates_category.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.test_views.TestCategoryDeleteView.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.test_views.TestCategoryUpdateView.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.test_views.TestCategoryUpdateView.test_form_valid.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.test_views.TestCategoryUpdateView.test_get_queryset.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.test_views.TestCategoryUpdateView.test_get_queryset_anonymous.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.test_views.TestCategoryUpdateView.test_update_category.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.test_views.TestCategoryUpdateView.test_uses_correct_template_in_response.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: category.tests.test_views.TestView.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: notifications.tests.test_model.TestModels.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: notifications.tests.test_view.TestCategoryCreateView.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: notifications.tests.test_view.TestNotificationDeleteView.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: notifications.tests.test_view.TestNotificationDeleteView.test_get_queryset.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: notifications.tests.test_view.TestNotificationListView.test_notification_list_view_get.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: notifications.tests.test_view.TestNotificationListView.test_notifications_list_view_filter.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: notifications.tests.test_view.TestNotificationUpdateView.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: notifications.tests.test_view.TestNotificationUpdateView.test_get_queryset.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: notifications.tests.test_view.TestNotificationUpdateView.test_update_category.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: notifications.tests.test_view.TestNotificationUpdateView.test_update_notification.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: notifications.tests.test_view.TestNotificationUpdateView.test_uses_correct_template_in_response.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: notifications_type.tests.test_model.TestModels.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: regular_expenses.tests.test_model.TestModels.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: regular_expenses.tests.test_model.TestModels.test_model_Category.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesCreateView.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesDeleteView.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesDeleteView.test_delete_expenses.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_filter.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.test_get_queryset.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.test_update_expenses.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.test_uses_correct_template_in_response.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: saving_goal.tests.test_model.TestModels.test_model_SavingGoal.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: saving_goal.tests.test_views.TestRegularExpensesListView.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: saving_goal.tests.test_views.TestSavingGoalCreateView.test_form_valid.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: saving_goal.tests.test_views.TestSavingGoalCreateView.test_post_valid_data_creates_expenses.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: saving_goal.tests.test_views.TestSavingGoalDeleteView.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: saving_goal.tests.test_views.TestSavingGoalUpdateView.test_get_queryset.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: saving_goal.tests.test_views.TestSavingGoalUpdateView.test_update_goal.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: saving_goal.tests.test_views.TestSavingGoalUpdateView.test_uses_correct_template_in_response.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: transaction.tests.test_model.TestModels.test_model_Transaction.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: transaction.tests.test_view.TestCategoryCreateView.test_form_valid.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: transaction.tests.test_view.TestCategoryCreateView.test_post_valid_data_creates_transaction.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: transaction.tests.test_view.TestCategoryDeleteView.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: transaction.tests.test_view.TestCategoryDeleteView.test_delete_transaction.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: transaction.tests.test_view.TestCategoryDeleteView.test_get_queryset.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: transaction.tests.test_view.TestCategoryUpdateView.test_get_queryset.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: transaction.tests.test_view.TestTransactionCreateView.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: transaction.tests.test_view.TestTransactionCreateView.test_form_valid.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: transaction.tests.test_view.TestTransactionCreateView.test_model_Transaction.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: transaction.tests.test_view.TestTransactionCreateView.test_post_valid_data_creates_transaction.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: transaction.tests.test_view.TestTransactionUpdateView.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: transaction.tests.test_view.TestTransactionUpdateView.test_update_category.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: transaction.tests.test_view.TestTransactionUpdateView.test_uses_correct_template_in_response.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: wallet.tests.test_model.TestModels.test_model_Transaction.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: wallet.tests.test_model.TestModels.test_model_Wallet.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: wallet.tests.test_view.TestTransactionCreateView.test_form_valid.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: wallet.tests.test_view.TestTransactionCreateView.test_post_valid_data_creates_wallet.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: wallet.tests.test_view.TestWalletCreateView.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: wallet.tests.test_view.TestWalletCreateView.test_form_valid.executor&quot;: &quot;Run&quot;,
-    &quot;Django tests.Test: wallet.tests.test_view.TestWalletCreateView.test_post_valid_data_creates_wallet.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_category_list_view_filter.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_filter.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_get.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for saving_goal.tests.test_model.TestModels.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for saving_goal.tests.test_model.TestModels.test_model_SavingGoal.executor&quot;: &quot;Run&quot;,
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;Python.category_compare.executor&quot;: &quot;Run&quot;,
-    &quot;Python.dash_app.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_dash.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tests.executor&quot;: &quot;Run&quot;,
-    &quot;Python.views.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Kaspi/Desktop/budget_planner/saving_goal/tests&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.budget_planner.executor": "Run",
+    "Django tests.Test: bank_account.tests.test_model.TestModels.test_model_BankAccount.executor": "Run",
+    "Django tests.Test: bank_account.tests.test_view.CategoryListViewTest.test_category_list_view_filter.executor": "Run",
+    "Django tests.Test: bank_account.tests.test_view.CategoryListViewTest.test_category_list_view_get.executor": "Run",
+    "Django tests.Test: bank_account.tests.test_view.TestBankAccountDeleteView.test_delete_BankAccount.executor": "Run",
+    "Django tests.Test: bank_account.tests.test_view.TestBankAccountDeleteView.test_get_queryset.executor": "Run",
+    "Django tests.Test: category.tests.TestView.executor": "Run",
+    "Django tests.Test: category.tests.TestView.test_CategoryListView.executor": "Run",
+    "Django tests.Test: category.tests.TestView.test_add_category_POST.executor": "Run",
+    "Django tests.Test: category.tests.test_factories.TestCategoryFactory.executor": "Run",
+    "Django tests.Test: category.tests.test_factories.TestCategoryFactory.test_batch_object_create.executor": "Run",
+    "Django tests.Test: category.tests.test_model.TestModels.executor": "Run",
+    "Django tests.Test: category.tests.test_model.TestModels.test_model_Category.executor": "Run",
+    "Django tests.Test: category.tests.test_models.TestModels.executor": "Run",
+    "Django tests.Test: category.tests.test_views.CategoryListViewTest.executor": "Run",
+    "Django tests.Test: category.tests.test_views.CategoryListViewTest.test_category_list_view_filter.executor": "Run",
+    "Django tests.Test: category.tests.test_views.CategoryListViewTest.test_category_list_view_get.executor": "Run",
+    "Django tests.Test: category.tests.test_views.TestCategoryCreateView.executor": "Run",
+    "Django tests.Test: category.tests.test_views.TestCategoryCreateView.test_form_valid.executor": "Run",
+    "Django tests.Test: category.tests.test_views.TestCategoryCreateView.test_post_valid_data_creates_category.executor": "Run",
+    "Django tests.Test: category.tests.test_views.TestCategoryDeleteView.executor": "Run",
+    "Django tests.Test: category.tests.test_views.TestCategoryUpdateView.executor": "Run",
+    "Django tests.Test: category.tests.test_views.TestCategoryUpdateView.test_form_valid.executor": "Run",
+    "Django tests.Test: category.tests.test_views.TestCategoryUpdateView.test_get_queryset.executor": "Run",
+    "Django tests.Test: category.tests.test_views.TestCategoryUpdateView.test_get_queryset_anonymous.executor": "Run",
+    "Django tests.Test: category.tests.test_views.TestCategoryUpdateView.test_update_category.executor": "Run",
+    "Django tests.Test: category.tests.test_views.TestCategoryUpdateView.test_uses_correct_template_in_response.executor": "Run",
+    "Django tests.Test: category.tests.test_views.TestView.executor": "Run",
+    "Django tests.Test: notifications.tests.test_model.TestModels.executor": "Run",
+    "Django tests.Test: notifications.tests.test_view.TestCategoryCreateView.executor": "Run",
+    "Django tests.Test: notifications.tests.test_view.TestNotificationDeleteView.executor": "Run",
+    "Django tests.Test: notifications.tests.test_view.TestNotificationDeleteView.test_get_queryset.executor": "Run",
+    "Django tests.Test: notifications.tests.test_view.TestNotificationListView.test_notification_list_view_get.executor": "Run",
+    "Django tests.Test: notifications.tests.test_view.TestNotificationListView.test_notifications_list_view_filter.executor": "Run",
+    "Django tests.Test: notifications.tests.test_view.TestNotificationUpdateView.executor": "Run",
+    "Django tests.Test: notifications.tests.test_view.TestNotificationUpdateView.test_get_queryset.executor": "Run",
+    "Django tests.Test: notifications.tests.test_view.TestNotificationUpdateView.test_update_category.executor": "Run",
+    "Django tests.Test: notifications.tests.test_view.TestNotificationUpdateView.test_update_notification.executor": "Run",
+    "Django tests.Test: notifications.tests.test_view.TestNotificationUpdateView.test_uses_correct_template_in_response.executor": "Run",
+    "Django tests.Test: notifications_type.tests.test_model.TestModels.executor": "Run",
+    "Django tests.Test: regular_expenses.tests.test_model.TestModels.executor": "Run",
+    "Django tests.Test: regular_expenses.tests.test_model.TestModels.test_model_Category.executor": "Run",
+    "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesCreateView.executor": "Run",
+    "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesDeleteView.executor": "Run",
+    "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesDeleteView.test_delete_expenses.executor": "Run",
+    "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_filter.executor": "Run",
+    "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.executor": "Run",
+    "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.test_get_queryset.executor": "Run",
+    "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.test_update_expenses.executor": "Run",
+    "Django tests.Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.test_uses_correct_template_in_response.executor": "Run",
+    "Django tests.Test: saving_goal.tests.test_model.TestModels.test_model_SavingGoal.executor": "Run",
+    "Django tests.Test: saving_goal.tests.test_views.TestRegularExpensesListView.executor": "Run",
+    "Django tests.Test: saving_goal.tests.test_views.TestSavingGoalCreateView.test_form_valid.executor": "Run",
+    "Django tests.Test: saving_goal.tests.test_views.TestSavingGoalCreateView.test_post_valid_data_creates_expenses.executor": "Run",
+    "Django tests.Test: saving_goal.tests.test_views.TestSavingGoalDeleteView.executor": "Run",
+    "Django tests.Test: saving_goal.tests.test_views.TestSavingGoalUpdateView.test_get_queryset.executor": "Run",
+    "Django tests.Test: saving_goal.tests.test_views.TestSavingGoalUpdateView.test_update_goal.executor": "Run",
+    "Django tests.Test: saving_goal.tests.test_views.TestSavingGoalUpdateView.test_uses_correct_template_in_response.executor": "Run",
+    "Django tests.Test: transaction.tests.test_model.TestModels.test_model_Transaction.executor": "Run",
+    "Django tests.Test: transaction.tests.test_view.TestCategoryCreateView.test_form_valid.executor": "Run",
+    "Django tests.Test: transaction.tests.test_view.TestCategoryCreateView.test_post_valid_data_creates_transaction.executor": "Run",
+    "Django tests.Test: transaction.tests.test_view.TestCategoryDeleteView.executor": "Run",
+    "Django tests.Test: transaction.tests.test_view.TestCategoryDeleteView.test_delete_transaction.executor": "Run",
+    "Django tests.Test: transaction.tests.test_view.TestCategoryDeleteView.test_get_queryset.executor": "Run",
+    "Django tests.Test: transaction.tests.test_view.TestCategoryUpdateView.test_get_queryset.executor": "Run",
+    "Django tests.Test: transaction.tests.test_view.TestTransactionCreateView.executor": "Run",
+    "Django tests.Test: transaction.tests.test_view.TestTransactionCreateView.test_form_valid.executor": "Run",
+    "Django tests.Test: transaction.tests.test_view.TestTransactionCreateView.test_model_Transaction.executor": "Run",
+    "Django tests.Test: transaction.tests.test_view.TestTransactionCreateView.test_post_valid_data_creates_transaction.executor": "Run",
+    "Django tests.Test: transaction.tests.test_view.TestTransactionUpdateView.executor": "Run",
+    "Django tests.Test: transaction.tests.test_view.TestTransactionUpdateView.test_update_category.executor": "Run",
+    "Django tests.Test: transaction.tests.test_view.TestTransactionUpdateView.test_uses_correct_template_in_response.executor": "Run",
+    "Django tests.Test: wallet.tests.test_model.TestModels.test_model_Transaction.executor": "Run",
+    "Django tests.Test: wallet.tests.test_model.TestModels.test_model_Wallet.executor": "Run",
+    "Django tests.Test: wallet.tests.test_view.TestTransactionCreateView.test_form_valid.executor": "Run",
+    "Django tests.Test: wallet.tests.test_view.TestTransactionCreateView.test_post_valid_data_creates_wallet.executor": "Run",
+    "Django tests.Test: wallet.tests.test_view.TestWalletCreateView.executor": "Run",
+    "Django tests.Test: wallet.tests.test_view.TestWalletCreateView.test_form_valid.executor": "Run",
+    "Django tests.Test: wallet.tests.test_view.TestWalletCreateView.test_post_valid_data_creates_wallet.executor": "Run",
+    "Python tests.Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_category_list_view_filter.executor": "Run",
+    "Python tests.Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_filter.executor": "Run",
+    "Python tests.Python tests for regular_expenses.tests.test_views.TestRegularExpensesListView.test_regular_expenses_list_view_get.executor": "Run",
+    "Python tests.Python tests for saving_goal.tests.test_model.TestModels.executor": "Run",
+    "Python tests.Python tests for saving_goal.tests.test_model.TestModels.test_model_SavingGoal.executor": "Run",
+    "Python.app.executor": "Run",
+    "Python.category_compare.executor": "Run",
+    "Python.dash_app.executor": "Run",
+    "Python.test_dash.executor": "Run",
+    "Python.tests.executor": "Run",
+    "Python.views.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "django.template.preview.state": "SHOW_EDITOR",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Kaspi/Desktop/budget_planner/transaction",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "terminal",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Kaspi\Desktop\budget_planner\transaction" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\saving_goal\tests" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\bank_account\tests" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\dashboard" />
-      <recent name="C:\Users\Kaspi\Desktop\budget_planner\budget_planner" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\users" />
@@ -421,7 +385,7 @@
       <workItem from="1743546026928" duration="294000" />
       <workItem from="1743625534142" duration="19728000" />
       <workItem from="1743888853112" duration="3885000" />
-      <workItem from="1743970323157" duration="1126000" />
+      <workItem from="1743970323157" duration="4863000" />
     </task>
     <servers />
   </component>
@@ -487,7 +451,7 @@
     <SUITE FILE_PATH="coverage/budget_planner$Test__transaction_tests_test_view_TestTransactionCreateView.coverage" NAME="Test: transaction.tests.test_view.TestTransactionCreateView Coverage Results" MODIFIED="1741551863415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__notifications_tests_test_view_TestNotificationDeleteView_test_get_queryset.coverage" NAME="Test: notifications.tests.test_view.TestNotificationDeleteView.test_get_queryset Coverage Results" MODIFIED="1742413658995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__notifications_tests_test_view_TestCategoryCreateView.coverage" NAME="Test: notifications.tests.test_view.TestCategoryCreateView Coverage Results" MODIFIED="1742409958631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/budget_planner$Test__saving_goal_tests_test_views_TestRegularExpensesListView.coverage" NAME="Test: saving_goal.tests.test_views.TestRegularExpensesListView Coverage Results" MODIFIED="1743877394043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/budget_planner$Test__saving_goal_tests_test_views_TestRegularExpensesListView.coverage" NAME="Test: saving_goal.tests.test_views.TestRegularExpensesListView Coverage Results" MODIFIED="1743972872182" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__transaction_tests_test_view_TestCategoryDeleteView_test_get_queryset.coverage" NAME="Test: transaction.tests.test_view.TestCategoryDeleteView.test_get_queryset Coverage Results" MODIFIED="1741382135190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__regular_expenses_tests_test_views_TestRegularExpensesUpdateView_test_get_queryset.coverage" NAME="Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.test_get_queryset Coverage Results" MODIFIED="1742936965314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__notifications_tests_test_model_TestModels.coverage" NAME="Test: notifications.tests.test_model.TestModels Coverage Results" MODIFIED="1742246807579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
