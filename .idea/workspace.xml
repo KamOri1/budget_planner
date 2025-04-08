@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="29f336b1-7ccc-4a0d-b958-8caebdd95a6b" name="Changes" comment="dock: marging with the main one, as I am working on it on two different computers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <list id="ecd68a04-be2f-4e53-bc9d-975a2f2ce695" name="Changes by admin" comment="" />
     <list id="df12f125-9c31-4dd7-a15d-10586d317a47" name="Changes by vene" comment="" />
@@ -128,6 +126,7 @@
     "Django tests.Test: transaction.tests.test_view.TestTransactionUpdateView.executor": "Run",
     "Django tests.Test: transaction.tests.test_view.TestTransactionUpdateView.test_update_category.executor": "Run",
     "Django tests.Test: transaction.tests.test_view.TestTransactionUpdateView.test_uses_correct_template_in_response.executor": "Run",
+    "Django tests.Test: users.tests.ModelTest.executor": "Run",
     "Django tests.Test: wallet.tests.test_model.TestModels.test_model_Transaction.executor": "Run",
     "Django tests.Test: wallet.tests.test_model.TestModels.test_model_Wallet.executor": "Run",
     "Django tests.Test: wallet.tests.test_view.TestTransactionCreateView.test_form_valid.executor": "Run",
@@ -154,7 +153,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "django.template.preview.state": "SHOW_EDITOR",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Kaspi/Desktop/budget_planner/transaction",
+    "last_opened_file_path": "C:/Users/Kaspi/Desktop/budget_planner/users/migrations",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -171,11 +170,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Kaspi\Desktop\budget_planner\users\migrations" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\transaction" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\saving_goal\tests" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\bank_account\tests" />
       <recent name="C:\Users\Kaspi\Desktop\budget_planner" />
-      <recent name="C:\Users\Kaspi\Desktop\budget_planner\dashboard" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\users" />
@@ -185,7 +184,7 @@
       <recent name="C:\Users\Kaspi\Desktop\budget_planner\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Django tests.Test: saving_goal.tests.test_views.TestRegularExpensesListView">
+  <component name="RunManager" selected="Django tests.Test: users.tests.ModelTest">
     <configuration name="Test: saving_goal.tests.test_views.TestRegularExpensesListView" type="DjangoTestsConfigurationType" temporary="true">
       <module name="budget_planner" />
       <option name="ENV_FILES" value="" />
@@ -207,7 +206,7 @@
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: saving_goal.tests.test_views.TestSavingGoalDeleteView" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: transaction.tests.test_view.TestTransactionCreateView" type="DjangoTestsConfigurationType" temporary="true">
       <module name="budget_planner" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -221,14 +220,14 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="saving_goal.tests.test_views.TestSavingGoalDeleteView" />
+      <option name="TARGET" value="transaction.tests.test_view.TestTransactionCreateView" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: saving_goal.tests.test_views.TestSavingGoalUpdateView.test_get_queryset" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: transaction.tests.test_view.TestTransactionCreateView.test_post_valid_data_creates_transaction" type="DjangoTestsConfigurationType" temporary="true">
       <module name="budget_planner" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -242,14 +241,14 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="saving_goal.tests.test_views.TestSavingGoalUpdateView.test_get_queryset" />
+      <option name="TARGET" value="transaction.tests.test_view.TestTransactionCreateView.test_post_valid_data_creates_transaction" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: saving_goal.tests.test_views.TestSavingGoalUpdateView.test_update_goal" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: transaction.tests.test_view.TestTransactionUpdateView" type="DjangoTestsConfigurationType" temporary="true">
       <module name="budget_planner" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -263,14 +262,14 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="saving_goal.tests.test_views.TestSavingGoalUpdateView.test_update_goal" />
+      <option name="TARGET" value="transaction.tests.test_view.TestTransactionUpdateView" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: saving_goal.tests.test_views.TestSavingGoalUpdateView.test_uses_correct_template_in_response" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: users.tests.ModelTest" type="DjangoTestsConfigurationType" temporary="true">
       <module name="budget_planner" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -284,7 +283,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="saving_goal.tests.test_views.TestSavingGoalUpdateView.test_uses_correct_template_in_response" />
+      <option name="TARGET" value="users.tests.ModelTest" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
@@ -318,19 +317,14 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Django tests.Test: saving_goal.tests.test_views.TestRegularExpensesListView" />
-        <item itemvalue="Django tests.Test: saving_goal.tests.test_views.TestSavingGoalDeleteView" />
-        <item itemvalue="Django tests.Test: saving_goal.tests.test_views.TestSavingGoalUpdateView.test_update_goal" />
-        <item itemvalue="Django tests.Test: saving_goal.tests.test_views.TestSavingGoalUpdateView.test_uses_correct_template_in_response" />
-        <item itemvalue="Django tests.Test: saving_goal.tests.test_views.TestSavingGoalUpdateView.test_get_queryset" />
+        <item itemvalue="Django tests.Test: users.tests.ModelTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PY-243.26053.29" />
-        <option value="bundled-python-sdk-b1dbf8ef85a6-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.26053.29" />
+        <option value="bundled-python-sdk-4f4e415b4190-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.26053.29" />
       </set>
     </attachedChunks>
   </component>
@@ -385,7 +379,7 @@
       <workItem from="1743546026928" duration="294000" />
       <workItem from="1743625534142" duration="19728000" />
       <workItem from="1743888853112" duration="3885000" />
-      <workItem from="1743970323157" duration="4863000" />
+      <workItem from="1743970323157" duration="11884000" />
     </task>
     <servers />
   </component>
@@ -435,7 +429,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/budget_planner$Test__bank_account_tests_test_view_TestBankAccountDeleteView_test_get_queryset.coverage" NAME="Test: bank_account.tests.test_view.TestBankAccountDeleteView.test_get_queryset Coverage Results" MODIFIED="1742077048833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$views.coverage" NAME="views Coverage Results" MODIFIED="1737572964859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dashboard" />
-    <SUITE FILE_PATH="coverage/budget_planner$Test__transaction_tests_test_view_TestTransactionCreateView_test_post_valid_data_creates_transaction.coverage" NAME="Test: transaction.tests.test_view.TestTransactionCreateView.test_post_valid_data_creates_transaction Coverage Results" MODIFIED="1740002905094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/budget_planner$Test__transaction_tests_test_view_TestTransactionCreateView_test_post_valid_data_creates_transaction.coverage" NAME="Test: transaction.tests.test_view.TestTransactionCreateView.test_post_valid_data_creates_transaction Coverage Results" MODIFIED="1744060361986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__category_tests_test_model_TestModels_test_model_Category.coverage" NAME="Test: category.tests.test_model.TestModels.test_model_Category Coverage Results" MODIFIED="1741381499956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$category_compare.coverage" NAME="category_compare Coverage Results" MODIFIED="1738357240204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dashboard/utils" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__wallet_tests_test_view_TestWalletCreateView_test_form_valid.coverage" NAME="Test: wallet.tests.test_view.TestWalletCreateView.test_form_valid Coverage Results" MODIFIED="1741470439977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -448,10 +442,11 @@
     <SUITE FILE_PATH="coverage/budget_planner$Test__category_tests_test_views_TestCategoryUpdateView_test_update_category.coverage" NAME="Test: category.tests.test_views.TestCategoryUpdateView.test_update_category Coverage Results" MODIFIED="1742411838400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__regular_expenses_tests_test_views_TestRegularExpensesDeleteView.coverage" NAME="Test: regular_expenses.tests.test_views.TestRegularExpensesDeleteView Coverage Results" MODIFIED="1743023493906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__category_tests_test_views_CategoryListViewTest.coverage" NAME="Test: category.tests.test_views.CategoryListViewTest Coverage Results" MODIFIED="1741212437590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/budget_planner$Test__transaction_tests_test_view_TestTransactionCreateView.coverage" NAME="Test: transaction.tests.test_view.TestTransactionCreateView Coverage Results" MODIFIED="1741551863415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/budget_planner$Test__transaction_tests_test_view_TestTransactionCreateView.coverage" NAME="Test: transaction.tests.test_view.TestTransactionCreateView Coverage Results" MODIFIED="1744060344333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__notifications_tests_test_view_TestNotificationDeleteView_test_get_queryset.coverage" NAME="Test: notifications.tests.test_view.TestNotificationDeleteView.test_get_queryset Coverage Results" MODIFIED="1742413658995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__notifications_tests_test_view_TestCategoryCreateView.coverage" NAME="Test: notifications.tests.test_view.TestCategoryCreateView Coverage Results" MODIFIED="1742409958631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__saving_goal_tests_test_views_TestRegularExpensesListView.coverage" NAME="Test: saving_goal.tests.test_views.TestRegularExpensesListView Coverage Results" MODIFIED="1743972872182" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/budget_planner$Test__users_tests_ModelTest.coverage" NAME="Test: users.tests.ModelTest Coverage Results" MODIFIED="1744142600181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__transaction_tests_test_view_TestCategoryDeleteView_test_get_queryset.coverage" NAME="Test: transaction.tests.test_view.TestCategoryDeleteView.test_get_queryset Coverage Results" MODIFIED="1741382135190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__regular_expenses_tests_test_views_TestRegularExpensesUpdateView_test_get_queryset.coverage" NAME="Test: regular_expenses.tests.test_views.TestRegularExpensesUpdateView.test_get_queryset Coverage Results" MODIFIED="1742936965314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__notifications_tests_test_model_TestModels.coverage" NAME="Test: notifications.tests.test_model.TestModels Coverage Results" MODIFIED="1742246807579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -473,7 +468,7 @@
     <SUITE FILE_PATH="coverage/budget_planner$Test__category_tests_test_views_CategoryListViewTest_test_category_list_view_get.coverage" NAME="Test: category.tests.test_views.CategoryListViewTest.test_category_list_view_get Coverage Results" MODIFIED="1741212364937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__category_tests_test_views_TestCategoryUpdateView_test_get_queryset.coverage" NAME="Test: category.tests.test_views.TestCategoryUpdateView.test_get_queryset Coverage Results" MODIFIED="1741381762451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__transaction_tests_test_view_TestCategoryCreateView_test_post_valid_data_creates_transaction.coverage" NAME="Test: transaction.tests.test_view.TestCategoryCreateView.test_post_valid_data_creates_transaction Coverage Results" MODIFIED="1739733613639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/budget_planner$Test__bank_account_tests_test_view_TestBankAccountDeleteView_test_delete_BankAccount.coverage" NAME="Test: bank_account.tests.test_view.TestBankAccountDeleteView.test_delete_BankAccount Coverage Results" MODIFIED="1742151952342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/budget_planner$Test__bank_account_tests_test_view_TestBankAccountDeleteView_test_delete_BankAccount.coverage" NAME="Test: bank_account.tests.test_view.TestBankAccountDeleteView.test_delete_BankAccount Coverage Results" MODIFIED="1744060456955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__category_tests_test_views_TestView.coverage" NAME="Test: category.tests.test_views.TestView Coverage Results" MODIFIED="1739223602128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__wallet_tests_test_model_TestModels_test_model_Wallet.coverage" NAME="Test: wallet.tests.test_model.TestModels.test_model_Wallet Coverage Results" MODIFIED="1741470417946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__transaction_tests_test_view_TestCategoryCreateView_test_form_valid.coverage" NAME="Test: transaction.tests.test_view.TestCategoryCreateView.test_form_valid Coverage Results" MODIFIED="1739733336886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -491,7 +486,7 @@
     <SUITE FILE_PATH="coverage/budget_planner$Test__category_tests_test_factories_TestCategoryFactory.coverage" NAME="Test: category.tests.test_factories.TestCategoryFactory Coverage Results" MODIFIED="1741382238413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__category_tests_test_views_TestCategoryCreateView.coverage" NAME="Test: category.tests.test_views.TestCategoryCreateView Coverage Results" MODIFIED="1741381573655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__category_tests_TestView_test_add_category_POST.coverage" NAME="Test: category.tests.TestView.test_add_category_POST Coverage Results" MODIFIED="1739212384383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/budget_planner$Test__transaction_tests_test_view_TestTransactionUpdateView.coverage" NAME="Test: transaction.tests.test_view.TestTransactionUpdateView Coverage Results" MODIFIED="1741551873378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/budget_planner$Test__transaction_tests_test_view_TestTransactionUpdateView.coverage" NAME="Test: transaction.tests.test_view.TestTransactionUpdateView Coverage Results" MODIFIED="1744060034732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__category_tests_test_views_TestCategoryUpdateView.coverage" NAME="Test: category.tests.test_views.TestCategoryUpdateView Coverage Results" MODIFIED="1741381783544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__bank_account_tests_test_view_CategoryListViewTest_test_category_list_view_filter.coverage" NAME="Test: bank_account.tests.test_view.CategoryListViewTest.test_category_list_view_filter Coverage Results" MODIFIED="1742152323055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/budget_planner$Test__notifications_tests_test_view_TestNotificationUpdateView_test_get_queryset.coverage" NAME="Test: notifications.tests.test_view.TestNotificationUpdateView.test_get_queryset Coverage Results" MODIFIED="1742411906341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
