@@ -6,13 +6,13 @@ from django.urls import include, path
 from dashboard.dash_app import app  # noqa
 from dashboard.dash_app_monthly_category_compare import app_category_compare  # noqa
 from dashboard.dash_app_monthly_compare import app_monthly_compare  # noqa
-from dashboard.views import billing, dashboard, main_view, notifications
+from dashboard.views import dashboard, main_view, notifications
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", main_view, name="home_page"),
     path("dashboard", dashboard, name="dashboard"),
-    path("billing", billing, name="billing"),
+    path("billing/", include("billings.urls")),
     path("notifications", notifications, name="notifications"),
     path("users/", include("users.urls")),
     path("wallets/", include("wallet.urls")),

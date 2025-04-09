@@ -34,7 +34,8 @@ INSTALLED_APPS = [
 ]
 
 INSTALLED_EXTENSIONS = [
-    "billings.apps.BillingsConfig" "wallet.apps.WalletConfig",
+    "billings.apps.BillingsConfig",
+    "wallet.apps.WalletConfig",
     "system_notification.apps.SystemNotificationConfig",
     "notifications_type.apps.NotificationsTypeConfig",
     "regular_expenses.apps.RegularExpensesConfig",
