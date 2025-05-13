@@ -17,7 +17,8 @@ class TodayMoney:
         month_profit: float = 0
 
         for transaction in self.transactions:
-            if transaction.category in self.category.filter(type="2"):
+            if str(transaction.category.type) == "profit":
+                # if transaction.category in self.category.filter(type="2"):
                 if transaction.transaction_date.strftime(
                     "%Y-%m"
                 ) == datetime.now().strftime("%Y-%m"):
@@ -28,7 +29,8 @@ class TodayMoney:
         month_expenses: float = 0
 
         for transaction in self.transactions:
-            if transaction.category in self.category.filter(type="1"):
+            if str(transaction.category.type) == "cost":
+                # if transaction.category in self.category.filter(type="1"):
                 if transaction.transaction_date.strftime(
                     "%Y-%m"
                 ) == datetime.now().strftime("%Y-%m"):
