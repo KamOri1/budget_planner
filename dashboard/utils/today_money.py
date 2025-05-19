@@ -18,7 +18,6 @@ class TodayMoney:
 
         for transaction in self.transactions:
             if str(transaction.category.type) == "profit":
-                # if transaction.category in self.category.filter(type="2"):
                 if transaction.transaction_date.strftime(
                     "%Y-%m"
                 ) == datetime.now().strftime("%Y-%m"):
@@ -112,7 +111,7 @@ class TodayMoney:
             previous_month_str: str = f"{str(int(current_year) - 1)}-12"
         else:
             previous_month_str: str = (
-                f"{current_year}-{str(int(current_month) - 1).zfill(2)}"  # zfill to ensure two digits
+                f"{current_year}-{str(int(current_month) - 1).zfill(2)}"
             )
 
         previous_month_date: datetime = datetime.strptime(previous_month_str, "%Y-%m")
