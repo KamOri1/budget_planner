@@ -30,7 +30,7 @@ class TodayMoney:
 
         for transaction in self.transactions:
             if str(transaction.category.type) == "cost":
-                # if transaction.category in self.category.filter(type="1"):
+
                 if transaction.transaction_date.strftime(
                     "%Y-%m"
                 ) == datetime.now().strftime("%Y-%m"):
@@ -53,7 +53,8 @@ class TodayMoney:
         previous_month: datetime = datetime.strptime(previous_month, "%Y-%m")
 
         for transaction in self.transactions:
-            if transaction.category in self.category.filter(type="2"):
+            if str(transaction.category.type) == "profit":
+
                 if transaction.transaction_date.strftime(
                     "%Y-%m"
                 ) == previous_month.strftime("%Y-%m"):
@@ -82,7 +83,8 @@ class TodayMoney:
         previous_month: datetime = datetime.strptime(previous_month, "%Y-%m")
 
         for transaction in self.transactions:
-            if transaction.category in self.category.filter(type="1"):
+            if str(transaction.category.type) == "cost":
+
                 if transaction.transaction_date.strftime(
                     "%Y-%m"
                 ) == previous_month.strftime("%Y-%m"):
@@ -98,37 +100,41 @@ class TodayMoney:
             return round(expenses_percentage_change)
 
     def compare_today_profit(self) -> float:
-        current_month_today_profit: float = self.sum_of_profit()
-        previous_month_today_profit: float = 0
         current_month = datetime.now().strftime("%m")
-        current_years = datetime.now().strftime("%Y")
+        current_year = datetime.now().strftime("%Y")
+        current_day = datetime.now().strftime("%d")
+
+        current_month_to_date_profit: float = self.today_profit
+        previous_month_to_date_profit: float = 0
+        previous_month_to_date_cost: float = 0
 
         if int(current_month) == 1:
-            previous_month: str = f"{str(int(current_years) - 1)}-12"
-
+            previous_month_str: str = f"{str(int(current_year) - 1)}-12"
         else:
-            previous_month: str = f"{current_years}-{str(int(current_month) - 1)}"
+            previous_month_str: str = (
+                f"{current_year}-{str(int(current_month) - 1).zfill(2)}"  # zfill to ensure two digits
+            )
 
-        previous_month: datetime = datetime.strptime(previous_month, "%Y-%m")
+        previous_month_date: datetime = datetime.strptime(previous_month_str, "%Y-%m")
 
         for transaction in self.transactions:
-            if transaction.category in self.category.filter(type="2"):
-                if transaction.transaction_date.strftime(
-                    "%Y-%m"
-                ) == previous_month.strftime(
-                    "%Y-%m"
-                ) and transaction.transaction_date.strftime(
-                    "%d"
-                ) <= datetime.now().strftime(
-                    "%d"
-                ):
-                    previous_month_today_profit += transaction.sum_amount
+            if (
+                transaction.transaction_date.strftime("%Y-%m")
+                == previous_month_date.strftime("%Y-%m")
+                and transaction.transaction_date.strftime("%d") <= current_day
+            ):
+                if str(transaction.category.type) == "profit":
+                    previous_month_to_date_profit += transaction.sum_amount
+                else:
+                    previous_month_to_date_cost += transaction.sum_amount
 
-        if previous_month_today_profit == 0:
+        previous_month_to_date_profit -= previous_month_to_date_cost
+
+        if previous_month_to_date_profit == 0:
             return 0
         else:
             profit_percentage_change = (
-                (current_month_today_profit - previous_month_today_profit)
-                / previous_month_today_profit
+                (current_month_to_date_profit - previous_month_to_date_profit)
+                / previous_month_to_date_profit
             ) * 100
             return round(profit_percentage_change)
