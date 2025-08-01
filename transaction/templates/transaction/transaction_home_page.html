@@ -33,6 +33,7 @@
         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"><a href="{{ 'transaction-home' }}">Name</a></th>
         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Value</th>
         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
+        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Description</th>
         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" colspan="2"></th>
     {% endif %}
 {% endblock tableTitle %}
@@ -62,6 +63,14 @@
                   </div>
                 </div>
              </td>
+             <td style="position: relative;">
+                <div class="d-flex px-3 py-1">
+                  <div class="d-flex flex-column justify-content-center">
+                    <h6 class="mb-0 text-sm" style="cursor: pointer;" onclick="this.style.display='none'; this.nextElementSibling.style.display='block'">{{ transaction.description | slice:":10"  }}...</h6>
+                      <h6 class="mb-0 text-sm full-description" style="display:none;" onclick="this.style.display='none'; this.previousElementSibling.style.display='block'"><i class="fas fa-arrow-left"></i> {{ transaction.description }}</h6>
+                  </div>
+                </div>
+             </td>
              <td>
                 <div class="d-flex px-3 py-1">
                   <div class="d-flex flex-column justify-content-center ms-auto text-end" >
@@ -77,8 +86,25 @@
                 </div>
              </td>
           </tr>
+          <style>
+  .full-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    white-space: normal;
+    word-wrap: break-word;
+    z-index: 100;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+  }
+</style>
       {% endfor %}
     {% else %}
         <p>No transaction to view</p>
     {% endif %}
 {% endblock tableData %}
+
