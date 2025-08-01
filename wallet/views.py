@@ -24,7 +24,7 @@ class WalletCreateView(CreateView):
 
     def form_valid(self, form):
         wallet = form.save(commit=False)
-        wallet.user = self.request.user.id
+        wallet.user_id = self.request.user.id
         form.save()
 
         return redirect(self.success_url)
