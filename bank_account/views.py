@@ -14,7 +14,7 @@ class AccountCreateView(CreateView):
 
     def form_valid(self, form):
         account = form.save(commit=False)
-        account.user_id_id = self.request.user.id
+        account.user_id = self.request.user.id
         form.save()
 
         return redirect(self.success_url)
