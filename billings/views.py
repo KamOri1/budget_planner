@@ -1,7 +1,6 @@
-from django.views.generic import TemplateView
+from datetime import date, timedelta
 
-from datetime import date
-from datetime import timedelta
+from django.views.generic import TemplateView
 
 from dashboard.utils.today_money import TodayMoney
 from transaction.models import Transaction
@@ -19,10 +18,13 @@ class BillingView(TemplateView):
         context = {
             "today_profit": today_profit.today_profit,
             "possession_values": PossessionValues(self.request.user).calculate(),
-            "transactions_today": Transaction.objects.filter(transaction_date__date=today),
-            "transactions_yesterday": Transaction.objects.filter(transaction_date__date=yesterday),
+            "transactions_today": Transaction.objects.filter(
+                transaction_date__date=today
+            ),
+            "transactions_yesterday": Transaction.objects.filter(
+                transaction_date__date=yesterday
+            ),
         }
-        print(context)
         return context
 
 
