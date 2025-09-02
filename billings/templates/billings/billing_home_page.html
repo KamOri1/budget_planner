@@ -265,11 +265,17 @@
                   {% for transaction in transactions_today %}
                     <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                       <div class="d-flex align-items-center">
-                        {% if transaction.category.type|stringformat:"s" == "profit" %}
-                           <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 p-3 btn-sm d-flex align-items-center justify-content-center"><i class="material-symbols-rounded text-lg">expand_less</i></button>
-                        {% else %}
-                            <button class="btn btn-icon-only btn-rounded btn-outline-danger mb-0 me-3 p-3 btn-sm d-flex align-items-center justify-content-center"><i class="material-symbols-rounded text-lg">expand_more</i></button>
-                        {% endif %}
+                        <a href="{%  url 'update_transaction' pk=transaction.id %}">
+                              {% if transaction.category.type|stringformat:"s" == "profit" %}
+                                <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 p-3 btn-sm d-flex align-items-center justify-content-center">
+                                  <i class="material-symbols-rounded text-lg">expand_less</i>
+                                </button>
+                              {% else %}
+                                <button type="submit" class="btn btn-icon-only btn-rounded btn-outline-danger mb-0 me-3 p-3 btn-sm d-flex align-items-center justify-content-center">
+                                 <i class="material-symbols-rounded text-lg">expand_more</i>
+                                </button>
+                              {% endif %}
+                             </a>
                         <div class="d-flex flex-column">
                           <h6 class="mb-1 text-dark text-sm">{{ transaction.transaction_name }}</h6>
                           <span class="text-xs">{{ transaction.transaction_date|date:"d-m-Y" }}</span>
@@ -293,15 +299,19 @@
                   {% for transaction in transactions_yesterday %}
                     <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
                         <div class="d-flex align-items-center">
-                          {% if transaction.category.type|stringformat:"s" == "profit" %}
-                            <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 p-3 btn-sm d-flex align-items-center justify-content-center">
-                              <i class="material-symbols-rounded text-lg">expand_less</i>
-                            </button>
-                          {% else %}
-                            <button class="btn btn-icon-only btn-rounded btn-outline-danger mb-0 me-3 p-3 btn-sm d-flex align-items-center justify-content-center">
-                              <i class="material-symbols-rounded text-lg">expand_more</i>
-                            </button>
-                          {% endif %}
+                             <a href="{%  url 'update_transaction' pk=transaction.id %}">
+                              {% if transaction.category.type|stringformat:"s" == "profit" %}
+
+                                <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 p-3 btn-sm d-flex align-items-center justify-content-center">
+                                  <i class="material-symbols-rounded text-lg">expand_less</i>
+                                </button>
+                              {% else %}
+
+                                <button type="submit" class="btn btn-icon-only btn-rounded btn-outline-danger mb-0 me-3 p-3 btn-sm d-flex align-items-center justify-content-center">
+                                 <i class="material-symbols-rounded text-lg">expand_more</i>
+                                </button>
+                              {% endif %}
+                             </a>
                           <div class="d-flex flex-column">
                             <h6 class="mb-1 text-dark text-sm">{{ transaction.transaction_name }}</h6>
                             <span class="text-xs">{{ transaction.transaction_date|date:"d-m-Y" }}</span>
@@ -314,6 +324,7 @@
                              text-danger
                           {% endif %}">
                           {{ transaction.sum_amount }}
+
                         </div>
                     </li>
                   {% endfor %}
